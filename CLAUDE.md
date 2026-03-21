@@ -1,41 +1,41 @@
-# CLAUDE.md — Remotely Codebase Guide
+# CLAUDE.md — remoteapp.nl Codebase Guide
 
-> This file is intended to orient AI assistants (Claude, Copilot, etc.) working in this repository. It covers architecture, conventions, workflows, and key patterns.
-
----
-
-## Project Overview
-
-**Remotely** is an open-source remote control and remote scripting platform built with .NET 5, ASP.NET Core Blazor (server-side), SignalR Core, and WebRTC. It allows IT professionals to remotely control desktops and execute scripts on managed machines.
+> Dit bestand is bedoeld om AI-assistenten (Claude, Copilot, etc.) te oriënteren in deze repository. Het behandelt architectuur, conventies, workflows en belangrijke patronen.
 
 ---
 
-## Repository Structure
+## Projectoverzicht
+
+**remoteapp.nl** is een open-source platform voor remote control en remote scripting, gebouwd met .NET 5, ASP.NET Core Blazor (server-side), SignalR Core en WebRTC. Het stelt IT-professionals in staat om desktops op afstand te besturen en scripts uit te voeren op beheerde machines.
+
+---
+
+## Repository-structuur
 
 ```
-Remotely/
-├── Server/                  # ASP.NET Core 5 Blazor Server web application
+remoteapp.nl/
+├── Server/                  # ASP.NET Core 5 Blazor Server webapplicatie
 │   ├── API/                 # REST API controllers
 │   ├── Areas/               # Razor Pages / Identity
 │   ├── Components/          # Blazor components
-│   ├── Data/                # EF Core DbContext and migrations
+│   ├── Data/                # EF Core DbContext en migraties
 │   ├── Hubs/                # SignalR hubs (AgentHub, CasterHub, ViewerHub)
-│   ├── Pages/               # Razor Pages and Blazor pages
+│   ├── Pages/               # Razor Pages en Blazor pages
 │   ├── Services/            # Server-side services (DI)
-│   └── wwwroot/             # Static assets (TypeScript compiled to JS)
+│   └── wwwroot/             # Statische assets (TypeScript gecompileerd naar JS)
 │       └── src/RemoteControl/  # TypeScript remote control client
-├── Agent/                   # Cross-platform managed-device service agent
+├── Agent/                   # Cross-platform service agent voor beheerde apparaten
 │   └── Services/            # Agent services (PowerShell, updater, etc.)
-├── Desktop.Core/            # Shared desktop client logic
+├── Desktop.Core/            # Gedeelde desktop client logica
 ├── Desktop.Win/             # Windows desktop client (WPF + SharpDX)
 ├── Desktop.XPlat/           # Cross-platform desktop client (Avalonia)
-├── Shared/                  # Shared models, DTOs, utilities used by all projects
-│   └── Models/              # Entity models and DTOs
+├── Shared/                  # Gedeelde modellen, DTO's en utilities
+│   └── Models/              # Entiteitsmodellen en DTO's
 ├── Tests/                   # Unit tests (MSTest + Moq)
 ├── Tests.LoadTester/        # Load testing utilities
-├── Server.Installer/        # Cross-platform server installer CLI tool
+├── Server.Installer/        # Cross-platform server installer CLI-tool
 ├── Agent.Installer.Win/     # Windows agent installer
-├── Utilities/               # PowerShell build/migration/publish scripts
+├── Utilities/               # PowerShell build/migratie/publish scripts
 └── .github/workflows/       # GitHub Actions CI/CD
 ```
 
@@ -43,41 +43,41 @@ Remotely/
 
 ## Tech Stack
 
-| Layer | Technology |
+| Laag | Technologie |
 |---|---|
 | Runtime | .NET 5.0 |
 | Web framework | ASP.NET Core 5, Blazor Server |
-| Real-time comms | ASP.NET Core SignalR (MessagePack protocol) |
+| Real-time communicatie | ASP.NET Core SignalR (MessagePack protocol) |
 | ORM | Entity Framework Core 5 |
-| Databases | SQLite (default), SQL Server, PostgreSQL |
+| Databases | SQLite (standaard), SQL Server, PostgreSQL |
 | Windows desktop | WPF, SharpDX |
 | Cross-platform desktop | Avalonia UI 0.10.6 |
 | WebRTC | Microsoft.MixedReality.WebRTC 2.0.2 |
 | Scripting | Microsoft PowerShell SDK 7.1.3 |
-| Frontend | TypeScript (ES2017), compiled via npm/webpack |
+| Frontend | TypeScript (ES2017), gecompileerd via npm/webpack |
 | Testing | MSTest, Moq, EF Core InMemory |
 
 ---
 
-## Key Architecture Concepts
+## Architectuurconcepten
 
 ### Multi-Tenancy
 
-- The platform supports multiple **Organizations**. `MaxOrganizationCount` in `ApplicationOptions` controls how many are allowed (default: 1).
-- Each organization has its own devices, users, device groups, scripts, and branding.
-- Users have roles: **Server Admin**, **Organization Admin**, and **standard user**.
+- Het platform ondersteunt meerdere **Organisaties**. `MaxOrganizationCount` in `ApplicationOptions` bepaalt het maximum (standaard: 1).
+- Elke organisatie heeft eigen apparaten, gebruikers, apparaatgroepen, scripts en branding.
+- Gebruikersrollen: **Server Admin**, **Organisatie Admin** en **standaardgebruiker**.
 
-### Real-Time Communication (SignalR)
+### Real-Time Communicatie (SignalR)
 
-Three hubs in `Server/Hubs/`:
+Drie hubs in `Server/Hubs/`:
 
-| Hub | Purpose |
+| Hub | Doel |
 |---|---|
-| `AgentHub` | Persistent connection from each managed Agent to the server |
-| `CasterHub` | Connection from the Desktop client (screen sender) to the server |
-| `ViewerHub` | Connection from the browser (screen viewer) to the server |
+| `AgentHub` | Persistente verbinding van elke beheerde Agent naar de server |
+| `CasterHub` | Verbinding van de Desktop client (schermzender) naar de server |
+| `ViewerHub` | Verbinding van de browser (schermkijker) naar de server |
 
-SignalR uses **MessagePack** binary protocol for efficiency. Max message size is 100 KB (configured in `Startup.cs`).
+SignalR gebruikt het **MessagePack** binaire protocol voor efficiëntie. Maximale berichtgrootte is 100 KB (geconfigureerd in `Startup.cs`).
 
 ### Remote Control Flow
 
@@ -87,118 +87,118 @@ Desktop Client (CasterHub) ──► Server ──► Browser (ViewerHub)
          └────── WebRTC (peer-to-peer, Windows) ──┘
 ```
 
-- On Windows, WebRTC is used for direct peer-to-peer screen streaming.
-- The server relays frames when WebRTC is unavailable (Linux/macOS desktop clients).
+- Op Windows wordt WebRTC gebruikt voor directe peer-to-peer schermstreaming.
+- De server stuurt frames door wanneer WebRTC niet beschikbaar is (Linux/macOS desktop clients).
 
-### Agent Operation
+### Agent Werking
 
-- Each managed machine runs the **Agent** service.
-- The agent connects to the server via `AgentHub` and:
-  - Sends periodic heartbeats and device info updates.
-  - Polls for pending script runs.
-  - Accepts remote control session requests.
-  - Self-updates via the `Updater` service.
+- Elke beheerde machine draait de **Agent** service.
+- De agent verbindt met de server via `AgentHub` en:
+  - Verstuurt periodieke heartbeats en apparaatinfo-updates.
+  - Controleert op openstaande script runs.
+  - Accepteert remote control sessieverzoeken.
+  - Werkt zichzelf bij via de `Updater` service.
 
-### Data Layer
+### Datalaag
 
-- EF Core with separate `DbContext` subclasses per provider:
+- EF Core met aparte `DbContext` subklassen per provider:
   - `SqliteDbContext` → `Remotely.db`
   - `SqlServerDbContext`
   - `PostgreSqlDbContext`
-- `DBProvider` in `ApplicationOptions` selects the active provider.
-- All data access goes through `IDataService` / `DataService` (DI singleton).
-- Migrations live in `Server/Data/Migrations/`.
+- `DBProvider` in `ApplicationOptions` selecteert de actieve provider.
+- Alle datatoegang verloopt via `IDataService` / `DataService` (DI singleton).
+- Migraties staan in `Server/Data/Migrations/`.
 
 ---
 
-## Project Conventions
+## Projectconventies
 
-### C# Style
+### C# Stijl
 
-- Use `var` for all local variables where the type is apparent or built-in (configured via `.editorconfig`).
-- XML doc comments (`CS1591`) are suppressed — do not add them unless the team explicitly requests.
-- Platform-compatibility analyzer (`CA1416`) is suppressed project-wide; use `[SupportedOSPlatform]` when needed for new platform-specific code.
-- Dependency injection is used throughout — avoid `new`-ing services directly; register them in `Startup.cs`.
+- Gebruik `var` voor alle lokale variabelen waar het type duidelijk of ingebouwd is (geconfigureerd via `.editorconfig`).
+- XML doc comments (`CS1591`) zijn onderdrukt — voeg ze niet toe tenzij expliciet gevraagd.
+- Platform-compatibility analyzer (`CA1416`) is project-breed onderdrukt; gebruik `[SupportedOSPlatform]` voor nieuwe platform-specifieke code.
+- Dependency injection wordt overal gebruikt — vermijd `new`-ing van services; registreer ze in `Startup.cs`.
 
-### Naming
+### Naamgeving
 
-- Models/entities: PascalCase nouns (e.g., `Device`, `RemotelyUser`, `Organization`).
-- Services: interface + implementation pattern (`IDataService` / `DataService`).
-- SignalR hub method names: PascalCase verbs (e.g., `SendHeartbeat`, `UpdateDevice`).
-- API controllers: `{Resource}Controller` (e.g., `DevicesController`).
+- Modellen/entiteiten: PascalCase zelfstandige naamwoorden (bijv. `Device`, `RemotelyUser`, `Organization`).
+- Services: interface + implementatiepatroon (`IDataService` / `DataService`).
+- SignalR hub methodenamen: PascalCase werkwoorden (bijv. `SendHeartbeat`, `UpdateDevice`).
+- API controllers: `{Resource}Controller` (bijv. `DevicesController`).
 
-### Database Changes
+### Databasewijzigingen
 
-When modifying EF Core models:
+Bij het wijzigen van EF Core modellen:
 
-1. Edit the model in `Shared/Models/` or `Server/Data/`.
-2. Run `Add-Migration.ps1` (in `Utilities/`) or use:
+1. Bewerk het model in `Shared/Models/` of `Server/Data/`.
+2. Voer `Add-Migration.ps1` uit (in `Utilities/`) of gebruik:
    ```bash
-   dotnet ef migrations add <MigrationName> --project Server
+   dotnet ef migrations add <MigratieNaam> --project Server
    ```
-3. Migrations run automatically on startup via `AppDb.MigrateAndSeed()`.
+3. Migraties worden automatisch uitgevoerd bij opstarten via `AppDb.MigrateAndSeed()`.
 
-### Configuration
+### Configuratie
 
-- `appsettings.json` — base configuration (checked into source).
-- `appsettings.Production.json` — production overrides (**not** in source; created on deploy).
-- All app-level settings are under the `ApplicationOptions` key and map to `ApplicationOptions.cs`.
-- Never commit secrets (SMTP passwords, connection strings with credentials) to source.
+- `appsettings.json` — basisconfiguratie (ingecheckt in source).
+- `appsettings.Production.json` — productie-overrides (**niet** in source; aangemaakt bij deployment).
+- Alle app-instellingen staan onder de `ApplicationOptions` sleutel en mappen naar `ApplicationOptions.cs`.
+- Sla nooit geheimen (SMTP-wachtwoorden, connectiestrings met credentials) op in source.
 
 ### Frontend (TypeScript)
 
-- Source lives in `Server/wwwroot/src/`.
-- Compiled output goes to `Server/wwwroot/build/`.
-- Build TypeScript with `npm run build` (or `npm run watch` during development) from `Server/wwwroot/`.
-- The remote control viewer client is in `Server/wwwroot/src/RemoteControl/`.
+- Source staat in `Server/wwwroot/src/`.
+- Gecompileerde output gaat naar `Server/wwwroot/build/`.
+- Bouw TypeScript met `npm run build` (of `npm run watch` tijdens ontwikkeling) vanuit `Server/wwwroot/`.
+- De remote control viewer client staat in `Server/wwwroot/src/RemoteControl/`.
 
 ---
 
-## Build & Run
+## Bouwen & Draaien
 
-### Prerequisites
+### Vereisten
 
 - .NET 5 SDK
-- Node.js / npm (for TypeScript frontend)
-- Visual Studio 2019+ or VS Code with C# extension
+- Node.js / npm (voor TypeScript frontend)
+- Visual Studio 2019+ of VS Code met C# extensie
 
-### Local Development
+### Lokale Ontwikkeling
 
 ```bash
-# Restore dependencies
+# Herstel dependencies
 dotnet restore
 
-# Build TypeScript
+# Bouw TypeScript
 cd Server/wwwroot
 npm install
 npm run build
 cd ../..
 
-# Run the server (SQLite by default)
+# Draai de server (SQLite standaard)
 dotnet run --project Server
 ```
 
-Server runs on `https://localhost:5001` by default.
+Server draait standaard op `https://localhost:5001`.
 
-### Running Tests
+### Tests Uitvoeren
 
 ```bash
 dotnet test
 ```
 
-Tests run from `Tests/Tests.csproj`. The test suite uses:
-- MSTest as the framework
-- Moq for mocking
-- EF Core InMemory provider to avoid a real database
+Tests draaien vanuit `Tests/Tests.csproj`. De testsuite gebruikt:
+- MSTest als framework
+- Moq voor mocking
+- EF Core InMemory provider om een echte database te vermijden
 
-### Building Platform Clients
+### Platform Clients Bouwen
 
-Because the Windows agent requires Windows and the macOS agent requires macOS, use **GitHub Actions** for full builds:
+Omdat de Windows agent Windows vereist en de macOS agent macOS, gebruik **GitHub Actions** voor volledige builds:
 
-- **`/.github/workflows/build.yml`** — full multi-platform build (workflow dispatch, accepts `ServerUrl` and `ServerRid` inputs)
-- **`/.github/workflows/run_tests.yml`** — runs `dotnet test` on every push/PR to `master`
+- **`/.github/workflows/build.yml`** — volledige multi-platform build (workflow dispatch, accepteert `ServerUrl` en `ServerRid` invoer)
+- **`/.github/workflows/run_tests.yml`** — draait `dotnet test` bij elke push/PR naar `master`
 
-To build locally for a single platform:
+Lokaal bouwen voor een enkel platform:
 ```bash
 # Windows agent (x64)
 dotnet publish Agent -r win-x64 -c Release
@@ -210,114 +210,114 @@ dotnet publish Agent -r osx-x64 -c Release
 dotnet publish Agent -r linux-x64 -c Release
 ```
 
-### Publish / Release
+### Publiceren / Release
 
-Use `Utilities/Publish.ps1` for packaging release artifacts.
-
----
-
-## API Reference Summary
-
-The REST API is documented at `/swagger` when the server is running.
-
-**Authentication:** Include `[ApiToken]:[ApiSecret]` in the `Authorization` header.
-
-Key controllers in `Server/API/`:
-
-| Controller | Responsibility |
-|---|---|
-| `DevicesController` | Query/manage devices |
-| `ScriptingController` | Execute scripts on devices |
-| `ScriptResultsController` | Retrieve script execution results |
-| `SavedScriptsController` | CRUD for saved scripts |
-| `RemoteControlController` | Start remote control sessions |
-| `AlertsController` | Create/manage alerts |
-| `OrganizationManagementController` | Manage org users, invites, groups |
-| `FileSharingController` | Upload/download shared files |
-| `AgentUpdateController` | Push agent updates |
-| `ClientDownloadsController` | Serve agent/client installers |
+Gebruik `Utilities/Publish.ps1` voor het verpakken van release-artefacten.
 
 ---
 
-## Important Files
+## API Referentieoverzicht
 
-| File | Purpose |
+De REST API is gedocumenteerd op `/swagger` wanneer de server draait.
+
+**Authenticatie:** Voeg `[ApiToken]:[ApiSecret]` toe aan de `Authorization` header.
+
+Belangrijke controllers in `Server/API/`:
+
+| Controller | Verantwoordelijkheid |
 |---|---|
-| `Remotely.sln` | Visual Studio solution — entry point for building all projects |
-| `Server/Startup.cs` | DI registration, middleware pipeline, SignalR config |
-| `Server/Data/AppDb.cs` | Base EF Core DbContext with all entity sets |
-| `Server/Services/DataService.cs` | Main data access service |
+| `DevicesController` | Apparaten opvragen/beheren |
+| `ScriptingController` | Scripts uitvoeren op apparaten |
+| `ScriptResultsController` | Resultaten van scriptuitvoering ophalen |
+| `SavedScriptsController` | CRUD voor opgeslagen scripts |
+| `RemoteControlController` | Remote control sessies starten |
+| `AlertsController` | Meldingen aanmaken/beheren |
+| `OrganizationManagementController` | Organisatiegebruikers, uitnodigingen, groepen beheren |
+| `FileSharingController` | Bestanden uploaden/downloaden |
+| `AgentUpdateController` | Agent-updates pushen |
+| `ClientDownloadsController` | Agent/client installers aanbieden |
+
+---
+
+## Belangrijke Bestanden
+
+| Bestand | Doel |
+|---|---|
+| `Remotely.sln` | Visual Studio oplossing — startpunt voor het bouwen van alle projecten |
+| `Server/Startup.cs` | DI-registratie, middleware pipeline, SignalR config |
+| `Server/Data/AppDb.cs` | Basis EF Core DbContext met alle entiteitssets |
+| `Server/Services/DataService.cs` | Hoofd datatoegangsservice |
 | `Server/Hubs/AgentHub.cs` | Agent ↔ Server SignalR hub |
 | `Server/Hubs/CasterHub.cs` | Desktop ↔ Server SignalR hub |
 | `Server/Hubs/ViewerHub.cs` | Browser ↔ Server SignalR hub |
-| `Shared/Models/Device.cs` | Core device entity |
-| `Shared/Models/Organization.cs` | Core organization entity |
-| `Shared/Models/RemotelyUser.cs` | User entity (extends ASP.NET Identity) |
-| `Agent/Services/AgentSocket.cs` | Agent's SignalR connection manager |
-| `Server/appsettings.json` | Base application configuration |
-| `.editorconfig` | C# code style rules |
-| `Utilities/Add-Migration.ps1` | Helper for EF Core migrations |
+| `Shared/Models/Device.cs` | Kern apparaat-entiteit |
+| `Shared/Models/Organization.cs` | Kern organisatie-entiteit |
+| `Shared/Models/RemotelyUser.cs` | Gebruikersentiteit (breidt ASP.NET Identity uit) |
+| `Agent/Services/AgentSocket.cs` | SignalR verbindingsbeheerder van de Agent |
+| `Server/appsettings.json` | Basisconfiguratie van de applicatie |
+| `.editorconfig` | C# codestijlregels |
+| `Utilities/Add-Migration.ps1` | Helper voor EF Core migraties |
 
 ---
 
 ## CI/CD
 
-| Workflow | Trigger | Runner | Purpose |
+| Workflow | Trigger | Runner | Doel |
 |---|---|---|---|
-| `run_tests.yml` | Push / PR to `master` | `windows-latest` | Run `dotnet test` |
-| `build.yml` | Manual dispatch | `windows-latest` + `macos-10.15` | Full multi-platform build with code signing |
+| `run_tests.yml` | Push / PR naar `master` | `windows-latest` | `dotnet test` uitvoeren |
+| `build.yml` | Handmatig starten | `windows-latest` + `macos-10.15` | Volledige multi-platform build met code signing |
 
-Build artifacts (agents, installers) are uploaded per-run. The `build.yml` workflow accepts:
-- `ServerUrl` — embedded into agent/client binaries at compile time
-- `ServerRid` — .NET runtime identifier for the server (e.g., `linux-x64`)
+Build-artefacten (agents, installers) worden per run geüpload. De `build.yml` workflow accepteert:
+- `ServerUrl` — ingebakken in agent/client binaries tijdens compilatie
+- `ServerRid` — .NET runtime identifier voor de server (bijv. `linux-x64`)
 
 ---
 
 ## Docker
 
-A `Dockerfile` is provided for containerized server deployment:
+Er is een `Dockerfile` beschikbaar voor gecontaineriseerde serverdeployment:
 
-- Base image: `ubuntu:focal` with .NET 5 runtime
-- Data directory: `/remotely-data/` (mount as a volume)
-- Default database: `/remotely-data/Remotely.db`
-- Entry script: `DockerMain.sh`
+- Basisimage: `ubuntu:focal` met .NET 5 runtime
+- Datamap: `/remotely-data/` (koppel als volume)
+- Standaard database: `/remotely-data/Remotely.db`
+- Opstartscript: `DockerMain.sh`
 
 ```bash
 docker run -d \
   -p 5000:5000 \
-  -v /your/data:/remotely-data \
+  -v /jouw/data:/remotely-data \
   translucency/remotely
 ```
 
 ---
 
-## Common Tasks for AI Assistants
+## Veelvoorkomende Taken voor AI-Assistenten
 
-### Adding a new API endpoint
-1. Create or extend a controller in `Server/API/`.
-2. Use constructor injection for `IDataService`, `ILogger`, etc.
-3. Decorate with `[Authorize]` and appropriate role policies.
-4. Add Swagger annotations if exposing to external API consumers.
+### Een nieuw API-eindpunt toevoegen
+1. Maak of breid een controller uit in `Server/API/`.
+2. Gebruik constructor-injectie voor `IDataService`, `ILogger`, etc.
+3. Decoreer met `[Authorize]` en passend rolbeleid.
+4. Voeg Swagger-annotaties toe als het eindpunt extern toegankelijk is.
 
-### Adding a new SignalR message
-1. Define the method in the appropriate hub class (`AgentHub`, `CasterHub`, or `ViewerHub`).
-2. Add the corresponding client-side handler in the agent (`AgentSocket.cs`) or TypeScript client.
-3. If the message carries structured data, define a DTO in `Shared/Models/`.
+### Een nieuw SignalR-bericht toevoegen
+1. Definieer de methode in de juiste hub (`AgentHub`, `CasterHub`, of `ViewerHub`).
+2. Voeg de bijbehorende client-side handler toe in de agent (`AgentSocket.cs`) of de TypeScript client.
+3. Als het bericht gestructureerde data bevat, definieer een DTO in `Shared/Models/`.
 
-### Adding a new database entity
-1. Add the model class to `Shared/Models/`.
-2. Add a `DbSet<T>` to `Server/Data/AppDb.cs`.
-3. Configure relationships in `AppDb.OnModelCreating()` if needed.
-4. Generate and apply a migration (see Database Changes above).
+### Een nieuwe database-entiteit toevoegen
+1. Voeg de modelklasse toe aan `Shared/Models/`.
+2. Voeg een `DbSet<T>` toe aan `Server/Data/AppDb.cs`.
+3. Configureer relaties in `AppDb.OnModelCreating()` indien nodig.
+4. Genereer en pas een migratie toe (zie Databasewijzigingen).
 
-### Modifying ApplicationOptions
-1. Add the property to `Server/Models/ApplicationOptions.cs`.
-2. Add the corresponding entry to `appsettings.json` with a sensible default.
-3. Document new options in the README under the Configuration section.
+### ApplicationOptions wijzigen
+1. Voeg de eigenschap toe aan `Server/Models/ApplicationOptions.cs`.
+2. Voeg de bijbehorende entry toe aan `appsettings.json` met een zinvolle standaardwaarde.
+3. Documenteer nieuwe opties in de README onder het configuratiegedeelte.
 
-### Working with the TypeScript frontend
-- The TypeScript source uses ES2017 modules.
-- `ViewerHubConnection.ts` handles the SignalR connection from the browser.
-- `DtoMessageHandler.ts` processes incoming binary DTO messages.
-- `RtcSession.ts` manages the WebRTC peer connection.
-- After changes, recompile with `npm run build` from `Server/wwwroot/`.
+### Werken met de TypeScript frontend
+- De TypeScript-broncode gebruikt ES2017 modules.
+- `ViewerHubConnection.ts` beheert de SignalR-verbinding vanuit de browser.
+- `DtoMessageHandler.ts` verwerkt binnenkomende binaire DTO-berichten.
+- `RtcSession.ts` beheert de WebRTC peer-verbinding.
+- Hercompileer na wijzigingen met `npm run build` vanuit `Server/wwwroot/`.
