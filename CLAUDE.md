@@ -6,7 +6,7 @@
 
 ## Projectoverzicht
 
-**remoteapp.nl** is een open-source platform voor remote control en remote scripting, gebouwd met .NET 5, ASP.NET Core Blazor (server-side), SignalR Core en WebRTC. Het stelt IT-professionals in staat om desktops op afstand te besturen en scripts uit te voeren op beheerde machines.
+**remoteapp.nl** is een open-source platform voor remote control en remote scripting, gebouwd met .NET 9, ASP.NET Core Blazor (server-side), SignalR Core en WebRTC. Het stelt IT-professionals in staat om desktops op afstand te besturen en scripts uit te voeren op beheerde machines.
 
 ---
 
@@ -14,7 +14,7 @@
 
 ```
 remoteapp.nl/
-├── Server/                  # ASP.NET Core 5 Blazor Server webapplicatie
+├── Server/                  # ASP.NET Core 9 Blazor Server webapplicatie
 │   ├── API/                 # REST API controllers
 │   ├── Areas/               # Razor Pages / Identity
 │   ├── Components/          # Blazor components
@@ -45,17 +45,17 @@ remoteapp.nl/
 
 | Laag | Technologie |
 |---|---|
-| Runtime | .NET 5.0 |
-| Web framework | ASP.NET Core 5, Blazor Server |
+| Runtime | .NET 9.0 |
+| Web framework | ASP.NET Core 9, Blazor Server |
 | Real-time communicatie | ASP.NET Core SignalR (MessagePack protocol) |
-| ORM | Entity Framework Core 5 |
+| ORM | Entity Framework Core 9 |
 | Databases | SQLite (standaard), SQL Server, PostgreSQL |
 | Windows desktop | WPF, SharpDX |
-| Cross-platform desktop | Avalonia UI 0.10.6 |
+| Cross-platform desktop | Avalonia UI 11.2.3 |
 | WebRTC | Microsoft.MixedReality.WebRTC 2.0.2 |
-| Scripting | Microsoft PowerShell SDK 7.1.3 |
+| Scripting | Microsoft PowerShell SDK 7.5.0 |
 | Frontend | TypeScript (ES2017), gecompileerd via npm/webpack |
-| Testing | MSTest, Moq, EF Core InMemory |
+| Testing | MSTest 3.x, Moq 4.20.x, EF Core InMemory |
 
 ---
 

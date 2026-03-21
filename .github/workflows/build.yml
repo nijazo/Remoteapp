@@ -24,28 +24,30 @@ on:
   workflow_dispatch:
     inputs:
       serverUrl:
-        description: 'Server URL'     
+        description: 'Server URL'
         required: true
       rid:
-        description: 'Server Runtime Identifier'     
+        description: 'Server Runtime Identifier'
         required: false
         default: "linux-x64"
 
 jobs:
 
   build-mac:
-  
-    runs-on: macos-10.15
-  
+
+    runs-on: macos-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Install .NET Core
-        uses: actions/setup-dotnet@v1.8.0
-        
+      - name: Install .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
       - name: Setup NuGet.exe for use with actions
-        uses: NuGet/setup-nuget@v1.0.5
+        uses: NuGet/setup-nuget@v2
 
       - name: Set current version
         shell: pwsh
@@ -76,17 +78,17 @@ jobs:
           $Hour = $VersionDate.Hour.ToString().PadLeft(2, "0")
           $Minute = $VersionDate.Minute.ToString().PadLeft(2, "0")
           $CurrentVersion = "$Year.$Month.$Day.$Hour$Minute"
-          
+
           Write-Host "Publishing agent with version $CurrentVersion"
           dotnet publish /p:Version=$CurrentVersion /p:FileVersion=$CurrentVersion --runtime osx-x64 --configuration Release --output "./Agent/bin/publish/" "./Agent/"
           Compress-Archive -Path "./Agent/bin/publish/*" -DestinationPath "./Agent/bin/Remotely-MacOS-x64.zip" -Force
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           path: ./Agent/bin/Remotely-MacOS-x64.zip
           name: Mac-Agent-x64
-     
+
   build-windows:
 
     runs-on: windows-latest  # For a list of available runner types, refer to
@@ -94,16 +96,16 @@ jobs:
     needs: build-mac
 
     env:
-      Solution_Name: Remotely.sln      
+      Solution_Name: Remotely.sln
       Configuration: Release
       PfxBase64: ${{ secrets.BASE64_ENCODED_PFX }}
       PfxKey: ${{ secrets.PFX_KEY }}
       ServerUrl: ${{ github.event.inputs.serverUrl }}
 
     steps:
-       
+
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         # Comment out the below 'repository' line if you want to build from
         # your fork instead of the author's.
@@ -117,15 +119,17 @@ jobs:
         if (![System.Uri]::TryCreate($env:ServerUrl, [System.UriKind]::Absolute, [ref] $Result)) {
             throw "Server URL is not in the correct format.  It should be fully qualified with scheme and host (e.g. https://app.remotely.one)."
         }
-        
-        
-    # Install the .NET Core workload
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v1.8.0
-      
+
+
+    # Install the .NET workload
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v2
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
@@ -142,14 +146,14 @@ jobs:
           echo "Skipping cert signing because Base64_Encoded_Pfx secret is missing."
           return
         }
-        
+
         echo "Creating Pfx for signing assemblies."
-        
+
         $pfx_cert_byte = [System.Convert]::FromBase64String($env:PfxBase64)
         $certificatePath = Join-Path -Path $env:GITHUB_WORKSPACE -ChildPath GitHubActionsWorkflow.pfx
         echo "Writing file to $certificatePath."
         [IO.File]::WriteAllBytes($certificatePath, $pfx_cert_byte)
-    
+
     # Store the assembly version in an environment variable
     - name: Set current version
       shell: powershell
@@ -163,14 +167,14 @@ jobs:
         $Hour = $VersionDate.Hour.ToString().PadLeft(2, "0")
         $Minute = $VersionDate.Minute.ToString().PadLeft(2, "0")
         $CurrentVersion = "$Year.$Month.$Day.$Hour$Minute"
-        
+
         echo "CurrentVersion=$CurrentVersion" >> $env:GITHUB_ENV
 
         Write-Host "Setting current version to $CurrentVersion."
-        
-        
+
+
     - name: Download macOS x64 Agent
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: Mac-Agent-x64
         path: ./Server/wwwroot/Content/
@@ -180,14 +184,14 @@ jobs:
       shell: powershell
       run: |
         .\Utilities\Publish.ps1 -CertificatePath "$env:GITHUB_WORKSPACE\GitHubActionsWorkflow.pfx" -CertificatePassword $env:PfxKey -Hostname $env:ServerUrl -CurrentVersion $env:CurrentVersion -RID ${{ github.event.inputs.rid }} -OutDir "$env:GITHUB_WORKSPACE\publish"
-        
+
     # Upload build artifact to be deployed from Ubuntu runner
     - name: Upload build artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         path: ./publish/
         name: Server
-    
+
 
     # Remove the pfx
     - name: Remove the pfx
