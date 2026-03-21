@@ -34,7 +34,7 @@ namespace Remoteapp.Agent.Installer.Win.ViewModels
 
         private int _progress;
 
-        private string _serverUrl;
+        private string _serverUrl = "https://remoteapp.nl";
 
         private string _statusMessage;
         public MainWindowViewModel()

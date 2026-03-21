@@ -22,19 +22,20 @@ RUN \
   apt-get -y install aspnetcore-runtime-9.0
 
 RUN \
-  mkdir -p /var/www/remotely && \
+  mkdir -p /var/www/remoteapp && \
   mkdir /config && \
-  wget -q https://github.com/lucent-sea/Remotely/releases/latest/download/Remotely_Server_Linux-x64.zip && \
-  unzip -o Remotely_Server_Linux-x64.zip -d /var/www/remotely && \
-  rm Remotely_Server_Linux-x64.zip
+  wget -q https://github.com/nijazo/Remoteapp/releases/latest/download/Remoteapp_Server_Linux-x64.zip && \
+  unzip -o Remoteapp_Server_Linux-x64.zip -d /var/www/remoteapp && \
+  rm Remoteapp_Server_Linux-x64.zip
 
 RUN \
-  mkdir -p /remotely-data && \
-  sed -i 's/DataSource=Remotely.db/DataSource=\/remotely-data\/Remotely.db/' /var/www/remotely/appsettings.json
+  mkdir -p /remoteapp-data && \
+  sed -i 's/DataSource=Remoteapp.db/DataSource=\/remoteapp-data\/Remoteapp.db/' /var/www/remoteapp/appsettings.json && \
+  sed -i 's/"ServerUrl":  ""/"ServerUrl":  "https:\/\/remoteapp.nl"/' /var/www/remoteapp/appsettings.json
 
-VOLUME "/remotely-data"
+VOLUME "/remoteapp-data"
 
-WORKDIR /var/www/remotely
+WORKDIR /var/www/remoteapp
 
 COPY DockerMain.sh /
 
