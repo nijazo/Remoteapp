@@ -11,9 +11,9 @@ ArgLength=${#Args[@]}
 for (( i=0; i<${ArgLength}; i+=2 ));
 do
     if [ "${Args[$i]}" = "--uninstall" ]; then
-        launchctl unload -w /Library/LaunchDaemons/remotely-agent.plist
-        rm -r -f /usr/local/bin/Remotely/
-        rm -f /Library/LaunchDaemons/remotely-agent.plist
+        launchctl unload -w /Library/LaunchDaemons/remoteapp-agent.plist
+        rm -r -f /usr/local/bin/Remoteapp/
+        rm -f /Library/LaunchDaemons/remoteapp-agent.plist
         exit
     elif [ "${Args[$i]}" = "--path" ]; then
         UpdatePackagePath="${Args[$i+1]}"
@@ -36,31 +36,31 @@ su - $SUDO_USER -c "brew install curl"
 su - $SUDO_USER -c "brew install jq"
 
 
-if [ -f "/usr/local/bin/Remotely/ConnectionInfo.json" ]; then
-    SavedGUID=`cat "/usr/local/bin/Remotely/ConnectionInfo.json" | jq -r '.DeviceID'`
+if [ -f "/usr/local/bin/Remoteapp/ConnectionInfo.json" ]; then
+    SavedGUID=`cat "/usr/local/bin/Remoteapp/ConnectionInfo.json" | jq -r '.DeviceID'`
     if [[ "$SavedGUID" != "null" && -n "$SavedGUID" ]]; then
         GUID="$SavedGUID"
     fi
 fi
 
-rm -r -f /Applications/Remotely
-rm -f /Library/LaunchDaemons/remotely-agent.plist
+rm -r -f /Applications/Remoteapp
+rm -f /Library/LaunchDaemons/remoteapp-agent.plist
 
-mkdir -p /usr/local/bin/Remotely/
-chmod -R 755 /usr/local/bin/Remotely/
-cd /usr/local/bin/Remotely/
+mkdir -p /usr/local/bin/Remoteapp/
+chmod -R 755 /usr/local/bin/Remoteapp/
+cd /usr/local/bin/Remoteapp/
 
 if [ -z "$UpdatePackagePath" ]; then
-    echo  "Downloading client..." >> /tmp/Remotely_Install.log
-    curl $HostName/Content/Remotely-MacOS-arm64.zip --output /usr/local/bin/Remotely/Remotely-MacOS-arm64.zip
+    echo  "Downloading client..." >> /tmp/Remoteapp_Install.log
+    curl $HostName/Content/Remoteapp-MacOS-arm64.zip --output /usr/local/bin/Remoteapp/Remoteapp-MacOS-arm64.zip
 else
-    echo  "Copying install files..." >> /tmp/Remotely_Install.log
-    cp "$UpdatePackagePath" /usr/local/bin/Remotely/Remotely-MacOS-arm64.zip
+    echo  "Copying install files..." >> /tmp/Remoteapp_Install.log
+    cp "$UpdatePackagePath" /usr/local/bin/Remoteapp/Remoteapp-MacOS-arm64.zip
     rm -f "$UpdatePackagePath"
 fi
 
-unzip -o ./Remotely-MacOS-arm64.zip
-rm -f ./Remotely-MacOS-arm64.zip
+unzip -o ./Remoteapp-MacOS-arm64.zip
+rm -f ./Remoteapp-MacOS-arm64.zip
 
 
 connectionInfo="{
@@ -72,7 +72,7 @@ connectionInfo="{
 
 echo "$connectionInfo" > ./ConnectionInfo.json
 
-curl --head $HostName/Content/Remotely-MacOS-arm64.zip | grep -i "etag" | cut -d' ' -f 2 > ./etag.txt
+curl --head $HostName/Content/Remoteapp-MacOS-arm64.zip | grep -i "etag" | cut -d' ' -f 2 > ./etag.txt
 
 
 plistFile="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -80,17 +80,17 @@ plistFile="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <plist version=\"1.0\">
 <dict>
     <key>Label</key>
-    <string>com.translucency.remotely-agent</string>
+    <string>com.translucency.remoteapp-agent</string>
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/dotnet</string>
-        <string>/usr/local/bin/Remotely/Remotely_Agent.dll</string>
+        <string>/usr/local/bin/Remoteapp/Remoteapp_Agent.dll</string>
     </array>
     <key>KeepAlive</key>
     <true/>
 </dict>
 </plist>"
-echo "$plistFile" > "/Library/LaunchDaemons/remotely-agent.plist"
+echo "$plistFile" > "/Library/LaunchDaemons/remoteapp-agent.plist"
 
-launchctl load -w /Library/LaunchDaemons/remotely-agent.plist
-launchctl kickstart -k system/com.translucency.remotely-agent
+launchctl load -w /Library/LaunchDaemons/remoteapp-agent.plist
+launchctl kickstart -k system/com.translucency.remoteapp-agent

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Remotely.Server.Migrations.SqlServer
+namespace Remoteapp.Server.Migrations.SqlServer
 {
     public partial class BrandingInfo : Migration
     {

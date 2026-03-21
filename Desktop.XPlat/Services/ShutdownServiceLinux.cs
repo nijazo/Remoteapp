@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Remotely.Desktop.Core;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Core.Services;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Remotely.Desktop.XPlat.Services
+namespace Remoteapp.Desktop.XPlat.Services
 {
     public class ShutdownServiceLinux : IShutdownService
     {

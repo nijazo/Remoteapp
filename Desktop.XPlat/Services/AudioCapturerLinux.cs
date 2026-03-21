@@ -1,7 +1,7 @@
-﻿using Remotely.Desktop.Core.Interfaces;
+﻿using Remoteapp.Desktop.Core.Interfaces;
 using System;
 
-namespace Remotely.Desktop.XPlat.Services
+namespace Remoteapp.Desktop.XPlat.Services
 {
     public class AudioCapturerLinux : IAudioCapturer
     {

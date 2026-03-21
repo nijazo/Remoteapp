@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Remotely.Shared.Enums;
-using Remotely.Shared.Models;
+using Remoteapp.Shared.Enums;
+using Remoteapp.Shared.Models;
 using System;
 
-namespace Remotely.Server.Services
+namespace Remoteapp.Server.Services
 {
     public interface IApplicationConfig
     {

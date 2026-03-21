@@ -11,9 +11,9 @@ ArgLength=${#Args[@]}
 for (( i=0; i<${ArgLength}; i+=2 ));
 do
     if [ "${Args[$i]}" = "--uninstall" ]; then
-        systemctl stop remotely-agent
-        rm -r -f /usr/local/bin/Remotely
-        rm -f /etc/systemd/system/remotely-agent.service
+        systemctl stop remoteapp-agent
+        rm -r -f /usr/local/bin/Remoteapp
+        rm -f /etc/systemd/system/remoteapp-agent.service
         systemctl daemon-reload
         exit
     elif [ "${Args[$i]}" = "--path" ]; then
@@ -42,32 +42,32 @@ apt-get -y install jq
 apt-get -y install curl
 
 
-if [ -f "/usr/local/bin/Remotely/ConnectionInfo.json" ]; then
-    SavedGUID=`cat "/usr/local/bin/Remotely/ConnectionInfo.json" | jq -r '.DeviceID'`
+if [ -f "/usr/local/bin/Remoteapp/ConnectionInfo.json" ]; then
+    SavedGUID=`cat "/usr/local/bin/Remoteapp/ConnectionInfo.json" | jq -r '.DeviceID'`
      if [[ "$SavedGUID" != "null" && -n "$SavedGUID" ]]; then
         GUID="$SavedGUID"
     fi
 fi
 
-rm -r -f /usr/local/bin/Remotely
-rm -f /etc/systemd/system/remotely-agent.service
+rm -r -f /usr/local/bin/Remoteapp
+rm -f /etc/systemd/system/remoteapp-agent.service
 
-mkdir -p /usr/local/bin/Remotely/
-cd /usr/local/bin/Remotely/
+mkdir -p /usr/local/bin/Remoteapp/
+cd /usr/local/bin/Remoteapp/
 
 if [ -z "$UpdatePackagePath" ]; then
-    echo  "Downloading client..." >> /tmp/Remotely_Install.log
-    wget $HostName/Content/Remotely-Linux.zip
+    echo  "Downloading client..." >> /tmp/Remoteapp_Install.log
+    wget $HostName/Content/Remoteapp-Linux.zip
 else
-    echo  "Copying install files..." >> /tmp/Remotely_Install.log
-    cp "$UpdatePackagePath" /usr/local/bin/Remotely/Remotely-Linux.zip
+    echo  "Copying install files..." >> /tmp/Remoteapp_Install.log
+    cp "$UpdatePackagePath" /usr/local/bin/Remoteapp/Remoteapp-Linux.zip
     rm -f "$UpdatePackagePath"
 fi
 
-unzip ./Remotely-Linux.zip
-rm -f ./Remotely-Linux.zip
-chmod +x ./Remotely_Agent
-chmod +x ./Desktop/Remotely_Desktop
+unzip ./Remoteapp-Linux.zip
+rm -f ./Remoteapp-Linux.zip
+chmod +x ./Remoteapp_Agent
+chmod +x ./Desktop/Remoteapp_Desktop
 
 
 connectionInfo="{
@@ -79,16 +79,16 @@ connectionInfo="{
 
 echo "$connectionInfo" > ./ConnectionInfo.json
 
-curl --head $HostName/Content/Remotely-Linux.zip | grep -i "etag" | cut -d' ' -f 2 > ./etag.txt
+curl --head $HostName/Content/Remoteapp-Linux.zip | grep -i "etag" | cut -d' ' -f 2 > ./etag.txt
 
-echo Creating service... >> /tmp/Remotely_Install.log
+echo Creating service... >> /tmp/Remoteapp_Install.log
 
 serviceConfig="[Unit]
-Description=The Remotely agent used for remote access.
+Description=The Remoteapp agent used for remote access.
 
 [Service]
-WorkingDirectory=/usr/local/bin/Remotely/
-ExecStart=/usr/local/bin/Remotely/Remotely_Agent
+WorkingDirectory=/usr/local/bin/Remoteapp/
+ExecStart=/usr/local/bin/Remoteapp/Remoteapp_Agent
 Restart=always
 StartLimitIntervalSec=0
 RestartSec=10
@@ -96,9 +96,9 @@ RestartSec=10
 [Install]
 WantedBy=graphical.target"
 
-echo "$serviceConfig" > /etc/systemd/system/remotely-agent.service
+echo "$serviceConfig" > /etc/systemd/system/remoteapp-agent.service
 
-systemctl enable remotely-agent
-systemctl restart remotely-agent
+systemctl enable remoteapp-agent
+systemctl restart remoteapp-agent
 
-echo Install complete. >> /tmp/Remotely_Install.log
+echo Install complete. >> /tmp/Remoteapp_Install.log

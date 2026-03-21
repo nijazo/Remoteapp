@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
-using Remotely.Agent.Interfaces;
-using Remotely.Shared.Models;
-using Remotely.Shared.Services;
-using Remotely.Shared.Utilities;
+using Remoteapp.Agent.Interfaces;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Services;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Remotely.Agent.Services
+namespace Remoteapp.Agent.Services
 {
 
     public class AppLauncherLinux : IAppLauncher

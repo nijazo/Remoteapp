@@ -7,7 +7,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Remotely.Server.Services
+namespace Remoteapp.Server.Services
 {
     public interface IEmailSenderEx
     {

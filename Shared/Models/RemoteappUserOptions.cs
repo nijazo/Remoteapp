@@ -1,9 +1,9 @@
-﻿using Remotely.Shared.Enums;
+﻿using Remoteapp.Shared.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Remotely.Shared.Models
+namespace Remoteapp.Shared.Models
 {
-    public class RemotelyUserOptions
+    public class RemoteappUserOptions
     {
         [Display(Name = "Display Name")]
         [StringLength(100)]

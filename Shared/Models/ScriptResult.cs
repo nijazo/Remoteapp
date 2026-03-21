@@ -1,5 +1,5 @@
-﻿using Remotely.Shared.Enums;
-using Remotely.Shared.Utilities;
+﻿using Remoteapp.Shared.Enums;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace Remotely.Shared.Models
+namespace Remoteapp.Shared.Models
 {
     public class ScriptResult
     {

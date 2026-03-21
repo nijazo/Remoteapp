@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Remotely.Shared.Models
+namespace Remoteapp.Shared.Models
 {
     [DataContract]
     public enum SessionType

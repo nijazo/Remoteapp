@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
-using Remotely.Server.Services;
-using Remotely.Shared.Models;
+using Remoteapp.Server.Services;
+using Remoteapp.Shared.Models;
 using System.Threading.Tasks;
 
-namespace Remotely.Server.Components
+namespace Remoteapp.Server.Components
 {
     public class AuthComponentBase : ComponentBase
     {
@@ -19,7 +19,7 @@ namespace Remotely.Server.Components
 
         public bool IsAuthenticated { get; private set; }
 
-        public RemotelyUser User { get; private set; }
+        public RemoteappUser User { get; private set; }
 
         public string Username { get; private set; }
 

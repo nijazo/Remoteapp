@@ -22,10 +22,10 @@
 // THE SOFTWARE.
 
 using Microsoft.Win32;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Win.Models;
-using Remotely.Shared.Utilities;
-using Remotely.Shared.Win32;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Win.Models;
+using Remoteapp.Shared.Utilities;
+using Remoteapp.Shared.Win32;
 using SharpDX;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
@@ -38,7 +38,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Remotely.Desktop.Win.Services
+namespace Remoteapp.Desktop.Win.Services
 {
     public class ScreenCapturerWin : IScreenCapturer
     {

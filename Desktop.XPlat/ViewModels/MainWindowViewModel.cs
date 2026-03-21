@@ -3,15 +3,15 @@ using Avalonia.Controls;
 using Avalonia.Threading;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
-using Remotely.Desktop.Core;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Core.Services;
-using Remotely.Desktop.XPlat.Controls;
-using Remotely.Desktop.XPlat.Native.Linux;
-using Remotely.Desktop.XPlat.Services;
-using Remotely.Desktop.XPlat.Views;
-using Remotely.Shared.Models;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Desktop.XPlat.Controls;
+using Remoteapp.Desktop.XPlat.Native.Linux;
+using Remoteapp.Desktop.XPlat.Services;
+using Remoteapp.Desktop.XPlat.Views;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -19,7 +19,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Remotely.Desktop.XPlat.ViewModels
+namespace Remoteapp.Desktop.XPlat.ViewModels
 {
     public class MainWindowViewModel : BrandedViewModelBase
     {
@@ -241,7 +241,7 @@ namespace Remotely.Desktop.XPlat.ViewModels
                 (serverUri.Scheme != Uri.UriSchemeHttp && serverUri.Scheme != Uri.UriSchemeHttps))
             {
                 Logger.Write("Server URL is not valid.");
-                await MessageBox.Show("Server URL must be a valid Uri (e.g. https://app.remotely.one).", "Invalid Server URL", MessageBoxType.OK);
+                await MessageBox.Show("Server URL must be a valid Uri (e.g. https://app.remoteapp.one).", "Invalid Server URL", MessageBoxType.OK);
                 return;
             }
 

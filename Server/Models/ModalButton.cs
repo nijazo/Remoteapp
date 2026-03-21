@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Remotely.Server.Models
+namespace Remoteapp.Server.Models
 {
     public class ModalButton
     {

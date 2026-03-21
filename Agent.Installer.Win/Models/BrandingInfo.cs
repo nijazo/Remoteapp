@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Remotely.Agent.Installer.Win.Models
+namespace Remoteapp.Agent.Installer.Win.Models
 {
     public class BrandingInfo
     {
-        public string Product { get; set; } = "Remotely";
+        public string Product { get; set; } = "Remoteapp";
 
         public string Icon { get; set; }
 

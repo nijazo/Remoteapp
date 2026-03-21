@@ -1,12 +1,12 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.ReactiveUI;
-using Remotely.Desktop.Core;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Threading;
 
-namespace Remotely.Desktop.XPlat
+namespace Remoteapp.Desktop.XPlat
 {
     class Program
     {

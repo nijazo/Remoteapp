@@ -1,10 +1,10 @@
-﻿using Remotely.Desktop.Core.Interfaces;
-using Remotely.Shared.Utilities;
+﻿using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Remotely.Desktop.XPlat.Services
+namespace Remoteapp.Desktop.XPlat.Services
 {
     public class ClipboardServiceLinux : IClipboardService
     {

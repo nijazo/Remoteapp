@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
-using Remotely.Server.Hubs;
-using Remotely.Shared.Enums;
-using Remotely.Shared.Models;
-using Remotely.Shared.Utilities;
+using Remoteapp.Server.Hubs;
+using Remoteapp.Shared.Enums;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Remotely.Server.Services
+namespace Remoteapp.Server.Services
 {
     public interface IScriptScheduleDispatcher
     {

@@ -102,7 +102,7 @@ Desktop Client (CasterHub) ──► Server ──► Browser (ViewerHub)
 ### Datalaag
 
 - EF Core met aparte `DbContext` subklassen per provider:
-  - `SqliteDbContext` → `Remotely.db`
+  - `SqliteDbContext` → `Remoteapp.db`
   - `SqlServerDbContext`
   - `PostgreSqlDbContext`
 - `DBProvider` in `ApplicationOptions` selecteert de actieve provider.
@@ -122,7 +122,7 @@ Desktop Client (CasterHub) ──► Server ──► Browser (ViewerHub)
 
 ### Naamgeving
 
-- Modellen/entiteiten: PascalCase zelfstandige naamwoorden (bijv. `Device`, `RemotelyUser`, `Organization`).
+- Modellen/entiteiten: PascalCase zelfstandige naamwoorden (bijv. `Device`, `RemoteappUser`, `Organization`).
 - Services: interface + implementatiepatroon (`IDataService` / `DataService`).
 - SignalR hub methodenamen: PascalCase werkwoorden (bijv. `SendHeartbeat`, `UpdateDevice`).
 - API controllers: `{Resource}Controller` (bijv. `DevicesController`).
@@ -243,7 +243,7 @@ Belangrijke controllers in `Server/API/`:
 
 | Bestand | Doel |
 |---|---|
-| `Remotely.sln` | Visual Studio oplossing — startpunt voor het bouwen van alle projecten |
+| `Remoteapp.sln` | Visual Studio oplossing — startpunt voor het bouwen van alle projecten |
 | `Server/Startup.cs` | DI-registratie, middleware pipeline, SignalR config |
 | `Server/Data/AppDb.cs` | Basis EF Core DbContext met alle entiteitssets |
 | `Server/Services/DataService.cs` | Hoofd datatoegangsservice |
@@ -252,7 +252,7 @@ Belangrijke controllers in `Server/API/`:
 | `Server/Hubs/ViewerHub.cs` | Browser ↔ Server SignalR hub |
 | `Shared/Models/Device.cs` | Kern apparaat-entiteit |
 | `Shared/Models/Organization.cs` | Kern organisatie-entiteit |
-| `Shared/Models/RemotelyUser.cs` | Gebruikersentiteit (breidt ASP.NET Identity uit) |
+| `Shared/Models/RemoteappUser.cs` | Gebruikersentiteit (breidt ASP.NET Identity uit) |
 | `Agent/Services/AgentSocket.cs` | SignalR verbindingsbeheerder van de Agent |
 | `Server/appsettings.json` | Basisconfiguratie van de applicatie |
 | `.editorconfig` | C# codestijlregels |
@@ -278,15 +278,15 @@ Build-artefacten (agents, installers) worden per run geüpload. De `build.yml` w
 Er is een `Dockerfile` beschikbaar voor gecontaineriseerde serverdeployment:
 
 - Basisimage: `ubuntu:focal` met .NET 5 runtime
-- Datamap: `/remotely-data/` (koppel als volume)
-- Standaard database: `/remotely-data/Remotely.db`
+- Datamap: `/remoteapp-data/` (koppel als volume)
+- Standaard database: `/remoteapp-data/Remoteapp.db`
 - Opstartscript: `DockerMain.sh`
 
 ```bash
 docker run -d \
   -p 5000:5000 \
-  -v /jouw/data:/remotely-data \
-  translucency/remotely
+  -v /jouw/data:/remoteapp-data \
+  translucency/remoteapp
 ```
 
 ---

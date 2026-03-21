@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Remotely.Shared.Models
+namespace Remoteapp.Shared.Models
 {
     public class BrandingInfo
     {
@@ -15,7 +15,7 @@ namespace Remotely.Shared.Models
         public string Id { get; set; }
 
         [StringLength(25)]
-        public string Product { get; set; } = "Remotely";
+        public string Product { get; set; } = "Remoteapp";
 
         public byte[] Icon { get; set; }
 

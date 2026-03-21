@@ -1,10 +1,10 @@
-﻿using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Core.Models;
-using Remotely.Desktop.Core.ViewModels;
-using Remotely.Shared.Utilities;
-using Remotely.Shared.Models;
-using Remotely.Shared.Models.RemoteControlDtos;
-using Remotely.Shared.Win32;
+﻿using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Core.Models;
+using Remoteapp.Desktop.Core.ViewModels;
+using Remoteapp.Shared.Utilities;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Models.RemoteControlDtos;
+using Remoteapp.Shared.Win32;
 using System;
 using System.Collections.Concurrent;
 using System.Drawing.Imaging;
@@ -17,7 +17,7 @@ using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Remotely.Desktop.Core.Services
+namespace Remoteapp.Desktop.Core.Services
 {
     public class Viewer : IDisposable
     {

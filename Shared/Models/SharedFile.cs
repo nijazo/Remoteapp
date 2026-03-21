@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Remotely.Shared.Models
+namespace Remoteapp.Shared.Models
 {
     public class SharedFile
     {

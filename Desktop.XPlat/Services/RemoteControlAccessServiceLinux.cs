@@ -1,15 +1,15 @@
 ﻿using Avalonia.Threading;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.XPlat.ViewModels;
-using Remotely.Desktop.XPlat.Views;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.XPlat.ViewModels;
+using Remoteapp.Desktop.XPlat.Views;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Remotely.Desktop.XPlat.Services
+namespace Remoteapp.Desktop.XPlat.Services
 {
     public class RemoteControlAccessServiceLinux : IRemoteControlAccessService
     {

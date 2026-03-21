@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Remotely.Desktop.Core;
-using Remotely.Desktop.Core.Services;
-using Remotely.Desktop.Core.ViewModels;
-using Remotely.Shared.Models;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Desktop.Core.ViewModels;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.IO;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Remotely.Desktop.Win.ViewModels
+namespace Remoteapp.Desktop.Win.ViewModels
 {
     public class BrandedViewModelBase : ViewModelBase
     {
@@ -28,7 +28,7 @@ namespace Remotely.Desktop.Win.ViewModels
             {
                 var brandingInfo = DeviceInitService?.BrandingInfo ?? new BrandingInfo();
 
-                ProductName = "Remotely";
+                ProductName = "Remoteapp";
 
                 if (!string.IsNullOrWhiteSpace(brandingInfo?.Product))
                 {
@@ -79,7 +79,7 @@ namespace Remotely.Desktop.Win.ViewModels
             }
             else
             {
-                imageStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Remotely.Desktop.Win.Assets.Remotely_Icon.png");
+                imageStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Remoteapp.Desktop.Win.Assets.Remoteapp_Icon.png");
             }
 
             var bitmap = new BitmapImage();

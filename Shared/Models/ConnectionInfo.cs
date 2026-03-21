@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Remotely.Shared.Models
+namespace Remoteapp.Shared.Models
 {
     public class ConnectionInfo
     {

@@ -1,12 +1,12 @@
-﻿using Remotely.Desktop.Core.Interfaces;
-using Remotely.Shared.Utilities;
-using Remotely.Shared.Win32;
+﻿using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Shared.Utilities;
+using Remoteapp.Shared.Win32;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Remotely.Desktop.Win.Services
+namespace Remoteapp.Desktop.Win.Services
 {
     public class ClipboardServiceWin : IClipboardService
     {

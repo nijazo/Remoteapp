@@ -1,6 +1,6 @@
-﻿using Remotely.Desktop.Core.Interfaces;
-using Remotely.Shared.Utilities;
-using Remotely.Shared.Models;
+﻿using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Shared.Utilities;
+using Remoteapp.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,7 +14,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Remotely.Desktop.Core.Services
+namespace Remoteapp.Desktop.Core.Services
 {
     public interface IDeviceInitService
     {

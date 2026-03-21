@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Remotely.Desktop.Core.Enums;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Core.Models;
-using Remotely.Desktop.Core.Utilities;
-using Remotely.Shared.Utilities;
-using Remotely.Shared.Models;
+using Remoteapp.Desktop.Core.Enums;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Core.Models;
+using Remoteapp.Desktop.Core.Utilities;
+using Remoteapp.Shared.Utilities;
+using Remoteapp.Shared.Models;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Remotely.Desktop.Core.Services
+namespace Remoteapp.Desktop.Core.Services
 {
     public interface IScreenCaster
     {

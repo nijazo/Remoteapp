@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Remotely.Server.Services;
-using Remotely.Shared.Models;
+using Remoteapp.Server.Services;
+using Remoteapp.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Remotely.Server.Auth
+namespace Remoteapp.Server.Auth
 {
     public class TwoFactorRequiredHandler : AuthorizationHandler<TwoFactorRequiredRequirement>
     {
-        private readonly UserManager<RemotelyUser> _userManager;
+        private readonly UserManager<RemoteappUser> _userManager;
         private readonly IApplicationConfig _appConfig;
 
-        public TwoFactorRequiredHandler(UserManager<RemotelyUser> userManager, IApplicationConfig appConfig)
+        public TwoFactorRequiredHandler(UserManager<RemoteappUser> userManager, IApplicationConfig appConfig)
         {
             _userManager = userManager;
             _appConfig = appConfig;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Remotely.Shared.Utilities
+namespace Remoteapp.Shared.Utilities
 {
     public class JsonSerializerHelper
     {

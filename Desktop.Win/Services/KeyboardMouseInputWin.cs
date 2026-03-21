@@ -1,16 +1,16 @@
-﻿using Remotely.Desktop.Core.Enums;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Core.Services;
-using Remotely.Shared.Utilities;
-using Remotely.Shared.Win32;
+﻿using Remoteapp.Desktop.Core.Enums;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Shared.Utilities;
+using Remoteapp.Shared.Win32;
 using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Remotely.Shared.Win32.User32;
+using static Remoteapp.Shared.Win32.User32;
 
-namespace Remotely.Desktop.Win.Services
+namespace Remoteapp.Desktop.Win.Services
 {
     public class KeyboardMouseInputWin : IKeyboardMouseInput
     {

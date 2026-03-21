@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Caching.Memory;
-using Remotely.Server.Services;
-using Remotely.Shared.Utilities;
+using Remoteapp.Server.Services;
+using Remoteapp.Shared.Utilities;
 using System;
 
-namespace Remotely.Server.Auth
+namespace Remoteapp.Server.Auth
 {
     public class RemoteControlFilterAttribute : ActionFilterAttribute, IAuthorizationFilter
     {

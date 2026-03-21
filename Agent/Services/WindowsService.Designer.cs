@@ -1,4 +1,4 @@
-﻿namespace Remotely.Agent.Services
+﻿namespace Remoteapp.Agent.Services
 {
     partial class WindowsService
     {

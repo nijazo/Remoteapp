@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
-using Remotely.Agent.Interfaces;
-using Remotely.Agent.Models;
-using Remotely.Shared.Models;
-using Remotely.Shared.Utilities;
+using Remoteapp.Agent.Interfaces;
+using Remoteapp.Agent.Models;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -12,7 +12,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Remotely.Agent.Services
+namespace Remoteapp.Agent.Services
 {
     public class ChatClientService
     {
@@ -72,7 +72,7 @@ namespace Remotely.Agent.Services
                         return;
                     }
 
-                    var clientPipe = new NamedPipeClientStream(".", "Remotely_Chat" + senderConnectionID, PipeDirection.InOut, PipeOptions.Asynchronous);
+                    var clientPipe = new NamedPipeClientStream(".", "Remoteapp_Chat" + senderConnectionID, PipeDirection.InOut, PipeOptions.Asynchronous);
                     clientPipe.Connect(15000);
                     if (!clientPipe.IsConnected)
                     {

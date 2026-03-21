@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Remotely.Shared.Models
+namespace Remoteapp.Shared.Models
 {
     public class AlertOptions
     {

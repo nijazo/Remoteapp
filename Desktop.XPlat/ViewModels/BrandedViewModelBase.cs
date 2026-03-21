@@ -3,15 +3,15 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
-using Remotely.Desktop.Core;
-using Remotely.Desktop.Core.Services;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Remotely.Desktop.XPlat.ViewModels
+namespace Remoteapp.Desktop.XPlat.ViewModels
 {
     public class BrandedViewModelBase : ReactiveViewModel
     {
@@ -37,7 +37,7 @@ namespace Remotely.Desktop.XPlat.ViewModels
             {
                 var brandingInfo = DeviceInitService?.BrandingInfo ?? new Shared.Models.BrandingInfo();
 
-                ProductName = "Remotely";
+                ProductName = "Remoteapp";
 
                 if (!string.IsNullOrWhiteSpace(brandingInfo?.Product))
                 {
@@ -66,7 +66,7 @@ namespace Remotely.Desktop.XPlat.ViewModels
                 }
                 else
                 {
-                    using var imageStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Remotely.Desktop.XPlat.Assets.Remotely_Icon.png");
+                    using var imageStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Remoteapp.Desktop.XPlat.Assets.Remoteapp_Icon.png");
                     Icon = new Bitmap(imageStream);
                 }
 

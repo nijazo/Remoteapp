@@ -1,8 +1,8 @@
-﻿using Remotely.Shared.Enums;
+﻿using Remoteapp.Shared.Enums;
 using System;
 using System.Runtime.Serialization;
 
-namespace Remotely.Shared.Models.RemoteControlDtos
+namespace Remoteapp.Shared.Models.RemoteControlDtos
 {
     [DataContract]
     public class CaptureFrameDto : BaseDto

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Remotely.Server.Migrations.Sqlite
+namespace Remoteapp.Server.Migrations.Sqlite
 {
     public partial class AddScriptSchedules : Migration
     {
@@ -16,7 +16,7 @@ namespace Remotely.Server.Migrations.Sqlite
 
             migrationBuilder.DropColumn(
                 name: "DisplayName",
-                table: "RemotelyUsers");
+                table: "RemoteappUsers");
 
             migrationBuilder.DropColumn(
                 name: "Token",
@@ -49,9 +49,9 @@ namespace Remotely.Server.Migrations.Sqlite
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SavedScripts_RemotelyUsers_CreatorId",
+                        name: "FK_SavedScripts_RemoteappUsers_CreatorId",
                         column: x => x.CreatorId,
-                        principalTable: "RemotelyUsers",
+                        principalTable: "RemoteappUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -83,9 +83,9 @@ namespace Remotely.Server.Migrations.Sqlite
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ScriptSchedules_RemotelyUsers_CreatorId",
+                        name: "FK_ScriptSchedules_RemoteappUsers_CreatorId",
                         column: x => x.CreatorId,
-                        principalTable: "RemotelyUsers",
+                        principalTable: "RemoteappUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -367,7 +367,7 @@ namespace Remotely.Server.Migrations.Sqlite
 
             migrationBuilder.AddColumn<string>(
                 name: "DisplayName",
-                table: "RemotelyUsers",
+                table: "RemoteappUsers",
                 type: "TEXT",
                 maxLength: 100,
                 nullable: true);

@@ -1,11 +1,11 @@
-﻿using Remotely.Desktop.Core.Enums;
-using Remotely.Shared.Models;
-using Remotely.Shared.Utilities;
+﻿using Remoteapp.Desktop.Core.Enums;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace Remotely.Desktop.Core
+namespace Remoteapp.Desktop.Core
 {
     public class Conductor
     {

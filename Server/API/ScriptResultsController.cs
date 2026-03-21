@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Remotely.Server.Auth;
-using Remotely.Server.Services;
-using Remotely.Shared.Models;
+using Remoteapp.Server.Auth;
+using Remoteapp.Server.Services;
+using Remoteapp.Shared.Models;
 using System.Text;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Remotely.Server.API
+namespace Remoteapp.Server.API
 {
     [Route("api/[controller]")]
     [ApiController]

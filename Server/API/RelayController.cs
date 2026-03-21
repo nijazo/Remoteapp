@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Remotely.Server.Services;
+using Remoteapp.Server.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Remotely.Server.API
+namespace Remoteapp.Server.API
 {
     [Route("api/[controller]")]
     [ApiController]

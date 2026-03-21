@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Remotely.Desktop.Core;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Core.Services;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Remotely.Desktop.Win.Services
+namespace Remoteapp.Desktop.Win.Services
 {
     public class ShutdownServiceWin : IShutdownService
     {

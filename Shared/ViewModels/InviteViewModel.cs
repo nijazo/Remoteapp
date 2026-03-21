@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Remotely.Shared.ViewModels
+namespace Remoteapp.Shared.ViewModels
 {
     public class InviteViewModel
     {

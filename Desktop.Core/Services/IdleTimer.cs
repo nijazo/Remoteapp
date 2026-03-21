@@ -1,9 +1,9 @@
-﻿using Remotely.Shared.Utilities;
+﻿using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.Concurrent;
 using System.Timers;
 
-namespace Remotely.Desktop.Core.Services
+namespace Remoteapp.Desktop.Core.Services
 {
     public class IdleTimer
     {

@@ -1,4 +1,4 @@
-﻿namespace Remotely.Server.Models
+﻿namespace Remoteapp.Server.Models
 {
     public class ApiLogin
     {

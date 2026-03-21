@@ -1,9 +1,9 @@
-﻿using Remotely.Shared.Utilities;
+﻿using Remoteapp.Shared.Utilities;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
 using System;
 
-namespace Remotely.Desktop.Win.Models
+namespace Remoteapp.Desktop.Win.Models
 {
     public class DirectXOutput : IDisposable
     {

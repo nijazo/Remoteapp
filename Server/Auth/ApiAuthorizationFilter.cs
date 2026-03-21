@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Remotely.Server.Services;
+using Remoteapp.Server.Services;
 
-namespace Remotely.Server.Auth
+namespace Remoteapp.Server.Auth
 {
     public class ApiAuthorizationFilter : ActionFilterAttribute, IAuthorizationFilter
     {

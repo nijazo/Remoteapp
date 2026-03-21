@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Remotely.Desktop.Core.Utilities
+namespace Remoteapp.Desktop.Core.Utilities
 {
     public class ImageUtils
     {

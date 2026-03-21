@@ -1,7 +1,7 @@
-﻿using Remotely.Desktop.Core.Enums;
-using Remotely.Desktop.Core.Services;
+﻿using Remoteapp.Desktop.Core.Enums;
+using Remoteapp.Desktop.Core.Services;
 
-namespace Remotely.Desktop.Core.Interfaces
+namespace Remoteapp.Desktop.Core.Interfaces
 {
     public interface IKeyboardMouseInput
     {

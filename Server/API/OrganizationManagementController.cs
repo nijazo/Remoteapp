@@ -1,24 +1,24 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
-using Remotely.Server.Auth;
-using Remotely.Server.Services;
-using Remotely.Shared.Models;
-using Remotely.Shared.ViewModels;
+using Remoteapp.Server.Auth;
+using Remoteapp.Server.Services;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.ViewModels;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Remotely.Server.API
+namespace Remoteapp.Server.API
 {
     [Route("api/[controller]")]
     [ApiController]
     public class OrganizationManagementController : ControllerBase
     {
         public OrganizationManagementController(IDataService dataService, 
-            UserManager<RemotelyUser> userManager, 
+            UserManager<RemoteappUser> userManager, 
             IEmailSenderEx emailSender)
         {
             DataService = dataService;
@@ -28,7 +28,7 @@ namespace Remotely.Server.API
 
         private IDataService DataService { get; }
         private IEmailSenderEx EmailSender { get; }
-        private UserManager<RemotelyUser> UserManager { get; }
+        private UserManager<RemoteappUser> UserManager { get; }
 
 
         [HttpPost("ChangeIsAdmin/{userID}")]
@@ -279,12 +279,12 @@ namespace Remotely.Server.API
                 var newInvite = DataService.AddInvite(orgID, invite);
 
                 var inviteURL = $"{Request.Scheme}://{Request.Host}/Invite?id={newInvite.ID}";
-                var emailResult = await EmailSender.SendEmailAsync(invite.InvitedUser, "Invitation to Organization in Remotely",
-                            $@"<img src='{Request.Scheme}://{Request.Host}/images/Remotely_Logo.png'/>
+                var emailResult = await EmailSender.SendEmailAsync(invite.InvitedUser, "Invitation to Organization in Remoteapp",
+                            $@"<img src='{Request.Scheme}://{Request.Host}/images/Remoteapp_Logo.png'/>
                             <br><br>
                             Hello!
                             <br><br>
-                            You've been invited to join an organization in Remotely.
+                            You've been invited to join an organization in Remoteapp.
                             <br><br>
                             You can join the organization by <a href='{HtmlEncoder.Default.Encode(inviteURL)}'>clicking here</a>.",
                             orgID);

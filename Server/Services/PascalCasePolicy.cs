@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Text.Json;
 
-namespace Remotely.Server.Services
+namespace Remoteapp.Server.Services
 {
     public class PascalCasePolicy : JsonNamingPolicy
     {

@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Thanks for trying Remotely!"
+echo "Thanks for trying Remoteapp!"
 echo
 
 Args=( "$@" )
@@ -15,19 +15,19 @@ do
 done
 
 if [ -z "$AppRoot" ]; then
-    read -p "Enter path where the Remotely server files should be installed (typically /var/www/remotely): " AppRoot
+    read -p "Enter path where the Remoteapp server files should be installed (typically /var/www/remoteapp): " AppRoot
     if [ -z "$AppRoot" ]; then
-        AppRoot="/var/www/remotely"
+        AppRoot="/var/www/remoteapp"
     fi
 fi
 
 if [ -z "$HostName" ]; then
-    read -p "Enter server host (e.g. remotely.yourdomainname.com): " HostName
+    read -p "Enter server host (e.g. remoteapp.yourdomainname.com): " HostName
 fi
 
-chmod +x "$AppRoot/Remotely_Server"
+chmod +x "$AppRoot/Remoteapp_Server"
 
-echo "Using $AppRoot as the Remotely website's content directory."
+echo "Using $AppRoot as the Remoteapp website's content directory."
 
 UbuntuVersion=$(lsb_release -r -s)
 
@@ -70,31 +70,31 @@ $HostName {
 echo "$caddyConfig" > /etc/caddy/Caddyfile
 
 
-# Create Remotely service.
+# Create Remoteapp service.
 
 serviceConfig="[Unit]
-Description=Remotely Server
+Description=Remoteapp Server
 
 [Service]
 WorkingDirectory=$AppRoot
-ExecStart=/usr/bin/dotnet $AppRoot/Remotely_Server.dll
+ExecStart=/usr/bin/dotnet $AppRoot/Remoteapp_Server.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
-SyslogIdentifier=remotely
+SyslogIdentifier=remoteapp
 Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 
 [Install]
 WantedBy=multi-user.target"
 
-echo "$serviceConfig" > /etc/systemd/system/remotely.service
+echo "$serviceConfig" > /etc/systemd/system/remoteapp.service
 
 
 # Enable service.
-systemctl enable remotely.service
+systemctl enable remoteapp.service
 # Start service.
-systemctl restart remotely.service
+systemctl restart remoteapp.service
 
 
 # Restart caddy

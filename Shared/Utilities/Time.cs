@@ -1,12 +1,12 @@
-﻿using Remotely.Shared.Enums;
-using Remotely.Shared.Models;
+﻿using Remoteapp.Shared.Enums;
+using Remoteapp.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Remotely.Shared.Utilities
+namespace Remoteapp.Shared.Utilities
 {
     public static class Time
     {

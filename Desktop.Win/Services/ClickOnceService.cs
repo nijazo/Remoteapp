@@ -1,8 +1,8 @@
-﻿using Remotely.Desktop.Core;
-using Remotely.Desktop.Core.Services;
-using Remotely.Shared.Enums;
-using Remotely.Shared.Models;
-using Remotely.Shared.Utilities;
+﻿using Remoteapp.Desktop.Core;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Shared.Enums;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml;
 
-namespace Remotely.Desktop.Win.Services
+namespace Remoteapp.Desktop.Win.Services
 {
     public interface IClickOnceService
     {

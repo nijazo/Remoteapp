@@ -1,4 +1,4 @@
-﻿namespace Remotely.Shared.Enums
+﻿namespace Remoteapp.Shared.Enums
 {
     public enum RemoteControlMode
     {

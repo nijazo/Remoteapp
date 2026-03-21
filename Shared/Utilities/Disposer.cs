@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Remotely.Shared.Utilities
+namespace Remoteapp.Shared.Utilities
 {
     public static class Disposer
     {

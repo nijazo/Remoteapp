@@ -5,16 +5,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Remotely.Agent.Interfaces;
-using Remotely.Agent.Services;
-using Remotely.Server.API;
-using Remotely.Server.Data;
-using Remotely.Server.Services;
-using Remotely.Shared.Models;
-using Remotely.Shared.Utilities;
+using Remoteapp.Agent.Interfaces;
+using Remoteapp.Agent.Services;
+using Remoteapp.Server.API;
+using Remoteapp.Server.Data;
+using Remoteapp.Server.Services;
+using Remoteapp.Shared.Models;
+using Remoteapp.Shared.Utilities;
 using System;
 
-namespace Remotely.Tests
+namespace Remoteapp.Tests
 {
     [TestClass]
     public class IoCActivator
@@ -48,13 +48,13 @@ namespace Remotely.Tests
         {
             services.AddDbContextFactory<AppDb>(options =>
             {
-                options.UseInMemoryDatabase("Remotely");
+                options.UseInMemoryDatabase("Remoteapp");
             });
 
             services.AddScoped(p =>
                 p.GetRequiredService<IDbContextFactory<AppDb>>().CreateDbContext());
 
-            services.AddIdentity<RemotelyUser, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
+            services.AddIdentity<RemoteappUser, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
              .AddEntityFrameworkStores<AppDb>()
              .AddDefaultUI()
              .AddDefaultTokenProviders();

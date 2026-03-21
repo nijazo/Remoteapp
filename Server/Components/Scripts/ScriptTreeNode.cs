@@ -1,11 +1,11 @@
-﻿using Remotely.Server.Components.TreeView;
-using Remotely.Shared.Models;
+﻿using Remoteapp.Server.Components.TreeView;
+using Remoteapp.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Remotely.Server.Components.Scripts
+namespace Remoteapp.Server.Components.Scripts
 {
     public class ScriptTreeNode
     {

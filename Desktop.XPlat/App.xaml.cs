@@ -5,18 +5,18 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Remotely.Desktop.Core;
-using Remotely.Desktop.Core.Interfaces;
-using Remotely.Desktop.Core.Services;
-using Remotely.Desktop.XPlat.Services;
-using Remotely.Desktop.XPlat.Views;
-using Remotely.Shared.Utilities;
+using Remoteapp.Desktop.Core;
+using Remoteapp.Desktop.Core.Interfaces;
+using Remoteapp.Desktop.Core.Services;
+using Remoteapp.Desktop.XPlat.Services;
+using Remoteapp.Desktop.XPlat.Views;
+using Remoteapp.Shared.Utilities;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Remotely.Desktop.XPlat
+namespace Remoteapp.Desktop.XPlat
 {
     public class App : Application
     {

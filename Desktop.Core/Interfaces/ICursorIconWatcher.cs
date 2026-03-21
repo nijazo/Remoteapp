@@ -1,7 +1,7 @@
-﻿using Remotely.Shared.Models;
+﻿using Remoteapp.Shared.Models;
 using System;
 
-namespace Remotely.Desktop.Core.Interfaces
+namespace Remoteapp.Desktop.Core.Interfaces
 {
     public interface ICursorIconWatcher
     {

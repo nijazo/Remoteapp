@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Remotely.Server.Auth;
-using Remotely.Server.Services;
-using Remotely.Shared.Models;
+using Remoteapp.Server.Auth;
+using Remoteapp.Server.Services;
+using Remoteapp.Shared.Models;
 using System;
 using System.IO;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Remotely.Server.API
+namespace Remoteapp.Server.API
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Remotely.Server.Migrations.Sqlite
+namespace Remoteapp.Server.Migrations.Sqlite
 {
     public partial class DeviceNotes : Migration
     {

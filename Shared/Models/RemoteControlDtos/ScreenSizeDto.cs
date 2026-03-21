@@ -1,7 +1,7 @@
-﻿using Remotely.Shared.Enums;
+﻿using Remoteapp.Shared.Enums;
 using System.Runtime.Serialization;
 
-namespace Remotely.Shared.Models.RemoteControlDtos
+namespace Remoteapp.Shared.Models.RemoteControlDtos
 {
     [DataContract]
     public class ScreenSizeDto : BaseDto
