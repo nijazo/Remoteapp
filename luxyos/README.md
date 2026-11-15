@@ -2,6 +2,8 @@
 
 Werkmap voor LuxyOS: een snel, gratis en eerlijk besturingssysteem. De domeinen luxyos.com, luxyos.nl en luxyos.eu zijn vastgelegd.
 
+LuxyOS is een project van Nijaz Omanovic. Eigen ontwerp, niets gekopieerd van anderen; aan de plannen kunnen geen rechten worden ontleend. Zie "Eigendom en originaliteit" in de [bouwnota](bouwnota.md).
+
 Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het plan om te beginnen.
 
 ## Inhoud
