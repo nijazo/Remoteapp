@@ -1,10 +1,10 @@
-# Bouwnota eigen besturingssysteem
+# Bouwnota LuxyOS
 
 Stand: 15 november 2026
 
 ## Visie en uitgangspunten
 
-Een snel besturingssysteem dat alleen start wat de gebruiker vraagt, Windows-programma's draait en makkelijk te bedienen is.
+LuxyOS is een snel besturingssysteem dat alleen start wat de gebruiker vraagt, Windows-programma's draait en makkelijk te bedienen is.
 
 - **Snel (on-demand)**: bij het opstarten draait alleen een broker. Diensten starten pas als een app erom vraagt en stoppen weer na gebruik. Een afgesloten programma stopt helemaal: er blijft niets op de achtergrond draaien.
 - **Windows-programma's**: installeren en werken zoals op Windows, via een compatibiliteitslaag.
@@ -693,6 +693,35 @@ Het OS draait ook als virtuele machine op VMware ESXi, Hyper-V of Proxmox, net a
 - Citrix en Omnissa Horizon hebben al Linux-agents. Die laten certificeren voor dit OS.
 - Ook handig om te ontwikkelen: testen op een eigen ESXi-server.
 
+**Zelf verbinden met Windows-servers (ingebouwde RDP-app)**
+
+Vanuit dit OS verbinden met een Windows-computer of een Remote Desktop Server, net zo makkelijk als vanaf Windows 11. Basis: FreeRDP (open source), met een eigen app "Extern bureaublad".
+
+| Functie | Zoals bij Windows 11 |
+| --- | --- |
+| Verbinden met naam of IP-adres, opgeslagen verbindingen | Ja |
+| Dubbelklikken op een .rdp-bestand opent de verbinding | Ja |
+| Inloggen met AD-account (NLA), ook met smartcard | Ja |
+| Remote Desktop Gateway (via poort 443, voor buiten kantoor) | Ja |
+| Meerdere schermen, aanpassen aan venstergrootte, scherp op hoge resolutie | Ja |
+| Klembord, geluid en microfoon, schijven, printers doorsturen | Ja |
+| USB-apparaten en webcam doorsturen | Ja, steeds beter in FreeRDP |
+| RemoteApp: losse programma's van de server als eigen vensters | Ja |
+| Werkruimte van het bedrijf abonneren: RemoteApps verschijnen in het startmenu | Ja, via de RD Web-feed |
+| Azure Virtual Desktop en Windows 365 | Via de browser. Een eigen app vraagt samenwerking met Microsoft |
+
+- Certificaten van de server worden gecontroleerd met het centrale certificaatbeheer.
+- Wachtwoorden van verbindingen staan veilig in de sleutelbos van de gebruiker, niet als platte tekst.
+- Zo kan dit OS ook dienen als werkplek voor bedrijven die al Windows-servers met Remote Desktop gebruiken.
+
+**Eigen jasje, vertrouwde indeling**
+
+- FreeRDP is alleen de motor. De app krijgt een eigen jasje met dezelfde indeling als de Remote Desktop-app van Windows, zodat Windows-gebruikers meteen de weg weten.
+- Zelfde opbouw: de velden Computer en Gebruikersnaam, en de tabbladen Algemeen, Weergave, Lokale bronnen, Ervaring en Geavanceerd. Opslaan en openen van .rdp-bestanden.
+- Extra ten opzichte van Windows: links een lijst met opgeslagen verbindingen en de RemoteApps van de werkruimte.
+- Het uiterlijk is eigen, in de stijl van het OS. Het ontwerp en de pictogrammen van Microsoft niet exact kopiëren: die zijn beschermd, en Lindows liep juist daarop vast.
+- Ontwerp: Extern bureaublad-app.
+
 ## Opdrachtregel: PowerShell en pakketbeheer
 
 PowerShell 7 gaat standaard mee, en een eigen pakketbeheerder doet hetzelfde als winget. Dit is voor IT-beheerders en gevorderde gebruikers; gewone gebruikers hebben het nooit nodig.
@@ -908,7 +937,7 @@ De grootste gaten zitten niet in functies, maar in software van andere makers, h
 | Gat | Waarom belangrijk | Aanpak |
 | --- | --- | --- |
 | Professionele software (Adobe, AutoCAD, Office-desktop) | Werkt slecht of niet via Wine | Eerlijke labels, webversies, alternatieven met Linux-versie (zoals DaVinci Resolve en Blender), Windows ernaast, makers benaderen |
-| Hardwaremakers | Fabrikanten leveren drivers en hulpprogramma's alleen voor Windows (printers, gaming-muizen, audio-apparatuur) | Certificeringsprogramma "Werkt met \[Naam OS\]" en samenwerking met fabrikanten |
+| Hardwaremakers | Fabrikanten leveren drivers en hulpprogramma's alleen voor Windows (printers, gaming-muizen, audio-apparatuur) | Certificeringsprogramma "Werkt met LuxyOS" en samenwerking met fabrikanten |
 | Voorgeïnstalleerd op nieuwe pc's | De meeste mensen gebruiken wat erop staat | Eerst opknappers van gebruikte pc's, later pc-fabrikanten |
 | Streamingdiensten | Netflix en anderen geven op Linux vaak lagere beeldkwaliteit door hun kopieerbeveiliging (DRM) | Met streamingdiensten praten; eerlijk vermelden |
 | Mediacodecs (H.264, HEVC, AAC) | Windows betaalt licenties; zelf meeleveren kan patentkosten geven | Hardware-decodering van de videokaart gebruiken en licenties regelen |
@@ -942,8 +971,8 @@ Fase 1 bewijst het on-demand idee in een virtuele machine. Pas als dat stabiel w
 
 Deze beslissingen staan nog open voordat de bouw begint.
 
-- [ ] Naam van het besturingssysteem kiezen.
-- [ ] Logo ontwerpen (nu een tijdelijk rondje op de Start-knop).
+- [ ] Naam: LuxyOS gekozen, domeinen .com, .nl en .eu vastgelegd. Nog doen: merk registreren bij EUIPO.
+- [ ] Logo kiezen uit de zes ideeën voor LuxyOS en verder uitwerken.
 - [ ] Licentie kiezen voor de eigen code, passend bij GPL en LGPL van Linux en Wine.
 - [ ] Team vormen: ontwikkelaars en testers.
 - [ ] Financiering zoeken: subsidie, crowdfunding of investeerders.

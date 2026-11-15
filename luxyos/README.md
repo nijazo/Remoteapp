@@ -1,6 +1,6 @@
-# Eigen OS (werknaam)
+# LuxyOS
 
-Werkmap voor het eigen besturingssysteem. De naam volgt later; tot die tijd heet alles "eigen OS".
+Werkmap voor LuxyOS: een snel, gratis en eerlijk besturingssysteem. De domeinen luxyos.com, luxyos.nl en luxyos.eu zijn vastgelegd.
 
 Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het plan om te beginnen.
 
@@ -12,6 +12,7 @@ Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het
 | [`ideeen/hoe-beginnen.md`](ideeen/hoe-beginnen.md) | Ideeën en stappenplan om te beginnen met bouwen |
 | [`afbeeldingen/`](afbeeldingen/) | Afbeeldingen van alle ontwerpen en twee schema's |
 | [`ontwerpen/`](ontwerpen/) | De bronbestanden van de ontwerpen, plus een script om ze opnieuw als afbeelding te maken |
+| [`website/`](website/) | De "Binnenkort"-pagina voor luxyos.com |
 
 ## De ontwerpen
 
@@ -32,10 +33,17 @@ Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het
 | 13 | [Website: Werkt jouw game?](afbeeldingen/13-website-werkt-jouw-game.png) |
 | 14 | [Extern bureaublad: instellingen op de server](afbeeldingen/14-extern-bureaublad-instellingen.png) |
 | 15 | [Extern bureaublad: zo ziet de klant het](afbeeldingen/15-extern-bureaublad-klant.png) |
+| 16 | [Extern bureaublad-app: verbinden met Windows](afbeeldingen/16-extern-bureaublad-app.png) |
+| 17 | [Logo-ideeën voor LuxyOS](afbeeldingen/17-logo-ideeen.png) |
+| 18 | [Website: Binnenkort](afbeeldingen/18-website-binnenkort.png) ([mobiel](afbeeldingen/19-website-binnenkort-mobiel.png)) |
 
 Schema's: [opbouw van het systeem](afbeeldingen/diagram-opbouw-systeem.png) en [bouwvolgorde](afbeeldingen/diagram-bouwvolgorde.png).
 
-Namen van apps, bedrijven, aantallen en tijden in de ontwerpen zijn voorbeelden. Het rondje op de Start-knop is een tijdelijk logo.
+Namen van apps, bedrijven, aantallen en tijden in de ontwerpen zijn voorbeelden. Het rondje op de Start-knop is een tijdelijk logo, tot er een keuze is uit de logo-ideeën.
+
+## De Binnenkort-pagina online zetten
+
+[`website/index.html`](website/index.html) is één bestand zonder externe onderdelen: geen lettertypen, scripts, trackers of cookies van andere websites. Zet het als `index.html` in de hoofdmap van de webhosting voor luxyos.com, en laat luxyos.nl en luxyos.eu daarnaar doorverwijzen. De pagina past zich aan voor telefoons en voor de donkere modus.
 
 ## Afbeeldingen opnieuw maken
 

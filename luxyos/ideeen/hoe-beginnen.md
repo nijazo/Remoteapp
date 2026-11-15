@@ -29,7 +29,7 @@ Daarna volgen de fasen uit de bouwnota: bureaublad, Wine, app-winkel, enzovoort.
 ## Voorstel voor de mapindeling als het bouwen begint
 
 ```
-eigen-os/
+luxyos/
   bouwen/          bouwscripts en Dockerfile voor het image
   broker/          de eigen opstartdienst (Rust)
   hardware/        hardware-rapport en driverhulp
@@ -50,7 +50,7 @@ eigen-os/
 
 ## Nog te beslissen voor de start
 
-- [ ] Naam van het OS
+- [x] Naam: LuxyOS (domeinen .com, .nl en .eu vastgelegd)
 - [ ] Licentie voor de eigen code
 - [ ] Welke test-pc(s) gebruiken we: liefst een gewone laptop met Intel of AMD
 - [ ] Wie bouwt mee: team en eventuele financiering
