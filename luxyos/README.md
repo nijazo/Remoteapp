@@ -14,7 +14,7 @@ Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het
 | [`ideeen/hoe-beginnen.md`](ideeen/hoe-beginnen.md) | Ideeën en stappenplan om te beginnen met bouwen |
 | [`afbeeldingen/`](afbeeldingen/) | Afbeeldingen van alle ontwerpen en twee schema's |
 | [`ontwerpen/`](ontwerpen/) | De bronbestanden van de ontwerpen, plus een script om ze opnieuw als afbeelding te maken |
-| [`website/`](website/) | De "Coming soon"-pagina voor luxyos.com: Engels als standaard, Nederlands in `nl/` |
+| [`website/`](website/) | De "Coming soon"-pagina voor luxyos.com in 11 talen, Engels als standaard |
 | [`logo/`](logo/) | Het logo: Ring van licht, als SVG, witte versie, app-icoon en animatie |
 
 ## De ontwerpen
@@ -61,7 +61,7 @@ Kleuren: Zon `#F5A524`, Nacht `#13243B`, Hemel `#2563C9`.
 
 ## De Binnenkort-pagina online zetten
 
-De website heeft twee talen. [`website/index.html`](website/index.html) is de Engelse pagina en de standaard; [`website/nl/index.html`](website/nl/index.html) is de Nederlandse. Met de knop EN / NL rechtsboven wissel je van taal. Het blok "Een eerste blik" toont vier ontwerpen; de afbeeldingen staan in `website/img/` en horen mee op de webhosting. Onderaan staat een donatieknop ("Donate to LuxyOS" / "Donatie LuxyOS") die naar paypal.me/nijazo gaat; het is een gewone link, zonder PayPal-scripts. Beide pagina's laden niets van andere websites: geen lettertypen, scripts, trackers of cookies. Zet de map `website/` als hoofdmap op de webhosting voor luxyos.com, zodat de Engelse pagina op luxyos.com staat en de Nederlandse op luxyos.com/nl/. Laat luxyos.nl doorverwijzen naar luxyos.com/nl/ en luxyos.eu naar luxyos.com. De pagina's passen zich aan voor telefoons en voor de donkere modus.
+De website staat live op https://luxyos.com/ in 11 talen: Engels (standaard), Nederlands, Duits, Frans, Spaans, Kroatisch, Bosnisch, Servisch, Albanees, Macedonisch en Turks. Elke taal heeft een eigen map (`website/de/`, `website/fr/` enz.); het taalmenu rechtsboven werkt zonder JavaScript. Alle pagina's worden gemaakt met `website/src/build.py`; pas teksten daar aan en draai `python3 website/src/build.py`. Nederlands toont Nederlandse afbeeldingen, de andere talen Engelse. Er is een blok "We zoeken ontwikkelaars en sponsors" met een knop naar GitHub en de knop "Donatie LuxyOS" (vrijwillige donatie, paypal.me/nijazo), en het doel: een eerste testversie in 2027. De pagina's laden niets van andere websites: geen lettertypen, scripts, trackers of cookies. luxyos.nl en luxyos.eu verwijzen nog niet door; daarvoor moet hun DNS eerst naar de View365-server.
 
 ## Afbeeldingen opnieuw maken
 
