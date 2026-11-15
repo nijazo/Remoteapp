@@ -390,6 +390,43 @@ Het logo van LuxyOS is de Ring van licht: een ring die bijna rond is, met een zo
 - Bestanden staan in de GitHub-map `luxyos/logo`: logo, witte versie, app-icoon en de animatie.
 - Nog doen: controleren op gelijkenis met bestaande logo's, en het logo laten vastleggen bij het merk.
 
+## Talen en regio
+
+LuxyOS is standaard Engels en ondersteunt de Europese talen. Bij de eerste start kiest de gebruiker zijn taal; daarna kan elke gebruiker zijn eigen taal instellen.
+
+**Talen bij de start**
+
+| Taal | Schrift | Toetsenbord |
+| --- | --- | --- |
+| Engels (standaard) | Latijn | QWERTY (VS en VK) |
+| Nederlands | Latijn | QWERTY (VS-internationaal), Belgisch AZERTY |
+| Kroatisch | Latijn (č, ć, đ, š, ž) | Kroatisch QWERTZ |
+| Bosnisch | Latijn, ook Cyrillisch | Bosnisch QWERTZ |
+| Duits | Latijn (ä, ö, ü, ß) | Duits QWERTZ |
+| Frans | Latijn | Frans AZERTY |
+| Spaans | Latijn (ñ) | Spaans QWERTY |
+
+- Daarna alle 24 officiële EU-talen, waaronder Pools, Italiaans, Portugees, Roemeens, Grieks (Grieks schrift) en Bulgaars (Cyrillisch).
+- Bosnië en Herzegovina heeft drie officiële talen: Bosnisch, Kroatisch en Servisch. Servisch (Latijn en Cyrillisch) daarom ook vroeg toevoegen.
+- Later ook andere Europese talen, zoals Albanees, Macedonisch, Montenegrijns, Oekraïens en Turks.
+
+**Hoe het werkt**
+
+- Taalpakketten op aanvraag: alleen de gekozen talen worden gedownload, passend bij on-demand.
+- Taal en regio zijn los in te stellen, bijvoorbeeld Engelse taal met Nederlandse datum, getallen en euro.
+- Wisselen van taal zonder herinstallatie, per gebruiker.
+- Lettertypen met alle Europese tekens: Latijn met accenten, Cyrillisch en Grieks.
+- Spellingscontrole per taal (Hunspell) en de juiste toetsenbordindelingen.
+- Windows-programma's via Wine krijgen dezelfde taal- en regio-instellingen.
+- Alles wordt vertaald: installatie, instellingen, winkel, foutmeldingen, hulp en de website (luxyos.com, standaard Engels).
+
+**Vertalen**
+
+- Weblate (open source) als vertaalplatform, met vrijwilligers uit de gemeenschap.
+- Professionele vertalers voor de startalen en voor juridische teksten, zoals de privacyverklaring en voorwaarden.
+- Elke taal wordt nagekeken door een moedertaalspreker voordat hij in een versie komt.
+- Technische basis: Qt-vertaalbestanden en ICU voor datum, tijd, getallen en valuta.
+
 ## Hardware en apparaten
 
 Eerst pc's en laptops met x86-64 en UEFI. Telefoons komen later, met een apart image per model.
@@ -940,7 +977,7 @@ Deze onderdelen maken het systeem compleet voor dagelijks gebruik.
 - NTFS-schijven en netwerkmappen lezen en schrijven.
 - Energiebeheer: slaapstand en batterij.
 - Gaming: Steam en game-controllers.
-- Meertalig, waaronder Nederlands, en toegankelijk (schermlezer, grote tekst).
+- Meertalig (standaard Engels, plus Europese talen; zie Talen en regio) en toegankelijk (schermlezer, grote tekst).
 
 **Voor bedrijven**: veel computers tegelijk centraal beheren.
 
