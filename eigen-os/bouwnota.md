@@ -661,6 +661,38 @@ IT-bedrijven moeten hun eigen monitoringsoftware (RMM) kunnen installeren, net a
 - De gebruiker ziet in Instellingen: "Deze computer wordt beheerd door \[bedrijf\]".
 - Partnerprogramma met RMM-leveranciers om hun agent te testen en te certificeren.
 
+## Als virtuele machine en via Extern bureaublad
+
+Het OS draait ook als virtuele machine op VMware ESXi, Hyper-V of Proxmox, net als Windows. Gebruikers werken erin via Extern bureaublad (RDP), met de gewone Windows-app. Er is geen Windows-licentie per virtuele machine nodig.
+
+**Kant-en-klare images**
+
+| Platform | Formaat |
+| --- | --- |
+| VMware ESXi en vSphere | OVA/OVF, met open-vm-tools (zoals VMware Tools) |
+| Microsoft Hyper-V en Azure | VHDX |
+| Proxmox en KVM | QCOW2 |
+
+- De drivers voor virtuele hardware zitten al in de Linux-kernel (zoals vmxnet3 en pvscsi voor VMware).
+- open-vm-tools regelt netjes afsluiten, tijdsynchronisatie, het IP-adres tonen in vSphere en snapshots.
+- Automatisch instellen bij uitrol: computernaam, IP-adres en lid worden van het domein (VMware-aanpassing of cloud-init).
+
+**Extern bureaublad (RDP) ingebouwd**
+
+- Verbinden met de gewone Extern bureaublad-app van Windows, en ook vanaf Mac, telefoon of tablet.
+- Meerdere schermen, klembord, geluid, printers en schijven doorsturen.
+- Inloggen met het AD-account, met beveiligde verbinding (TLS en NLA).
+- Meerdere gebruikers tegelijk op één server, zoals Windows Remote Desktop Services, zonder licenties per gebruiker. Dat is een grote besparing voor bedrijven.
+- Verbinding verbroken: de sessie blijft staan tot de gebruiker terugkomt (instelbaar).
+- Basis: de RDP-functies van het bureaublad (zoals in KDE en GNOME) en FreeRDP.
+
+**Aandachtspunten**
+
+- Zonder videokaart in de virtuele machine tekent de processor het beeld. Prima voor kantoorwerk; voor CAD is een virtuele videokaart nodig (NVIDIA vGPU).
+- On-demand diensten gebruiken weinig geheugen, dus er passen meer virtuele machines op één server.
+- Citrix en Omnissa Horizon hebben al Linux-agents. Die laten certificeren voor dit OS.
+- Ook handig om te ontwikkelen: testen op een eigen ESXi-server.
+
 ## Opdrachtregel: PowerShell en pakketbeheer
 
 PowerShell 7 gaat standaard mee, en een eigen pakketbeheerder doet hetzelfde als winget. Dit is voor IT-beheerders en gevorderde gebruikers; gewone gebruikers hebben het nooit nodig.
@@ -790,6 +822,38 @@ De schijf is standaard versleuteld. Een reset of herinstallatie moet altijd werk
 - Herinstalleren kan vanaf een USB-stick of via internet, met de nieuwste versie.
 - Na een reset kunnen apps uit de winkel vanzelf terugkomen, als de gebruiker dat wil.
 - Bedrijven: de computer op afstand wissen. Na de reset meldt hij zich vanzelf weer aan bij het domein en de beheersoftware, zonder handwerk (zoals Windows Autopilot).
+
+## Certificaten
+
+Een eigen certificaatbeheer zoals bij Windows: één centrale plek voor alle certificaten, die het hele systeem gebruikt. Browsers, e-mail, VPN, wifi, Extern bureaublad en Windows-programma's.
+
+**Certificaatarchieven**
+
+| Archief | Wat erin zit | Wie beheert |
+| --- | --- | --- |
+| Persoonlijk | Eigen certificaten met privésleutel, voor inloggen, e-mail ondertekenen en VPN | De gebruiker |
+| Vertrouwde basiscertificaten | Certificaatautoriteiten die het systeem vertrouwt, ook de eigen CA van een bedrijf | Beheerder |
+| Tussenliggende certificaatautoriteiten | Tussenstappen in de vertrouwensketen | Systeem en beheerder |
+| Vertrouwde uitgevers | Makers van ondertekende software | Beheerder |
+| Niet-vertrouwd | Geblokkeerde certificaten | Beheerder |
+| Computer | Certificaten van de computer zelf, zoals voor Extern bureaublad en wifi | Beheerder |
+
+**Gebruiken**
+
+- Importeren door te dubbelklikken op een bestand (.cer, .crt, .pem, .pfx, .p12, .p7b), met een wizard zoals bij Windows. Exporteren kan ook.
+- Één archief voor alles: browsers, e-mail, Java, en ook Windows-programma's via Wine gebruiken dezelfde certificaten.
+- Smartcards en beveiligingssleutels met pincode, ook om in te loggen.
+- Privésleutels waar mogelijk in de TPM-chip, zodat ze niet te kopiëren zijn.
+- Waarschuwing ruim voordat een certificaat verloopt, en automatisch vernieuwen waar dat kan.
+- Veiligheid: melding als er een nieuw basiscertificaat wordt toegevoegd. Zo valt malware op die verkeer probeert af te luisteren.
+
+**Zakelijk**
+
+- Automatisch certificaten aanvragen bij de eigen certificaatserver van Active Directory (AD CS), zoals bij Windows. Samba ondersteunt dit al via groepsbeleid.
+- De bedrijfs-CA automatisch verspreiden via groepsbeleid of de beheersoftware.
+- Gebruik voor wifi met certificaat (802.1X), VPN, Extern bureaublad, ondertekende e-mail (S/MIME) en ondertekende apps in de winkel.
+
+Basis: p11-kit en ca-certificates (vertrouwde certificaten), NSS (browsers), OpenSC (smartcards), tpm2-pkcs11 (sleutels in de TPM) en certmonger (aanvragen en vernieuwen).
 
 ## Updates, registratie en verdienmodel
 

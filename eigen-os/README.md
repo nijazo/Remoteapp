@@ -30,6 +30,8 @@ Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het
 | 11 | [Aanmeldscherm (lokale gebruikers)](afbeeldingen/11-aanmeldscherm.png) |
 | 12 | [Gaming-instellingen](afbeeldingen/12-gaming-instellingen.png) |
 | 13 | [Website: Werkt jouw game?](afbeeldingen/13-website-werkt-jouw-game.png) |
+| 14 | [Extern bureaublad: instellingen op de server](afbeeldingen/14-extern-bureaublad-instellingen.png) |
+| 15 | [Extern bureaublad: zo ziet de klant het](afbeeldingen/15-extern-bureaublad-klant.png) |
 
 Schema's: [opbouw van het systeem](afbeeldingen/diagram-opbouw-systeem.png) en [bouwvolgorde](afbeeldingen/diagram-bouwvolgorde.png).
 
