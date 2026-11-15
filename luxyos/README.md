@@ -38,6 +38,7 @@ Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het
 | 17 | [Logo-ideeën voor LuxyOS](afbeeldingen/17-logo-ideeen.png) |
 | 18 | [Website: Binnenkort](afbeeldingen/18-website-binnenkort.png) ([mobiel](afbeeldingen/19-website-binnenkort-mobiel.png)) |
 | 20 | [Logo: Ring van licht, uitgewerkt met animatie](afbeeldingen/20-logo-ring-van-licht.png) |
+| 21 | [Verkenner: vertrouwde indeling, zoals in Windows](afbeeldingen/21-verkenner.png) |
 
 Schema's: [opbouw van het systeem](afbeeldingen/diagram-opbouw-systeem.png) en [bouwvolgorde](afbeeldingen/diagram-bouwvolgorde.png).
 

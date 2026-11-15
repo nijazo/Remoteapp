@@ -354,6 +354,17 @@ Een .exe op de website zet een Windows-pc in één keer over. Gegevens, programm
 
 De indeling lijkt op Windows XP, maar het uiterlijk is eigen. Het XP-ontwerp zelf is van Microsoft. Voorbeeld: [Bureaublad-ontwerp](afbeeldingen/).
 
+**Verkenner zoals gebruikers gewend zijn.** Na de overstap werkt iedereen gewoon door en vindt meteen documenten en afbeeldingen terug:
+
+- Dezelfde mappen met dezelfde namen: Bureaublad, Downloads, Documenten, Afbeeldingen, Muziek, Video's. Bestanden van Windows staan op dezelfde plek.
+- Links Snelle toegang, Deze pc met stationsletters (C:, D:, E:), netwerkschijven (S:) en cloudopslag.
+- Tabbladen, adresbalk met kruimelpad die ook Windows-paden zoals C:\Users\Naam\Documents begrijpt, en zoeken rechtsboven.
+- Knoppen voor Nieuw, Knippen, Kopiëren, Plakken, Naam wijzigen, Delen en Verwijderen, plus een detailvenster met voorbeeld.
+- Lijst met Naam, Gewijzigd op, Type en Grootte, met bekende typenamen zoals Word-document en Excel-werkblad.
+- Rechtsklikmenu met de bekende opdrachten en sneltoetsen (Ctrl+C, F2, Del, Alt+Enter). Bij "Openen met" staan Windows- en Linux-apps naast elkaar.
+
+Ontwerp: [Verkenner](afbeeldingen/21-verkenner.png).
+
 - Taakbalk onderaan: Start-knop, snelkoppelingen, open vensters, systeemvak met klok.
 - Startmenu met twee kolommen: programma's en zoekbalk links, mappen en instellingen rechts.
 - Verkenner, rechtermuisknopmenu's en bureaubladpictogrammen.
@@ -389,6 +400,31 @@ Het logo van LuxyOS is de Ring van licht: een ring die bijna rond is, met een zo
 - Woordmerk: "Luxy" vet, "OS" dun in Hemel-blauw.
 - Bestanden staan in de GitHub-map `luxyos/logo`: logo, witte versie, app-icoon en de animatie.
 - Nog doen: controleren op gelijkenis met bestaande logo's, en het logo laten vastleggen bij het merk.
+
+## Gemaakt voor Europa
+
+LuxyOS wordt gemaakt in en voor de EU, en de Europese wetten zijn de basis, in elk land. Mensen en bedrijven buiten de EU mogen LuxyOS gebruiken en krijgen dezelfde Europese bescherming.
+
+- **Eén versie, één standaard.** Er komt geen zwakkere versie voor andere landen.
+- **EU-wet is het minimum.** Vraagt een land meer bescherming, dan kan LuxyOS meer, maar nooit minder.
+- **Gegevens blijven in Europa.** Updates, app-winkel, registratie en back-up draaien in de EU. Niets gaat buiten de EU zonder toestemming.
+- **Partners volgen EU-regels.** Wie LuxyOS verspreidt, apparaten ermee verkoopt, apps in de winkel aanbiedt of beheer doet, houdt zich aan de EU-regels, waar die partij ook zit.
+- **Europese organisatie.** De organisatie achter LuxyOS zit in een EU-land.
+
+| Wet | Wat het betekent voor LuxyOS |
+| --- | --- |
+| AVG (GDPR) | Privacy standaard aan; gegevens inzien, exporteren en wissen; registratie alleen met toestemming |
+| ePrivacy-richtlijn | Niets lezen of opslaan op het apparaat zonder toestemming |
+| Cyber Resilience Act | Besturingssystemen zijn een "belangrijk product": standaard veilig, beveiligingsupdates voor de hele ondersteuningsperiode, softwarelijst (SBOM), lekken melden, CE-markering |
+| Europese toegankelijkheidswet (EAA) | Schermlezer, alles met toetsenbord, hoog contrast, grote tekst |
+| AI-verordening (AI Act) | AI is altijd herkenbaar; de beheerder kan AI blokkeren |
+| Digital Services Act | App-winkel: bekende verkopers, illegale apps melden, uitleg bij verwijderen |
+| Digital Markets Act (als voorbeeld) | Keuzescherm, standaardapps wijzigen en verwijderen, geen voorrang voor eigen apps |
+| eIDAS 2 | Gekwalificeerde certificaten, smartcards, Europese digitale identiteitswallet |
+| NIS2 | Hulp voor bedrijven: logging, centraal beheer, updaterapporten |
+| Ecodesign-regels voor telefoons | Later voor de telefoonversie: minstens 5 jaar updates |
+
+Een open-source licentie kan gebruikers niet verplichten EU-wetten te volgen. De regels voor partners komen daarom in de voorwaarden van de app-winkel, in partnercontracten en in het merkbeleid voor de naam LuxyOS. Voor de eerste release controleert een jurist in Europees digitaal recht dit plan.
 
 ## Talen en regio
 
