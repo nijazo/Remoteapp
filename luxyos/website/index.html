@@ -53,6 +53,15 @@
 .talen a:hover { color: var(--tekst); }
 .talen [aria-current] { background: var(--nacht); color: #ffffff; }
 @media (prefers-color-scheme: dark) { .talen [aria-current] { background: #ffffff; color: #13243b; } }
+section.doneer .wrap { padding-top: 0; padding-bottom: 72px; }
+.doneer-blok { border: 1px solid var(--rand); border-radius: 18px; background: var(--kaart); padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; }
+.doneer-blok h2 { margin: 0 0 6px; }
+.doneer-blok p { margin: 0; color: var(--tekst-zacht); max-width: 600px; }
+.doneer-blok small { display: block; margin-top: 8px; color: var(--tekst-zacht); font-size: 13px; }
+.knop { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 12px; background: var(--hemel); color: #ffffff; font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap; }
+.knop:hover { filter: brightness(1.08); }
+.knop:focus-visible { outline: 3px solid var(--zon); outline-offset: 3px; }
+@media (prefers-color-scheme: dark) { .knop { color: #0e1828; } }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -85,7 +94,7 @@ h2 { margin: 0 0 24px; font-size: clamp(24px, 3.4vw, 32px); letter-spacing: -0.0
 .kaart svg { width: 40px; height: 40px; color: var(--hemel); }
 .kaart h3 { margin: 0; font-size: 18px; }
 .kaart p { margin: 0; color: var(--tekst-zacht); font-size: 15px; }
-section.status .wrap { padding-top: 40px; padding-bottom: 72px; }
+section.status .wrap { padding-top: 40px; padding-bottom: 24px; }
 .status-blok { border-radius: 18px; background: var(--nacht); color: #ffffff; padding: 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
 .status-blok h2 { margin: 0 0 8px; color: #ffffff; }
 .status-blok p { margin: 0; color: #c9d5e6; max-width: 600px; }
@@ -180,6 +189,18 @@ footer .wrap { padding-top: 24px; padding-bottom: 32px; display: flex; flex-wrap
 <li>3 · Test</li>
 <li>4 · Download</li>
 </ol>
+</div>
+</div>
+</section>
+<section class="doneer">
+<div class="wrap">
+<div class="doneer-blok">
+<div>
+<h2>Help build LuxyOS</h2>
+<p>LuxyOS is free and non-commercial. Donations pay for servers, test hardware and development.</p>
+<small>Via PayPal (paypal.me/nijazo). Voluntary; a donation gives no rights or influence.</small>
+</div>
+<a class="knop" href="https://paypal.me/nijazo" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Donate to LuxyOS</a>
 </div>
 </div>
 </section>

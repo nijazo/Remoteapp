@@ -61,7 +61,7 @@ Kleuren: Zon `#F5A524`, Nacht `#13243B`, Hemel `#2563C9`.
 
 ## De Binnenkort-pagina online zetten
 
-De website heeft twee talen. [`website/index.html`](website/index.html) is de Engelse pagina en de standaard; [`website/nl/index.html`](website/nl/index.html) is de Nederlandse. Met de knop EN / NL rechtsboven wissel je van taal. Beide pagina's laden niets van andere websites: geen lettertypen, scripts, trackers of cookies. Zet de map `website/` als hoofdmap op de webhosting voor luxyos.com, zodat de Engelse pagina op luxyos.com staat en de Nederlandse op luxyos.com/nl/. Laat luxyos.nl doorverwijzen naar luxyos.com/nl/ en luxyos.eu naar luxyos.com. De pagina's passen zich aan voor telefoons en voor de donkere modus.
+De website heeft twee talen. [`website/index.html`](website/index.html) is de Engelse pagina en de standaard; [`website/nl/index.html`](website/nl/index.html) is de Nederlandse. Met de knop EN / NL rechtsboven wissel je van taal. Onderaan staat een donatieknop ("Donate to LuxyOS" / "Donatie LuxyOS") die naar paypal.me/nijazo gaat; het is een gewone link, zonder PayPal-scripts. Beide pagina's laden niets van andere websites: geen lettertypen, scripts, trackers of cookies. Zet de map `website/` als hoofdmap op de webhosting voor luxyos.com, zodat de Engelse pagina op luxyos.com staat en de Nederlandse op luxyos.com/nl/. Laat luxyos.nl doorverwijzen naar luxyos.com/nl/ en luxyos.eu naar luxyos.com. De pagina's passen zich aan voor telefoons en voor de donkere modus.
 
 ## Afbeeldingen opnieuw maken
 
