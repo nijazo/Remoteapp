@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Network &amp; internet</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>{{t.sNetwork}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+.hov:hover{background:rgba(37,99,201,0.09) !important}
+.hovd:hover{background:rgba(255,255,255,0.14) !important}
+.nb{display:flex;align-items:center;gap:10px;height:38px;padding:0 10px;border:0;border-radius:8px;background:transparent;font:inherit;font-size:13.5px;color:#13243b;text-align:left;cursor:pointer}
+.btn{height:38px;padding:0 14px;border:1px solid #c9d2de;border-radius:9px;background:#ffffff;font:inherit;font-size:13px;font-weight:600;color:#13243b;cursor:pointer;white-space:nowrap}
+.card{border:1px solid #e1e6ee;border-radius:12px}
+.cr{display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 0;box-sizing:border-box;border-bottom:1px solid #f1f4f8}
+.cr:last-child{border-bottom:0}
+.ct{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:#eef2f7;color:#3d4b61;display:flex;align-items:center;justify-content:center}
+.cn{font-size:14px;font-weight:600}
+.cs{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#3d4b61}
+.sw{flex-shrink:0;width:40px;height:22px;border-radius:11px;border:0;padding:0;position:relative;cursor:pointer}
+.sw span{position:absolute;top:3px;width:16px;height:16px;border-radius:50%;background:#ffffff}
+.chev{width:32px;height:32px;flex-shrink:0;border:0;border-radius:8px;background:transparent;color:#4a5568;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ip{margin:0;display:grid;grid-template-columns:150px minmax(0,1fr);font-size:13.5px}
+.ip dt{display:flex;align-items:center;min-height:36px;padding:4px 12px 4px 0;box-sizing:border-box;color:#4a5568;border-bottom:1px solid #f1f4f8}
+.ip dd{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:36px;margin:0;padding:4px 0;box-sizing:border-box;color:#13243b;font-weight:500;font-variant-numeric:tabular-nums;border-bottom:1px solid #f1f4f8;overflow-wrap:anywhere}
+.ip .l{border-bottom:0}
+.lk{font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #d9e7f2; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<svg aria-hidden="true" width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0">
+<circle cx="1130" cy="220" r="78" fill="#f4cf9c"></circle>
+<path d="M0 520 C 180 440, 360 470, 520 430 C 700 385, 860 450, 1040 410 C 1200 375, 1330 420, 1440 395 L1440 900 L0 900 Z" fill="#a9c6dd"></path>
+<path d="M0 610 C 200 540, 380 600, 600 560 C 820 520, 980 600, 1180 560 C 1300 535, 1380 560, 1440 550 L1440 900 L0 900 Z" fill="#7aa3c8"></path>
+<path d="M0 700 C 240 640, 460 710, 720 670 C 960 635, 1180 700, 1440 650 L1440 900 L0 900 Z" fill="#4d7aa6"></path>
+<path d="M0 790 C 300 750, 560 800, 860 770 C 1100 748, 1300 780, 1440 760 L1440 900 L0 900 Z" fill="#2f5682"></path>
+</svg>
+
+<div role="application" aria-label="{{t.taskTitle}}" style="position: absolute; left: 140px; top: 22px; width: 1160px; height: 822px; background: #ffffff; border-radius: 10px; box-shadow: 0 18px 48px rgba(10,20,40,0.28); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; flex-shrink: 0; background: #eef2f7; display: flex; align-items: center; justify-content: space-between; padding-left: 14px; border-bottom: 1px solid #dde3ec">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>
+<span>{{t.appName}}</span>
+</div>
+<div style="display: flex; height: 100%">
+<button class="hov" type="button" aria-label="{{t.minimize}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+<button class="hov" type="button" aria-label="{{t.maximize}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+<button class="hov" type="button" aria-label="{{t.close}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+</div>
+
+<div style="flex: 1; display: flex; min-height: 0">
+<nav aria-label="{{t.appName}}" style="width: 250px; flex-shrink: 0; background: #f6f8fb; border-right: 1px solid #e6ebf2; padding: 16px 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 6px 8px 14px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: {{accent}}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">{{t.avatar}}</span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600">{{t.user}}</span><span style="font-size: 12px; color: #4a5568">{{t.account}}</span></span>
+</div>
+<label style="height: 36px; border: 1px solid #d5dce6; border-radius: 8px; background: #ffffff; display: flex; align-items: center; gap: 8px; padding: 0 10px; margin-bottom: 10px; color: #4a5568">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">{{t.searchLabel}}</span>
+<input type="search" placeholder="{{t.searchPh}}" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 13px; color: #13243b; width: 100%">
+</label>
+<button class="nb hov" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>{{t.sSystem}}</button>
+<button class="nb" type="button" aria-current="page" style="background: {{accentSoft}}; font-weight: 600"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg>{{t.sNetwork}}</button>
+<button class="nb hov" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>{{t.sPrivacy}}</button>
+<button class="nb hov" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg>{{t.sApps}}</button>
+<button class="nb hov" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>{{t.sAccounts}}</button>
+<button class="nb hov" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path></svg>{{t.sSecurity}}</button>
+<button class="nb hov" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"></path></svg>{{t.sRecovery}}</button>
+<button class="nb hov" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>{{t.sAbout}}</button>
+</nav>
+
+<main style="flex: 1; min-width: 0; padding: 26px 36px; display: flex; flex-direction: column; gap: 18px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em">{{t.sNetwork}}</h1>
+
+<!-- Status -->
+<div class="card" style="display: flex; align-items: center; gap: 16px; padding: 18px 20px">
+<span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; background: {{accentSoft}}; color: {{accent}}; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">{{t.connectedTo}}</h2>
+<p style="margin: 0; font-size: 13.5px; color: #3d4b61">{{t.statusSub}}</p>
+</div>
+<div style="display: flex; gap: 8px; flex-shrink: 0">
+<button class="btn hov" type="button">{{t.properties}}</button>
+<button class="btn hov" type="button">{{t.disconnect}}</button>
+</div>
+</div>
+
+<!-- Connections -->
+<div role="list" aria-label="{{t.connections}}" class="card" style="display: flex; flex-direction: column; padding: 2px 14px 2px 20px">
+<div role="listitem" class="cr">
+<span class="ct" style="background: {{accentSoft}}; color: {{accent}}"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span class="cn">{{t.wifi}}</span><span class="cs">{{t.net}}<span style="margin-left: 4px; width: 7px; height: 7px; border-radius: 50%; background: #22a35a"></span><span style="color: #166534; font-weight: 600">{{t.connected}}</span></span></span>
+<button type="button" class="sw" role="switch" aria-checked="true" aria-label="{{t.wifi}}" style="background: {{accent}}"><span style="left: 21px"></span></button>
+<button type="button" class="chev hov" aria-label="{{t.details}}: {{t.wifi}}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+<div role="listitem" class="cr">
+<span class="ct"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3v3H9v-3H6a2 2 0 0 1-2-2z"></path><path d="M8.5 8v3M12 8v3M15.5 8v3"></path></svg></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span class="cn">{{t.ethernet}}</span><span class="cs">{{t.notConnected}}</span></span>
+<button type="button" class="chev hov" aria-label="{{t.details}}: {{t.ethernet}}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+<div role="listitem" class="cr">
+<span class="ct"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><rect x="9" y="11" width="6" height="5" rx="1"></rect><path d="M10.5 11V9.5a1.5 1.5 0 0 1 3 0V11"></path></svg></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span class="cn">{{t.vpn}}</span><span class="cs">{{t.vpnName}}</span></span>
+<button type="button" class="sw" role="switch" aria-checked="false" aria-label="{{t.vpnName}}" style="background: #7f8c9e"><span style="left: 3px"></span></button>
+<button type="button" class="chev hov" aria-label="{{t.details}}: {{t.vpn}}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+<div role="listitem" class="cr">
+<span class="ct"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M8.5 15.5a5 5 0 0 1 0-7M15.5 8.5a5 5 0 0 1 0 7M5.6 18.4a9 9 0 0 1 0-12.8M18.4 5.6a9 9 0 0 1 0 12.8"></path></svg></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span class="cn">{{t.hotspot}}</span><span class="cs">{{t.off}}</span></span>
+<button type="button" class="sw" role="switch" aria-checked="false" aria-label="{{t.hotspot}}" style="background: #7f8c9e"><span style="left: 3px"></span></button>
+<button type="button" class="chev hov" aria-label="{{t.details}}: {{t.hotspot}}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 14px">
+<!-- IP settings -->
+<section class="card" style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 10px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="5" rx="1"></rect><rect x="3" y="16" width="6" height="5" rx="1"></rect><rect x="15" y="16" width="6" height="5" rx="1"></rect><path d="M12 8v4M6 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"></path></svg>
+<h2 style="margin: 0; font-size: 15px; font-weight: 700">{{t.ipTitle}}</h2>
+</div>
+<dl class="ip">
+<dt>{{t.ipAssign}}</dt><dd><span>{{t.ipAuto}}</span><button class="btn hov" type="button" aria-label="{{t.edit}}: {{t.ipAssign}}" style="height: 32px; padding: 0 12px">{{t.edit}}</button></dd>
+<dt>{{t.ipv4}}</dt><dd>192.168.1.42</dd>
+<dt>{{t.mask}}</dt><dd>255.255.255.0</dd>
+<dt>{{t.gateway}}</dt><dd>192.168.1.1</dd>
+<dt>{{t.ipv6}}</dt><dd>{{t.auto}}</dd>
+<dt class="l">{{t.dns}}</dt><dd class="l">{{t.dnsVal}}</dd>
+</dl>
+</section>
+
+<!-- App firewall -->
+<section class="card" style="display: flex; flex-direction: column; gap: 12px; padding: 18px 20px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 9.7h18M3 14.3h18M9 5v4.7M15 5v4.7M12 9.7v4.6M7 14.3V19M17 14.3V19"></path></svg>
+<h2 style="margin: 0; font-size: 15px; font-weight: 700">{{t.fwTitle}}</h2>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px; background: #f6f8fb">
+<span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 9px; background: #fbeaf0; color: #b4235a; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m5.7 5.7 12.6 12.6"></path></svg></span>
+<span style="font-size: 14px; font-weight: 700; line-height: 1.35">{{t.fwBlocked}}</span>
+</div>
+<p style="margin: 0; font-size: 13.5px; line-height: 1.45; color: #3d4b61">{{t.fwNote}}</p>
+<button type="button" style="margin-top: auto; align-self: flex-start; display: flex; align-items: center; gap: 4px; height: 30px; padding: 0; border: 0; background: transparent; font: inherit; font-size: 13.5px; font-weight: 600; color: {{accent}}; cursor: pointer">{{t.manage}}<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+</section>
+</div>
+
+<!-- More settings -->
+<nav aria-label="{{t.moreLabel}}" style="margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; padding-top: 14px; border-top: 1px solid #e6ebf2">
+<a class="lk" href="#" style="color: {{accent}}">{{t.proxy}}</a>
+<a class="lk" href="#" style="color: {{accent}}">{{t.profiles}}</a>
+<a class="lk" href="#" style="color: {{accent}}">{{t.sharing}}</a>
+<a class="lk" href="#" style="color: {{accent}}">{{t.advanced}}</a>
+</nav>
+</main>
+</div>
+</div>
+
+<div style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 48px; background: #1a2232; display: flex; align-items: center; gap: 4px; padding: 0 6px; box-sizing: border-box; color: #ffffff">
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px 0 12px; border: 0; border-radius: 8px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 64 64"><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-dasharray="99 33" transform="rotate(-30 32 32)"></circle><circle cx="37.4" cy="11.7" r="7" fill="#F5A524"></circle></svg><span>{{t.start}}</span></button>
+<span style="width: 1px; height: 24px; background: #3a4558; margin: 0 6px"></span>
+<button class="hovd" type="button" aria-label="{{t.explorer}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #f2c46d; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.internet}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #8fb8ff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.email}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #6fd6c9; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></button>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; margin-left: 6px; border: 0; border-bottom: 3px solid {{accent}}; border-radius: 8px 8px 4px 4px; background: rgba(255,255,255,0.08); color: #ffffff; font: inherit; font-size: 13px; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c5cfdd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>{{t.taskTitle}}</button>
+<span style="flex: 1"></span>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 0; border-radius: 16px; background: rgba(255,255,255,0.1); color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3ddc84"></span>{{t.services}}</button>
+<button class="hovd" type="button" aria-label="{{t.wifiTray}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.volume}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.battery}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2"></path><rect x="5" y="10" width="9" height="4" rx="0.5" fill="currentColor" stroke="none"></rect></svg></button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px 0 8px; line-height: 1.25">
+<span style="font-size: 13px; font-weight: 600">{{t.time}}</span>
+<span style="font-size: 11.5px; color: #c5cfdd">{{t.date}}</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"lang":{"editor":"select","default":"nl","options":["en","nl"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const m = /^#?([0-9a-f]{6})$/i.exec(accent);
+    let soft = 'rgba(37,99,201,0.12)';
+    if (m) {
+      const n = parseInt(m[1], 16);
+      soft = 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',0.12)';
+    }
+    const lang = this.props.lang === 'nl' ? 'nl' : 'en';
+    const T = {
+      en: {
+        appName: 'Settings', minimize: 'Minimize', maximize: 'Maximize', close: 'Close',
+        avatar: 'U', user: 'User', account: 'Local account', searchLabel: 'Search settings', searchPh: 'Find a setting',
+        sSystem: 'System', sNetwork: 'Network & internet', sPrivacy: 'Privacy', sApps: 'Apps', sAccounts: 'Accounts',
+        sSecurity: 'Security', sRecovery: 'Recovery & encryption', sAbout: 'About this system',
+        connectedTo: 'Connected to Home-5G', statusSub: 'Strong signal · Private network · Encrypted DNS on',
+        properties: 'Properties', disconnect: 'Disconnect',
+        connections: 'Connections', details: 'Details', net: 'Home-5G', connected: 'Connected',
+        wifi: 'Wi-Fi', ethernet: 'Ethernet', notConnected: 'Not connected', vpn: 'VPN', vpnName: 'Office VPN (WireGuard)',
+        hotspot: 'Mobile hotspot', off: 'Off',
+        ipTitle: 'IP settings (Wi-Fi)', ipAssign: 'IP assignment', ipAuto: 'Automatic (DHCP)', edit: 'Edit',
+        ipv4: 'IPv4 address', mask: 'Subnet mask', gateway: 'Gateway', ipv6: 'IPv6', auto: 'Automatic',
+        dns: 'DNS', dnsVal: 'Automatic, encrypted (DNS over HTTPS)',
+        fwTitle: 'App firewall', fwBlocked: '3 apps blocked from the internet', manage: 'Manage',
+        fwNote: 'Each app can be allowed or blocked separately.',
+        moreLabel: 'More network settings', proxy: 'Proxy', profiles: 'Network profiles', sharing: 'File sharing (SMB)', advanced: 'Advanced',
+        start: 'Start', explorer: 'Explorer', internet: 'Internet', email: 'E-mail', taskTitle: 'Settings — Network',
+        services: '3 services running', wifiTray: 'Wi-Fi: connected', volume: 'Volume', battery: 'Battery',
+        time: '10:24', date: '16 Nov 2026'
+      },
+      nl: {
+        appName: 'Instellingen', minimize: 'Minimaliseren', maximize: 'Maximaliseren', close: 'Sluiten',
+        avatar: 'G', user: 'Gebruiker', account: 'Lokaal account', searchLabel: 'Zoeken in instellingen', searchPh: 'Instelling zoeken',
+        sSystem: 'Systeem', sNetwork: 'Netwerk en internet', sPrivacy: 'Privacy', sApps: 'Apps', sAccounts: 'Accounts',
+        sSecurity: 'Beveiliging', sRecovery: 'Herstel en versleuteling', sAbout: 'Over dit systeem',
+        connectedTo: 'Verbonden met Home-5G', statusSub: 'Sterk signaal · Privénetwerk · Versleutelde DNS aan',
+        properties: 'Eigenschappen', disconnect: 'Verbreken',
+        connections: 'Verbindingen', details: 'Details', net: 'Home-5G', connected: 'Verbonden',
+        wifi: 'Wifi', ethernet: 'Ethernet', notConnected: 'Niet verbonden', vpn: 'VPN', vpnName: 'Kantoor-VPN (WireGuard)',
+        hotspot: 'Mobiele hotspot', off: 'Uit',
+        ipTitle: 'IP-instellingen (wifi)', ipAssign: 'Toewijzing van IP', ipAuto: 'Automatisch (DHCP)', edit: 'Bewerken',
+        ipv4: 'IPv4-adres', mask: 'Subnetmasker', gateway: 'Gateway', ipv6: 'IPv6', auto: 'Automatisch',
+        dns: 'DNS', dnsVal: 'Automatisch, versleuteld (DNS via HTTPS)',
+        fwTitle: 'App-firewall', fwBlocked: '3 apps geblokkeerd voor internet', manage: 'Beheren',
+        fwNote: 'Elke app kun je apart toestaan of blokkeren.',
+        moreLabel: 'Meer netwerkinstellingen', proxy: 'Proxy', profiles: 'Netwerkprofielen', sharing: 'Bestanden delen (SMB)', advanced: 'Geavanceerd',
+        start: 'Start', explorer: 'Verkenner', internet: 'Internet', email: 'E-mail', taskTitle: 'Instellingen — Netwerk',
+        services: '3 diensten actief', wifiTray: 'Wifi: verbonden', volume: 'Volume', battery: 'Batterij',
+        time: '10:24', date: '16 nov 2026'
+      }
+    };
+    return { accent: accent, accentSoft: soft, t: T[lang] };
+  }
+}
+</script>
+</body>
+</html>

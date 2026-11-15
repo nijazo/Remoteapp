@@ -42,6 +42,9 @@ Er wordt hier nog niet gebouwd. Deze map bewaart de ideeën, de ontwerpen en het
 | 20 | [Logo: Ring van licht, uitgewerkt met animatie](afbeeldingen/20-logo-ring-van-licht.png) |
 | 21 | [Verkenner: vertrouwde indeling, zoals in Windows](afbeeldingen/21-verkenner.png) |
 | 22 | [Sponsorformulier: kiezen vóór het betalen (later, met zakelijk PayPal-account)](afbeeldingen/22-sponsorformulier-voorbeeld.png) |
+| 23 | [Netwerk en internet: wifi, VPN, IP-instellingen, versleutelde DNS, firewall per app](afbeeldingen/23-netwerk.png) |
+| 24 | [Accounts: Active Directory voor werk, Microsoft 365, Google en Yahoo](afbeeldingen/24-accounts.png) |
+| 25 | [Beveiliging met ingebouwde IT DeXt Antivirus](afbeeldingen/25-beveiliging.png) |
 
 Schema's: [opbouw van het systeem](afbeeldingen/diagram-opbouw-systeem.png) en [bouwvolgorde](afbeeldingen/diagram-bouwvolgorde.png).
 
