@@ -402,12 +402,13 @@ LuxyOS is standaard Engels en ondersteunt de Europese talen. Bij de eerste start
 | Nederlands | Latijn | QWERTY (VS-internationaal), Belgisch AZERTY |
 | Kroatisch | Latijn (č, ć, đ, š, ž) | Kroatisch QWERTZ |
 | Bosnisch | Latijn, ook Cyrillisch | Bosnisch QWERTZ |
+| Servisch | Cyrillisch en Latijn | Servisch Cyrillisch en Servisch Latijn (QWERTZ) |
 | Duits | Latijn (ä, ö, ü, ß) | Duits QWERTZ |
 | Frans | Latijn | Frans AZERTY |
 | Spaans | Latijn (ñ) | Spaans QWERTY |
 
 - Daarna alle 24 officiële EU-talen, waaronder Pools, Italiaans, Portugees, Roemeens, Grieks (Grieks schrift) en Bulgaars (Cyrillisch).
-- Bosnië en Herzegovina heeft drie officiële talen: Bosnisch, Kroatisch en Servisch. Servisch (Latijn en Cyrillisch) daarom ook vroeg toevoegen.
+- Bosnië en Herzegovina heeft drie officiële talen: Bosnisch, Kroatisch en Servisch. Alle drie staan daarom bij de startalen.
 - Later ook andere Europese talen, zoals Albanees, Macedonisch, Montenegrijns, Oekraïens en Turks.
 
 **Hoe het werkt**
