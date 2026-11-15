@@ -368,6 +368,28 @@ Regels voor eenvoud:
 5. Updates op de achtergrond, zonder geforceerde herstarts.
 6. Alles is terug te draaien met één klik.
 
+## Logo en huisstijl
+
+Het logo van LuxyOS is de Ring van licht: een ring die bijna rond is, met een zonnetje in de opening. De ring laadt alleen waar het nodig is, en daarna gaat het zonnetje aan. Dat is het on-demand idee in één beeld.
+
+| Kleur | Code | Gebruik |
+| --- | --- | --- |
+| Zon | #F5A524 | Het zonnetje, accenten |
+| Nacht | #13243B | De ring op licht, donkere achtergronden |
+| Hemel | #2563C9 | Knoppen, "OS" in het woordmerk |
+
+**Animatie**
+
+1. De ring laadt in 1,1 seconde de 270 graden die nodig zijn.
+2. Daarna gaat het zonnetje aan met een korte gloed. Totaal 1,6 seconde.
+3. Als laadindicator draait de ring tot het werk klaar is; dan gaat de zon aan.
+4. Staat "minder beweging" aan, dan verschijnt het logo meteen, zonder animatie.
+
+- Gebruik: opstartscherm, aanmeldscherm, Start-knop, app-icoon, favicon en website.
+- Woordmerk: "Luxy" vet, "OS" dun in Hemel-blauw.
+- Bestanden staan in de GitHub-map `luxyos/logo`: logo, witte versie, app-icoon en de animatie.
+- Nog doen: controleren op gelijkenis met bestaande logo's, en het logo laten vastleggen bij het merk.
+
 ## Hardware en apparaten
 
 Eerst pc's en laptops met x86-64 en UEFI. Telefoons komen later, met een apart image per model.
@@ -972,7 +994,7 @@ Fase 1 bewijst het on-demand idee in een virtuele machine. Pas als dat stabiel w
 Deze beslissingen staan nog open voordat de bouw begint.
 
 - [ ] Naam: LuxyOS gekozen, domeinen .com, .nl en .eu vastgelegd. Nog doen: merk registreren bij EUIPO.
-- [ ] Logo kiezen uit de zes ideeën voor LuxyOS en verder uitwerken.
+- [ ] Logo: Ring van licht gekozen en uitgewerkt, met animatie. Nog doen: controleren op gelijkenis met bestaande logo's.
 - [ ] Licentie kiezen voor de eigen code, passend bij GPL en LGPL van Linux en Wine.
 - [ ] Team vormen: ontwikkelaars en testers.
 - [ ] Financiering zoeken: subsidie, crowdfunding of investeerders.

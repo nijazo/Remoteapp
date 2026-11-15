@@ -92,6 +92,7 @@ window.__renderDC = function (templateHtml, classCode, props) {
     await page.setContent(`<!doctype html><html lang="nl"><head><meta charset="utf-8"><style>body{margin:0;font-family:Inter,system-ui,sans-serif}${helmetCss}</style></head><body><div id="root"></div><script>${runtime}</script></body></html>`);
     await page.evaluate(([t, c, p]) => window.__renderDC(t, c, p), [template, scriptTag[2], props]);
     await page.waitForTimeout(300);
+    await page.evaluate(() => document.getAnimations().forEach((a) => { try { a.finish(); } catch (e) { a.pause(); a.currentTime = 300; } }));
     const out = path.join(outDir, f.replace('.dc.html', '.png'));
     await page.screenshot({ path: out, fullPage: true });
     console.log('ok', out);
