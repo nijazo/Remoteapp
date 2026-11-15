@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Bureaublad met startmenu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+.hov:hover{background:rgba(37,99,201,0.09) !important}
+.hovd:hover{background:rgba(255,255,255,0.14) !important}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #d9e7f2; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<svg aria-hidden="true" width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0">
+<circle cx="1130" cy="220" r="78" fill="#f4cf9c"></circle>
+<path d="M0 520 C 180 440, 360 470, 520 430 C 700 385, 860 450, 1040 410 C 1200 375, 1330 420, 1440 395 L1440 900 L0 900 Z" fill="#a9c6dd"></path>
+<path d="M0 610 C 200 540, 380 600, 600 560 C 820 520, 980 600, 1180 560 C 1300 535, 1380 560, 1440 550 L1440 900 L0 900 Z" fill="#7aa3c8"></path>
+<path d="M0 700 C 240 640, 460 710, 720 670 C 960 635, 1180 700, 1440 650 L1440 900 L0 900 Z" fill="#4d7aa6"></path>
+<path d="M0 790 C 300 750, 560 800, 860 770 C 1100 748, 1300 780, 1440 760 L1440 900 L0 900 Z" fill="#2f5682"></path>
+</svg>
+
+<div style="position: absolute; left: 14px; top: 20px; display: flex; flex-direction: column; gap: 4px">
+<button class="hov" type="button" style="width: 92px; padding: 6px 4px; display: flex; flex-direction: column; align-items: center; gap: 6px; background: transparent; border: 0; border-radius: 10px; font: inherit; font-size: 13px; font-weight: 500; color: #13243b; cursor: pointer">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.82); display: flex; align-items: center; justify-content: center; color: #2563c9; box-shadow: 0 1px 3px rgba(19,36,59,0.18)"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg></span>
+<span>Deze computer</span>
+</button>
+<button class="hov" type="button" style="width: 92px; padding: 6px 4px; display: flex; flex-direction: column; align-items: center; gap: 6px; background: transparent; border: 0; border-radius: 10px; font: inherit; font-size: 13px; font-weight: 500; color: #13243b; cursor: pointer">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.82); display: flex; align-items: center; justify-content: center; color: #b7791f; box-shadow: 0 1px 3px rgba(19,36,59,0.18)"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>
+<span>Documenten</span>
+</button>
+<button class="hov" type="button" style="width: 92px; padding: 6px 4px; display: flex; flex-direction: column; align-items: center; gap: 6px; background: transparent; border: 0; border-radius: 10px; font: inherit; font-size: 13px; font-weight: 500; color: #13243b; cursor: pointer">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.82); display: flex; align-items: center; justify-content: center; color: #0f766e; box-shadow: 0 1px 3px rgba(19,36,59,0.18)"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></span>
+<span>Internet</span>
+</button>
+<button class="hov" type="button" style="width: 92px; padding: 6px 4px; display: flex; flex-direction: column; align-items: center; gap: 6px; background: transparent; border: 0; border-radius: 10px; font: inherit; font-size: 13px; font-weight: 500; color: #13243b; cursor: pointer">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.82); display: flex; align-items: center; justify-content: center; color: #4b5a70; box-shadow: 0 1px 3px rgba(19,36,59,0.18)"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"></path></svg></span>
+<span>Prullenbak</span>
+</button>
+</div>
+
+<div style="position: absolute; left: 510px; top: 48px; width: 640px; height: 410px; background: #ffffff; border-radius: 10px; box-shadow: 0 18px 48px rgba(10,20,40,0.28); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; flex-shrink: 0; background: #eef2f7; display: flex; align-items: center; justify-content: space-between; padding-left: 14px; border-bottom: 1px solid #dde3ec">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #13243b">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b7791f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+<span>Verkenner — Downloads</span>
+</div>
+<div style="display: flex; height: 100%">
+<button class="hov" type="button" aria-label="Minimaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path></svg></button>
+<button class="hov" type="button" aria-label="Maximaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+<button class="hov" type="button" aria-label="Sluiten" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+</div>
+<div style="height: 44px; flex-shrink: 0; display: flex; align-items: center; gap: 4px; padding: 0 10px; border-bottom: 1px solid #e6ebf2">
+<button class="hov" type="button" aria-label="Terug" style="width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"></path></svg></button>
+<button class="hov" type="button" aria-label="Vooruit" style="width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+<button class="hov" type="button" aria-label="Map omhoog" style="width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+<div style="flex: 1; height: 30px; margin-left: 6px; border: 1px solid #d5dce6; border-radius: 8px; display: flex; align-items: center; gap: 6px; padding: 0 10px; font-size: 13px; color: #13243b">
+<span>Deze computer</span>
+<svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg>
+<span style="font-weight: 600">Downloads</span>
+</div>
+<label style="width: 170px; height: 30px; border: 1px solid #d5dce6; border-radius: 8px; display: flex; align-items: center; gap: 6px; padding: 0 10px; box-sizing: border-box; color: #4a5568">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Zoeken in Downloads</span>
+<input type="search" placeholder="Zoeken" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 13px; color: #13243b; width: 100%">
+</label>
+</div>
+<div style="flex: 1; display: flex; min-height: 0">
+<div style="width: 172px; flex-shrink: 0; background: #f6f8fb; border-right: 1px solid #e6ebf2; padding: 10px 8px; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4a5568; padding: 4px 8px 6px">Snelle toegang</div>
+<button class="hov" type="button" style="height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>Bureaublad</button>
+<button class="hov" type="button" style="height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b7791f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Documenten</button>
+<button type="button" style="height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border: 0; border-radius: 6px; background: {{accentSoft}}; font: inherit; font-size: 13px; font-weight: 600; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Downloads</button>
+<button class="hov" type="button" style="height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="m21 16-5-5-9 9"></path></svg>Afbeeldingen</button>
+<button class="hov" type="button" style="height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Muziek</button>
+<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4a5568; padding: 12px 8px 6px">Apparaten</div>
+<button class="hov" type="button" style="height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="13" width="18" height="7" rx="2"></rect><path d="M5 13l2-8h10l2 8M17 16.5h.01"></path></svg>Lokale schijf (C:)</button>
+<button class="hov" type="button" style="height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="9" width="10" height="13" rx="2"></rect><path d="M9 9V3h6v6M11 5h.01M13 5h.01"></path></svg>USB-stick (E:)</button>
+</div>
+<div style="flex: 1; min-width: 0; padding: 12px; display: flex; flex-direction: column; gap: 8px">
+<div style="background: {{accentSoft}}; border-radius: 8px; padding: 9px 12px; font-size: 12.5px; line-height: 1.4; color: #13243b; display: flex; align-items: center; gap: 8px">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+<span>Windows-programma’s (.exe) installeer je gewoon met dubbelklikken, net als op Windows.</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 150px 72px; gap: 8px; padding: 0 10px; height: 26px; align-items: center; font-size: 12px; font-weight: 600; color: #4a5568; border-bottom: 1px solid #e6ebf2">
+<span>Naam</span><span>Type</span><span style="text-align: right">Grootte</span>
+</div>
+<button type="button" style="display: grid; grid-template-columns: minmax(0, 1fr) 150px 72px; gap: 8px; align-items: center; height: 36px; padding: 0 10px; border: 0; border-radius: 6px; background: {{accentSoft}}; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer">
+<span style="display: flex; align-items: center; gap: 10px; font-weight: 600"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 8h18M7 6h.01M10 6h.01"></path></svg>OfficeSetup.exe</span>
+<span style="color: #3d4b61">Windows-programma</span><span style="text-align: right; color: #3d4b61">7,2 MB</span>
+</button>
+<button class="hov" type="button" style="display: grid; grid-template-columns: minmax(0, 1fr) 150px 72px; gap: 8px; align-items: center; height: 36px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer">
+<span style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 8h18M7 6h.01M10 6h.01"></path></svg>Spel_Installatie.exe</span>
+<span style="color: #3d4b61">Windows-programma</span><span style="text-align: right; color: #3d4b61">84 MB</span>
+</button>
+<button class="hov" type="button" style="display: grid; grid-template-columns: minmax(0, 1fr) 150px 72px; gap: 8px; align-items: center; height: 36px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer">
+<span style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b7791f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Vakantiefoto’s</span>
+<span style="color: #3d4b61">Map</span><span style="text-align: right; color: #3d4b61">—</span>
+</button>
+<button class="hov" type="button" style="display: grid; grid-template-columns: minmax(0, 1fr) 150px 72px; gap: 8px; align-items: center; height: 36px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer">
+<span style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c53030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>Factuur_november.pdf</span>
+<span style="color: #3d4b61">PDF-document</span><span style="text-align: right; color: #3d4b61">312 kB</span>
+</button>
+<button class="hov" type="button" style="display: grid; grid-template-columns: minmax(0, 1fr) 150px 72px; gap: 8px; align-items: center; height: 36px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent; font: inherit; font-size: 13px; color: #13243b; text-align: left; cursor: pointer">
+<span style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg>Notities.txt</span>
+<span style="color: #3d4b61">Tekstdocument</span><span style="text-align: right; color: #3d4b61">4 kB</span>
+</button>
+</div>
+</div>
+<div style="height: 28px; flex-shrink: 0; border-top: 1px solid #e6ebf2; display: flex; align-items: center; padding: 0 14px; font-size: 12px; color: #4a5568">5 items · 1 geselecteerd</div>
+</div>
+
+<sc-if value="{{servicesOpen}}" hint-placeholder-val="{{ true }}">
+<div style="position: absolute; right: 12px; bottom: 56px; width: 330px; background: #ffffff; border-radius: 12px; box-shadow: 0 14px 36px rgba(10,20,40,0.28); padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 36px; height: 36px; border-radius: 10px; background: {{accentSoft}}; color: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px; font-weight: 700">Diensten op aanvraag</span>
+<span style="font-size: 12.5px; color: #4a5568">Alleen wat jij gebruikt, draait.</span>
+</div>
+</div>
+<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4a5568">Actief (3)</div>
+<div style="display: flex; flex-direction: column; gap: 4px; margin-top: -6px">
+<div style="display: flex; align-items: center; gap: 10px; height: 36px">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+<span style="flex: 1; font-size: 13.5px">Bureaublad</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #166534; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #22a35a"></span>Actief</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; height: 36px">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg>
+<span style="flex: 1; font-size: 13.5px">Netwerk (wifi)</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #166534; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #22a35a"></span>Actief</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; height: 44px">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13.5px">Geluid</span><span style="font-size: 12px; color: #4a5568">Stopt na 30 s zonder gebruik</span></span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #166534; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #22a35a"></span>Actief</span>
+</div>
+</div>
+<div style="height: 1px; background: #e6ebf2"></div>
+<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4a5568">In rust (12)</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: -4px">
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 14px; background: #f1f4f9; font-size: 12px; color: #3d4b61"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z"></path></svg>Printer</span>
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 14px; background: #f1f4f9; font-size: 12px; color: #3d4b61"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10-5 4V3l5 4L7 17"></path></svg>Bluetooth</span>
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 14px; background: #f1f4f9; font-size: 12px; color: #3d4b61"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>Camera</span>
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 14px; background: #f1f4f9; font-size: 12px; color: #3d4b61"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"></path></svg>Updates</span>
+<span style="display: flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 14px; background: #f1f4f9; font-size: 12px; color: #3d4b61">+8 andere</span>
+</div>
+<div style="font-size: 12px; line-height: 1.45; color: #4a5568; background: #f6f8fb; border-radius: 8px; padding: 8px 10px">Een dienst start vanzelf zodra een app erom vraagt, en stopt weer als niemand hem gebruikt.</div>
+</div>
+</sc-if>
+
+<sc-if value="{{startOpen}}" hint-placeholder-val="{{ true }}">
+<div style="position: absolute; left: 6px; bottom: 54px; width: 470px; height: 470px; background: #ffffff; border-radius: 12px; box-shadow: 0 16px 40px rgba(10,20,40,0.32); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 64px; flex-shrink: 0; background: {{accent}}; display: flex; align-items: center; gap: 12px; padding: 0 16px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: {{accent}}; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700">G</span>
+<span style="font-size: 16px; font-weight: 700; color: #ffffff">Gebruiker</span>
+</div>
+<div style="flex: 1; display: grid; grid-template-columns: 270px minmax(0, 1fr); min-height: 0">
+<div style="padding: 10px; display: flex; flex-direction: column; gap: 0">
+<label style="height: 38px; border: 1px solid #d5dce6; border-radius: 8px; display: flex; align-items: center; gap: 8px; padding: 0 10px; margin-bottom: 8px; color: #4a5568">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Zoeken naar programma’s en bestanden</span>
+<input type="search" placeholder="Zoek programma’s en bestanden" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 13px; color: #13243b; width: 100%">
+</label>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 12px; width: 100%; height: 40px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 14px; color: #13243b; text-align: left; cursor: pointer"><span style="width: 28px; height: 28px; border-radius: 8px; background: #2563c9; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></span>Internet</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 12px; width: 100%; height: 40px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 14px; color: #13243b; text-align: left; cursor: pointer"><span style="width: 28px; height: 28px; border-radius: 8px; background: #0f766e; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>E-mail</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 12px; width: 100%; height: 40px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 14px; color: #13243b; text-align: left; cursor: pointer"><span style="width: 28px; height: 28px; border-radius: 8px; background: #6d45b8; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span>Tekstverwerker</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 12px; width: 100%; height: 40px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 14px; color: #13243b; text-align: left; cursor: pointer"><span style="width: 28px; height: 28px; border-radius: 8px; background: #b8501a; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="m21 16-5-5-9 9"></path></svg></span>Foto’s</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 12px; width: 100%; height: 40px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 14px; color: #13243b; text-align: left; cursor: pointer"><span style="width: 28px; height: 28px; border-radius: 8px; background: #b4235a; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12a4 4 0 0 1 4 4v1a4 4 0 0 1-7 2.6L14 15h-4l-1 .6A4 4 0 0 1 2 13v-1a4 4 0 0 1 4-4z"></path><path d="M7 11v3M5.5 12.5h3M16 12h.01M18 13.5h.01"></path></svg></span>Spellen</button>
+<div style="height: 1px; background: #e6ebf2; margin: 8px 4px"></div>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 12px; width: 100%; height: 40px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 14px; font-weight: 600; color: #13243b; text-align: left; cursor: pointer"><span style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; color: #3d4b61"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg></span><span style="flex: 1">Alle programma’s</span><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+<div style="background: #f1f4f9; padding: 10px 8px; display: flex; flex-direction: column; gap: 0">
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 38px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b7791f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Documenten</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 38px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="m21 16-5-5-9 9"></path></svg>Afbeeldingen</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 38px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Muziek</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 38px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563c9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>Deze computer</button>
+<div style="height: 1px; background: #dbe2ec; margin: 8px 4px"></div>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 38px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>Instellingen</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 38px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d45b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"></path></svg>Ontwikkelaarsmodus</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 38px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.5V14M12 17h.01"></path></svg>Hulp en uitleg</button>
+</div>
+</div>
+<div style="height: 52px; flex-shrink: 0; background: #f1f4f9; border-top: 1px solid #dbe2ec; display: flex; align-items: center; justify-content: flex-end; gap: 4px; padding: 0 10px">
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg>Afmelden</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; font-weight: 500; color: #13243b; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#b4235a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v9M7 6.3a7 7 0 1 0 10 0"></path></svg>Uitschakelen</button>
+</div>
+</div>
+</sc-if>
+
+<div style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 48px; background: #1a2232; display: flex; align-items: center; gap: 4px; padding: 0 6px; box-sizing: border-box; color: #ffffff">
+<button type="button" onClick="{{toggleStart}}" aria-expanded="{{startOpen}}" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px 0 12px; border: 0; border-radius: 8px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"></circle></svg>
+<span>Start</span>
+</button>
+<span style="width: 1px; height: 24px; background: #3a4558; margin: 0 6px"></span>
+<button class="hovd" type="button" aria-label="Verkenner" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #f2c46d; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+<button class="hovd" type="button" aria-label="Internet" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #8fb8ff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></button>
+<button class="hovd" type="button" aria-label="E-mail" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #6fd6c9; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></button>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; margin-left: 6px; border: 0; border-bottom: 3px solid {{accent}}; border-radius: 8px 8px 4px 4px; background: rgba(255,255,255,0.08); color: #ffffff; font: inherit; font-size: 13px; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f2c46d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Verkenner — Downloads</button>
+<span style="flex: 1"></span>
+<button class="hovd" type="button" onClick="{{toggleServices}}" aria-expanded="{{servicesOpen}}" style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 0; border-radius: 16px; background: rgba(255,255,255,0.1); color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3ddc84"></span>3 diensten actief</button>
+<button class="hovd" type="button" aria-label="Wifi: verbonden" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></button>
+<button class="hovd" type="button" aria-label="Volume" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button class="hovd" type="button" aria-label="Batterij" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2"></path><rect x="5" y="10" width="9" height="4" rx="0.5" fill="currentColor" stroke="none"></rect></svg></button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px 0 8px; line-height: 1.25">
+<span style="font-size: 13px; font-weight: 600">14:32</span>
+<span style="font-size: 11.5px; color: #c5cfdd">15-11-2026</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"startOpen":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { startOpen: props.startOpen ?? true, servicesOpen: true };
+  }
+  componentDidUpdate(prev) {
+    if (prev.startOpen !== this.props.startOpen) {
+      this.setState({ startOpen: this.props.startOpen ?? true });
+    }
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const m = /^#?([0-9a-f]{6})$/i.exec(accent);
+    let soft = 'rgba(37,99,201,0.12)';
+    if (m) {
+      const n = parseInt(m[1], 16);
+      soft = 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',0.12)';
+    }
+    return {
+      accent: accent,
+      accentSoft: soft,
+      startOpen: this.state.startOpen,
+      servicesOpen: this.state.servicesOpen,
+      toggleStart: () => this.setState({ startOpen: !this.state.startOpen }),
+      toggleServices: () => this.setState({ servicesOpen: !this.state.servicesOpen })
+    };
+  }
+}
+</script>
+</body>
+</html>

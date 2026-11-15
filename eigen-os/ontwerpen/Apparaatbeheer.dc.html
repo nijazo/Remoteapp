@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Apparaatbeheer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+.hov:hover{background:rgba(37,99,201,0.09) !important}
+.hovd:hover{background:rgba(255,255,255,0.14) !important}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #d9e7f2; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<svg aria-hidden="true" width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0">
+<circle cx="1130" cy="220" r="78" fill="#f4cf9c"></circle>
+<path d="M0 520 C 180 440, 360 470, 520 430 C 700 385, 860 450, 1040 410 C 1200 375, 1330 420, 1440 395 L1440 900 L0 900 Z" fill="#a9c6dd"></path>
+<path d="M0 610 C 200 540, 380 600, 600 560 C 820 520, 980 600, 1180 560 C 1300 535, 1380 560, 1440 550 L1440 900 L0 900 Z" fill="#7aa3c8"></path>
+<path d="M0 700 C 240 640, 460 710, 720 670 C 960 635, 1180 700, 1440 650 L1440 900 L0 900 Z" fill="#4d7aa6"></path>
+<path d="M0 790 C 300 750, 560 800, 860 770 C 1100 748, 1300 780, 1440 760 L1440 900 L0 900 Z" fill="#2f5682"></path>
+</svg>
+
+<div style="position: absolute; left: 120px; top: 22px; width: 1200px; height: 822px; background: #ffffff; border-radius: 10px; box-shadow: 0 18px 48px rgba(10,20,40,0.28); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; flex-shrink: 0; background: #eef2f7; display: flex; align-items: center; justify-content: space-between; padding-left: 14px; border-bottom: 1px solid #dde3ec">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2M7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM9 9h6v6H9z"></path></svg>
+<span>Apparaatbeheer</span>
+</div>
+<div style="display: flex; height: 100%">
+<button class="hov" type="button" aria-label="Minimaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+<button class="hov" type="button" aria-label="Maximaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+<button class="hov" type="button" aria-label="Sluiten" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+</div>
+
+<div style="height: 52px; flex-shrink: 0; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-bottom: 1px solid #e6ebf2">
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid #d5dce6; border-radius: 8px; background: #ffffff; font: inherit; font-size: 13px; font-weight: 600; color: #13243b; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"></path></svg>Zoeken naar nieuwe hardware</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid #d5dce6; border-radius: 8px; background: #ffffff; font: inherit; font-size: 13px; font-weight: 600; color: #13243b; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Firmware-updates<span style="min-width: 20px; height: 20px; border-radius: 10px; background: {{accent}}; color: #ffffff; font-size: 11.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; padding: 0 6px; box-sizing: border-box">1</span></button>
+<span style="flex: 1"></span>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #3d4b61; cursor: pointer"><input type="checkbox" style="width: 16px; height: 16px; margin: 0">Verborgen apparaten tonen</label>
+<label style="width: 220px; height: 36px; border: 1px solid #d5dce6; border-radius: 8px; display: flex; align-items: center; gap: 8px; padding: 0 10px; box-sizing: border-box; color: #4a5568">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Apparaat zoeken</span>
+<input type="search" placeholder="Apparaat zoeken" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 13px; color: #13243b; width: 100%">
+</label>
+</div>
+
+<div style="flex: 1; display: flex; min-height: 0">
+<div style="width: 440px; flex-shrink: 0; border-right: 1px solid #e6ebf2; padding: 8px; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="12">
+<sc-if value="{{r.isCat}}" hint-placeholder-val="{{ true }}">
+<button class="hov" type="button" onClick="{{r.toggle}}" aria-expanded="{{r.open}}" style="display: flex; align-items: center; gap: 10px; height: 38px; flex-shrink: 0; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; color: #13243b; text-align: left; cursor: pointer">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="{{r.chevron}}"></path></svg>
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{r.icon}}"></path></svg>
+<span style="flex: 1; font-size: 13.5px; font-weight: 600">{{r.name}}</span>
+<sc-if value="{{r.warn}}" hint-placeholder-val="{{ false }}"><svg role="img" aria-label="Aandacht nodig" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8a5a00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg></sc-if>
+<span style="font-size: 12px; color: #4a5568">{{r.count}}</span>
+</button>
+</sc-if>
+<sc-if value="{{r.isDev}}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{r.select}}" aria-pressed="{{r.selected}}" style="display: flex; align-items: center; gap: 10px; height: 40px; flex-shrink: 0; padding: 0 10px 0 52px; border: 0; border-radius: 8px; background: {{r.bg}}; font: inherit; color: #13243b; text-align: left; cursor: pointer">
+<span style="flex: 1; min-width: 0; font-size: 13.5px; font-weight: {{r.weight}}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+<span style="display: flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px; border-radius: 11px; background: {{r.cBg}}; color: {{r.cFg}}; font-size: 11.5px; font-weight: 600; white-space: nowrap"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{r.cDot}}"></span>{{r.status}}</span>
+</button>
+</sc-if>
+</sc-for>
+</div>
+
+<div style="flex: 1; min-width: 0; padding: 26px 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 12px; background: {{accentSoft}}; color: {{accent}}; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{sel.icon}}"></path></svg></span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<h1 style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.01em">{{sel.name}}</h1>
+<span style="font-size: 13px; color: #4a5568">{{sel.cat}}</span>
+</div>
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: 14px; background: {{sel.cBg}}; color: {{sel.cFg}}; font-size: 12.5px; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{sel.cDot}}"></span>{{sel.status}}</span>
+</div>
+
+<div style="display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; background: {{sel.boxBg}}; font-size: 13.5px; line-height: 1.5; color: #13243b">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{sel.cFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+<span>{{sel.text}}</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 15px; font-weight: 700">Driver</h2>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{sel.actions}}" as="act" hint-placeholder-count="3">
+<button type="button" style="height: 38px; padding: 0 16px; border: 1px solid {{act.border}}; border-radius: 9px; background: {{act.bg}}; color: {{act.fg}}; font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer">{{act.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="border: 1px solid #e1e6ee; border-radius: 12px; padding: 6px 18px">
+<div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: center; min-height: 40px; border-bottom: 1px solid #f1f4f8; font-size: 13.5px"><span style="color: #4a5568">Fabrikant</span><span>{{sel.maker}}</span></div>
+<div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: center; min-height: 40px; border-bottom: 1px solid #f1f4f8; font-size: 13.5px"><span style="color: #4a5568">Model</span><span>{{sel.model}}</span></div>
+<div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: center; min-height: 40px; border-bottom: 1px solid #f1f4f8; font-size: 13.5px"><span style="color: #4a5568">Hardware-ID</span><span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px">{{sel.hwid}}</span></div>
+<div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: center; min-height: 40px; border-bottom: 1px solid #f1f4f8; font-size: 13.5px"><span style="color: #4a5568">Driver</span><span>{{sel.driver}}</span></div>
+<div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: center; min-height: 40px; font-size: 13.5px"><span style="color: #4a5568">Laden</span><span>{{sel.load}}</span></div>
+</div>
+
+<div style="display: flex; align-items: center; gap: 16px; font-size: 13px">
+<a href="#" style="font-weight: 600; color: {{accent}}; text-decoration: none">Details kopiëren voor de helpdesk</a>
+<a href="#" style="font-weight: 600; color: {{accent}}; text-decoration: none">Logboek van dit apparaat</a>
+</div>
+</div>
+</div>
+
+<div style="height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-top: 1px solid #e6ebf2; font-size: 12px; color: #4a5568">
+<span>{{summary}}</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>Wijzigingen vragen om het beheerderswachtwoord</span>
+</div>
+</div>
+
+<div style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 48px; background: #1a2232; display: flex; align-items: center; gap: 4px; padding: 0 6px; box-sizing: border-box; color: #ffffff">
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px 0 12px; border: 0; border-radius: 8px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"></circle></svg><span>Start</span></button>
+<span style="width: 1px; height: 24px; background: #3a4558; margin: 0 6px"></span>
+<button class="hovd" type="button" aria-label="Verkenner" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #f2c46d; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+<button class="hovd" type="button" aria-label="Internet" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #8fb8ff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></button>
+<button class="hovd" type="button" aria-label="E-mail" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #6fd6c9; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></button>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; margin-left: 6px; border: 0; border-bottom: 3px solid {{accent}}; border-radius: 8px 8px 4px 4px; background: rgba(255,255,255,0.08); color: #ffffff; font: inherit; font-size: 13px; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c5cfdd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2M7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM9 9h6v6H9z"></path></svg>Apparaatbeheer</button>
+<span style="flex: 1"></span>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 0; border-radius: 16px; background: rgba(255,255,255,0.1); color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3ddc84"></span>3 diensten actief</button>
+<button class="hovd" type="button" aria-label="Wifi: verbonden" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></button>
+<button class="hovd" type="button" aria-label="Volume" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button class="hovd" type="button" aria-label="Batterij" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2"></path><rect x="5" y="10" width="9" height="4" rx="0.5" fill="currentColor" stroke="none"></rect></svg></button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px 0 8px; line-height: 1.25">
+<span style="font-size: 13px; font-weight: 600">15:42</span>
+<span style="font-size: 11.5px; color: #c5cfdd">15-11-2026</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { selected: 'fp', closed: { usb: true, input: true } };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const m = /^#?([0-9a-f]{6})$/i.exec(accent);
+    let soft = 'rgba(37,99,201,0.12)';
+    if (m) {
+      const n = parseInt(m[1], 16);
+      soft = 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',0.12)';
+    }
+    const ic = {
+      video: 'M5 4h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM8 20h8M12 16v4',
+      audio: 'M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13',
+      net: 'M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01',
+      store: 'M5 13h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zM5 13l2-8h10l2 8M17 16.5h.01',
+      cam: 'M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1zM8.5 13a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0-7 0',
+      print: 'M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z',
+      usb: 'M12 2v14M9 5l3-3 3 3M8 9v2l4 3M16 7v3l-4 3M10 18a2 2 0 1 0 4 0a2 2 0 1 0-4 0',
+      input: 'M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zM6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10'
+    };
+    const cats = [
+      { id: 'video', name: 'Beeldscherm en videokaarten', devices: [
+        { id: 'igpu', name: 'Intel Iris Xe Graphics', st: 'werkt', maker: 'Intel', model: 'Iris Xe Graphics (ingebouwd)', hwid: 'PCI 8086:9a49', driver: 'i915, ingebouwd in de kernel', load: 'Geladen: in gebruik voor het bureaublad' },
+        { id: 'dgpu', name: 'NVIDIA GeForce RTX 3050 Laptop', st: 'slaapt', maker: 'NVIDIA', model: 'GeForce RTX 3050 Laptop GPU', hwid: 'PCI 10de:25a2', driver: 'NVIDIA-driver van de fabrikant', load: 'Slaapt: gaat alleen aan voor games en zware programma’s' }
+      ] },
+      { id: 'audio', name: 'Geluid', devices: [
+        { id: 'snd', name: 'Realtek ALC256', st: 'slaapt', maker: 'Realtek', model: 'ALC256 audiocodec', hwid: 'PCI 8086:a0c8', driver: 'snd-hda-intel, ingebouwd in de kernel', load: 'Slaapt: laadt zodra een app geluid afspeelt' }
+      ] },
+      { id: 'net', name: 'Netwerk', devices: [
+        { id: 'wifi', name: 'Intel Wi-Fi 6 AX201', st: 'werkt', maker: 'Intel', model: 'Wi-Fi 6 AX201 160MHz', hwid: 'PCI 8086:a0f0', driver: 'iwlwifi, ingebouwd in de kernel', load: 'Geladen: verbonden met wifi' },
+        { id: 'bt', name: 'Bluetooth', st: 'uit', maker: 'Intel', model: 'AX201 Bluetooth', hwid: 'USB 8087:0026', driver: 'btusb, ingebouwd in de kernel', load: 'Niet geladen: uitgeschakeld' }
+      ] },
+      { id: 'store', name: 'Opslag', devices: [
+        { id: 'ssd', name: 'NVMe SSD 512 GB', st: 'werkt', maker: 'Samsung', model: 'NVMe SSD 512 GB', hwid: 'PCI 144d:a809', driver: 'nvme, ingebouwd in de kernel', load: 'Geladen: systeemschijf' }
+      ] },
+      { id: 'cam', name: 'Camera en biometrie', devices: [
+        { id: 'webcam', name: 'Ingebouwde webcam', st: 'slaapt', maker: 'Chicony', model: 'HD-webcam', hwid: 'USB 04f2:b6dd', driver: 'uvcvideo, ingebouwd in de kernel', load: 'Slaapt: laadt zodra een app de camera opent' },
+        { id: 'fp', name: 'Vingerafdrukscanner', st: 'mist', maker: 'Goodix', model: 'Vingerafdruksensor', hwid: 'USB 27c6:639c', driver: 'Geen', load: 'Niet geladen' }
+      ] },
+      { id: 'print', name: 'Printers', devices: [
+        { id: 'prn', name: 'Netwerkprinter (kantoor)', st: 'werkt', maker: 'HP', model: 'LaserJet', hwid: 'Netwerk 192.168.1.40', driver: 'Geen aparte driver nodig (IPP Everywhere)', load: 'Laadt alleen tijdens het printen' }
+      ] },
+      { id: 'usb', name: 'USB en poorten', devices: [
+        { id: 'usbc', name: 'USB 3.2-controller', st: 'werkt', maker: 'Intel', model: 'USB 3.2 xHCI-controller', hwid: 'PCI 8086:a0ed', driver: 'xhci_hcd, ingebouwd in de kernel', load: 'Geladen' },
+        { id: 'tb', name: 'Thunderbolt 4-controller', st: 'slaapt', maker: 'Intel', model: 'Thunderbolt 4', hwid: 'PCI 8086:9a1b', driver: 'thunderbolt, ingebouwd in de kernel', load: 'Slaapt: laadt als er iets wordt aangesloten' },
+        { id: 'sd', name: 'SD-kaartlezer', st: 'slaapt', maker: 'Realtek', model: 'SD-kaartlezer', hwid: 'PCI 10ec:525a', driver: 'rtsx_pci, ingebouwd in de kernel', load: 'Slaapt: laadt als er een kaart in gaat' }
+      ] },
+      { id: 'input', name: 'Toetsenbord en muis', devices: [
+        { id: 'kb', name: 'Ingebouwd toetsenbord', st: 'werkt', maker: 'Standaard', model: 'PS/2-toetsenbord', hwid: 'Serio 0001:0001', driver: 'atkbd, ingebouwd in de kernel', load: 'Geladen' },
+        { id: 'tp', name: 'Touchpad', st: 'werkt', maker: 'Synaptics', model: 'Precisie-touchpad', hwid: 'I2C 06cb:ce26', driver: 'i2c-hid, ingebouwd in de kernel', load: 'Geladen' }
+      ] }
+    ];
+    const S = {
+      werkt: { label: 'Werkt', bg: '#e8f5ee', fg: '#166534', dot: '#22a35a', box: '#f1f9f4', text: 'Dit apparaat werkt goed.' },
+      slaapt: { label: 'Slaapt', bg: '#eef2f7', fg: '#3d4b61', dot: '#7f8c9e', box: '#f6f8fb', text: 'Dit apparaat werkt. De driver slaapt en laadt pas als iets het apparaat gebruikt. Zo bespaart het systeem geheugen en energie.' },
+      mist: { label: 'Driver ontbreekt', bg: '#fdf3e1', fg: '#8a5a00', dot: '#d08a00', box: '#fdf6e8', text: 'Er is nog geen driver voor dit apparaat, dus het werkt nog niet. Je kunt gewoon inloggen met je wachtwoord. Zoek een driver om de scanner te gebruiken.' },
+      uit: { label: 'Uitgeschakeld', bg: '#f1f4f9', fg: '#4a5568', dot: '#b6c0ce', box: '#f6f8fb', text: 'Je hebt dit apparaat uitgeschakeld. Het gebruikt geen energie en apps kunnen het niet gebruiken.' }
+    };
+    const A = {
+      werkt: ['Driver bijwerken', 'Vorige driver terugzetten', 'Uitschakelen'],
+      slaapt: ['Driver bijwerken', 'Vorige driver terugzetten', 'Uitschakelen'],
+      mist: ['Driver automatisch zoeken', 'Kiezen uit de lijst', 'Driver van de fabrikant'],
+      uit: ['Inschakelen']
+    };
+    const rows = [];
+    let sel = null;
+    let total = 0, loaded = 0, sleeping = 0, missing = 0, off = 0;
+    cats.forEach((c) => {
+      const open = !this.state.closed[c.id];
+      const warn = c.devices.some((d) => d.st === 'mist');
+      rows.push({
+        isCat: true, isDev: false, name: c.name, icon: ic[c.id], open: open, warn: warn,
+        count: c.devices.length + (c.devices.length === 1 ? ' apparaat' : ' apparaten'),
+        chevron: open ? 'm6 9 6 6 6-6' : 'm9 6 6 6-6 6',
+        toggle: () => this.setState({ closed: Object.assign({}, this.state.closed, { [c.id]: open }) })
+      });
+      c.devices.forEach((d) => {
+        total += 1;
+        if (d.st === 'werkt') loaded += 1;
+        if (d.st === 'slaapt') sleeping += 1;
+        if (d.st === 'mist') missing += 1;
+        if (d.st === 'uit') off += 1;
+        const st = S[d.st];
+        const isSel = d.id === this.state.selected;
+        if (isSel) {
+          sel = {
+            name: d.name, cat: c.name, icon: ic[c.id], status: st.label, cBg: st.bg, cFg: st.fg, cDot: st.dot, boxBg: st.box, text: st.text,
+            maker: d.maker, model: d.model, hwid: d.hwid, driver: d.driver, load: d.load,
+            actions: A[d.st].map((label, i) => ({
+              label: label,
+              bg: i === 0 ? accent : '#ffffff', fg: i === 0 ? '#ffffff' : '#13243b', border: i === 0 ? accent : '#c9d2de'
+            }))
+          };
+        }
+        if (open) {
+          rows.push({
+            isCat: false, isDev: true, name: d.name, status: st.label, cBg: st.bg, cFg: st.fg, cDot: st.dot,
+            selected: isSel, bg: isSel ? soft : 'transparent', weight: isSel ? 700 : 500,
+            select: () => this.setState({ selected: d.id })
+          });
+        }
+      });
+    });
+    const summary = total + ' apparaten · ' + loaded + ' werken · ' + sleeping + ' slapen tot ze nodig zijn · ' + off + ' uitgeschakeld · ' + missing + ' driver ontbreekt';
+    return { accent: accent, accentSoft: soft, rows: rows, sel: sel, summary: summary };
+  }
+}
+</script>
+</body>
+</html>

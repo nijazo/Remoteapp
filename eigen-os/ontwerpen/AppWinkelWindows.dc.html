@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>App-winkel: Windows-programma’s</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+.hov:hover{background:rgba(37,99,201,0.09) !important}
+.hovd:hover{background:rgba(255,255,255,0.14) !important}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #d9e7f2; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<svg aria-hidden="true" width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0">
+<circle cx="1130" cy="220" r="78" fill="#f4cf9c"></circle>
+<path d="M0 520 C 180 440, 360 470, 520 430 C 700 385, 860 450, 1040 410 C 1200 375, 1330 420, 1440 395 L1440 900 L0 900 Z" fill="#a9c6dd"></path>
+<path d="M0 610 C 200 540, 380 600, 600 560 C 820 520, 980 600, 1180 560 C 1300 535, 1380 560, 1440 550 L1440 900 L0 900 Z" fill="#7aa3c8"></path>
+<path d="M0 700 C 240 640, 460 710, 720 670 C 960 635, 1180 700, 1440 650 L1440 900 L0 900 Z" fill="#4d7aa6"></path>
+<path d="M0 790 C 300 750, 560 800, 860 770 C 1100 748, 1300 780, 1440 760 L1440 900 L0 900 Z" fill="#2f5682"></path>
+</svg>
+
+<div style="position: absolute; left: 120px; top: 22px; width: 1200px; height: 822px; background: #ffffff; border-radius: 10px; box-shadow: 0 18px 48px rgba(10,20,40,0.28); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; flex-shrink: 0; background: #eef2f7; display: flex; align-items: center; justify-content: space-between; padding-left: 14px; border-bottom: 1px solid #dde3ec">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
+<span>App-winkel</span>
+</div>
+<div style="display: flex; height: 100%">
+<button class="hov" type="button" aria-label="Minimaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+<button class="hov" type="button" aria-label="Maximaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+<button class="hov" type="button" aria-label="Sluiten" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+</div>
+
+<div style="flex: 1; display: flex; min-height: 0">
+<div style="width: 220px; flex-shrink: 0; background: #f6f8fb; border-right: 1px solid #e6ebf2; padding: 16px 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px">
+<label style="height: 36px; border: 1px solid #d5dce6; border-radius: 8px; background: #ffffff; display: flex; align-items: center; gap: 8px; padding: 0 10px; margin-bottom: 10px; color: #4a5568">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Zoeken in de app-winkel</span>
+<input type="search" placeholder="Apps zoeken" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 13px; color: #13243b; width: 100%">
+</label>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m15.5 8.5-2 5-5 2 2-5z"></path></svg>Ontdekken</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg>Apps</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12a4 4 0 0 1 4 4v1a4 4 0 0 1-7 2.6L14 15h-4l-1 .6A4 4 0 0 1 2 13v-1a4 4 0 0 1 4-4z"></path><path d="M7 11v3M5.5 12.5h3"></path></svg>Spellen</button>
+<button type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: {{accentSoft}}; font: inherit; font-size: 13.5px; font-weight: 600; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 8h18M7 6h.01M10 6h.01"></path></svg>Windows-programma’s</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"></path></svg><span style="flex: 1">Updates</span><span style="min-width: 20px; height: 20px; border-radius: 10px; background: {{accent}}; color: #ffffff; font-size: 11.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; padding: 0 6px; box-sizing: border-box">2</span></button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Mijn apps</button>
+<span style="flex: 1"></span>
+<a href="#" style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 10px; background: #ffffff; border: 1px solid #e1e6ee; text-decoration: none">
+<span style="font-size: 13px; font-weight: 600; color: #13243b">Ontwikkelaar?</span>
+<span style="font-size: 12px; color: {{accent}}">Bied je eigen app aan</span>
+</a>
+</div>
+
+<div style="flex: 1; min-width: 0; padding: 24px 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Windows-programma’s</h1>
+<p style="margin: 0; font-size: 14.5px; color: #4a5568">Ze draaien gewoon naast je andere apps. Het label laat zien hoe goed elk programma werkt.</p>
+</div>
+
+<div style="display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 12px; background: {{accentSoft}}">
+<span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px; background: #ffffff; color: {{accent}}; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14.5px; font-weight: 700">Overstappen van Windows?</span>
+<span style="font-size: 13px; color: #3d4b61">Importeer de programmalijst van je oude pc. De winkel zoekt alles voor je op.</span>
+</span>
+<button type="button" style="height: 40px; padding: 0 18px; border: 0; border-radius: 10px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Lijst importeren</button>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px" role="group" aria-label="Filter">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="4">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.selected}}" style="height: 34px; padding: 0 14px; border: 1px solid {{f.border}}; border-radius: 17px; background: {{f.bg}}; color: {{f.fg}}; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{f.label}}</button>
+</sc-for>
+<span style="flex: 1"></span>
+<span style="font-size: 12.5px; color: #4a5568">{{countText}}</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{apps}}" as="item" hint-placeholder-count="6">
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 1px solid #e1e6ee; border-radius: 12px; background: #ffffff">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 48px; height: 48px; flex-shrink: 0; border-radius: 12px; background: {{item.tile}}; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{item.icon}}"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span style="font-size: 15px; font-weight: 700">{{item.name}}</span>
+<span style="font-size: 12.5px; color: #4a5568">{{item.maker}}</span>
+</span>
+</div>
+<span style="font-size: 13px; color: #3d4b61">{{item.desc}}</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="display: flex; align-items: center; gap: 5px; height: 24px; padding: 0 8px; border-radius: 12px; background: #eef2f7; color: #3d4b61; font-size: 11.5px; font-weight: 600"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 8h18"></path></svg>Windows</span>
+<sc-if value="{{item.linux}}" hint-placeholder-val="{{ true }}">
+<span style="display: flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 12px; background: #eef2f7; color: #3d4b61; font-size: 11.5px; font-weight: 600">+ Linux</span>
+</sc-if>
+<sc-if value="{{item.github}}" hint-placeholder-val="{{ true }}">
+<span style="display: flex; align-items: center; gap: 5px; height: 24px; padding: 0 8px; border-radius: 12px; background: #eef2f7; color: #3d4b61; font-size: 11.5px; font-weight: 600"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"></circle><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="8" r="2.5"></circle><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"></path></svg>Uit GitHub</span>
+</sc-if>
+<sc-if value="{{item.verified}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; gap: 5px; height: 24px; padding: 0 8px; border-radius: 12px; background: #e8f5ee; color: #166534; font-size: 11.5px; font-weight: 600"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>Gecontroleerd</span>
+</sc-if>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 6px; border-top: 1px solid #eef1f5">
+<span style="display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 13px; background: {{item.cBg}}; color: {{item.cFg}}; font-size: 12px; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{item.cDot}}"></span>{{item.compat}}</span>
+<button type="button" style="height: 34px; padding: 0 14px; border: 1px solid {{item.btnBorder}}; border-radius: 9px; background: {{item.btnBg}}; color: {{item.btnFg}}; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{item.btn}}</button>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 10px; background: #f6f8fb; font-size: 12.5px; color: #3d4b61">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+<span>Apps met “Uit GitHub” komen automatisch uit open-source projecten. Ze draaien in een sandbox, net als alle andere apps.</span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 48px; background: #1a2232; display: flex; align-items: center; gap: 4px; padding: 0 6px; box-sizing: border-box; color: #ffffff">
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px 0 12px; border: 0; border-radius: 8px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"></circle></svg><span>Start</span></button>
+<span style="width: 1px; height: 24px; background: #3a4558; margin: 0 6px"></span>
+<button class="hovd" type="button" aria-label="Verkenner" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #f2c46d; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+<button class="hovd" type="button" aria-label="Internet" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #8fb8ff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></button>
+<button class="hovd" type="button" aria-label="E-mail" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #6fd6c9; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></button>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; margin-left: 6px; border: 0; border-bottom: 3px solid {{accent}}; border-radius: 8px 8px 4px 4px; background: rgba(255,255,255,0.08); color: #ffffff; font: inherit; font-size: 13px; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8fb8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>App-winkel</button>
+<span style="flex: 1"></span>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 0; border-radius: 16px; background: rgba(255,255,255,0.1); color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3ddc84"></span>4 diensten actief</button>
+<button class="hovd" type="button" aria-label="Wifi: verbonden" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></button>
+<button class="hovd" type="button" aria-label="Volume" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button class="hovd" type="button" aria-label="Batterij" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2"></path><rect x="5" y="10" width="9" height="4" rx="0.5" fill="currentColor" stroke="none"></rect></svg></button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px 0 8px; line-height: 1.25">
+<span style="font-size: 13px; font-weight: 600">15:26</span>
+<span style="font-size: 11.5px; color: #c5cfdd">15-11-2026</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'alle' };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const m = /^#?([0-9a-f]{6})$/i.exec(accent);
+    let soft = 'rgba(37,99,201,0.12)';
+    if (m) {
+      const n = parseInt(m[1], 16);
+      soft = 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',0.12)';
+    }
+    const compat = {
+      perfect: { label: 'Werkt perfect', bg: '#e8f5ee', fg: '#166534', dot: '#22a35a' },
+      klein: { label: 'Kleine problemen', bg: '#fdf3e1', fg: '#8a5a00', dot: '#d08a00' },
+      niet: { label: 'Werkt niet', bg: '#fdecec', fg: '#9b1c1c', dot: '#c53030' },
+      test: { label: 'Nog niet getest', bg: '#eef2f7', fg: '#3d4b61', dot: '#7f8c9e' }
+    };
+    const all = [
+      { name: 'Tekstblok', maker: 'Open Tekst Project · Gratis', desc: 'Teksteditor voor code en notities', tile: '#2563c9', icon: 'M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h6', linux: true, github: true, verified: false, free: true, c: 'perfect', btn: 'Installeren' },
+      { name: 'Pakker', maker: 'Pakker-team · Gratis', desc: 'Zip- en 7z-bestanden in- en uitpakken', tile: '#0f766e', icon: 'M3 7h18v4H3zM5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8M10 15h4', linux: false, github: true, verified: false, free: true, c: 'perfect', btn: 'Installeren' },
+      { name: 'Boekhoud Plus', maker: 'Cijfer BV · Betaald', desc: 'Boekhouding voor zzp en mkb', tile: '#6d45b8', icon: 'M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 7h8v3H8zM8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01', linux: false, github: false, verified: true, free: false, c: 'klein', btn: 'Installeren' },
+      { name: 'FotoLab', maker: 'Lichtbeeld Studio · Gratis', desc: 'Foto’s bewerken met lagen', tile: '#b8501a', icon: 'M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM21 16l-5-5-9 9M7 10a2 2 0 1 0 4 0a2 2 0 1 0-4 0', linux: true, github: false, verified: true, free: true, c: 'perfect', btn: 'Installeren' },
+      { name: 'Racewereld Online', maker: 'Snelweg Games · Gratis', desc: 'Anti-cheat werkt alleen op Windows', tile: '#b4235a', icon: 'M6 8h12a4 4 0 0 1 4 4v1a4 4 0 0 1-7 2.6L14 15h-4l-1 .6A4 4 0 0 1 2 13v-1a4 4 0 0 1 4-4zM7 11v3M5.5 12.5h3M16 12h.01M18 13.5h.01', linux: false, github: false, verified: true, free: true, c: 'niet', btn: 'Meer info' },
+      { name: 'Schermklik', maker: 'Schermklik-gemeenschap · Gratis', desc: 'Schermafbeeldingen maken en delen', tile: '#4b5a70', icon: 'M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M9 12h6M12 9v6', linux: false, github: true, verified: false, free: true, c: 'test', btn: 'Proberen' }
+    ];
+    const f = this.state.filter;
+    const shown = all.filter((a) => f === 'alle' || (f === 'perfect' && a.c === 'perfect') || (f === 'github' && a.github) || (f === 'gratis' && a.free));
+    const apps = shown.map((a) => {
+      const st = compat[a.c];
+      const primary = a.btn !== 'Meer info';
+      return {
+        name: a.name, maker: a.maker, desc: a.desc, tile: a.tile, icon: a.icon,
+        linux: a.linux, github: a.github, verified: a.verified,
+        compat: st.label, cBg: st.bg, cFg: st.fg, cDot: st.dot,
+        btn: a.btn,
+        btnBg: primary ? accent : '#ffffff', btnFg: primary ? '#ffffff' : '#13243b', btnBorder: primary ? accent : '#c9d2de'
+      };
+    });
+    const defs = [
+      { id: 'alle', label: 'Alle' },
+      { id: 'perfect', label: 'Werkt perfect' },
+      { id: 'github', label: 'Uit GitHub' },
+      { id: 'gratis', label: 'Gratis' }
+    ];
+    const filters = defs.map((d) => {
+      const sel = d.id === f;
+      return {
+        label: d.label, selected: sel,
+        bg: sel ? '#13243b' : '#ffffff', fg: sel ? '#ffffff' : '#13243b', border: sel ? '#13243b' : '#c9d2de',
+        pick: () => this.setState({ filter: d.id })
+      };
+    });
+    return {
+      accent: accent,
+      accentSoft: soft,
+      apps: apps,
+      filters: filters,
+      countText: apps.length + (apps.length === 1 ? ' programma' : ' programma’s')
+    };
+  }
+}
+</script>
+</body>
+</html>

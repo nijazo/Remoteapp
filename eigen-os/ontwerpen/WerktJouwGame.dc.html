@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Werkt jouw game?</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #ffffff; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<header style="border-bottom: 1px solid #e6ebf2">
+<div style="max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
+<a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #13243b">
+<span style="width: 32px; height: 32px; border-radius: 50%; background: {{accent}}; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"></circle></svg></span>
+<span style="font-size: 17px; font-weight: 800">[Naam OS]</span>
+</a>
+<nav aria-label="Hoofdmenu" style="flex: 1; display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 14.5px; font-weight: 500">
+<a href="#" style="color: #3d4b61; text-decoration: none">Overstappen</a>
+<a href="#" style="color: #3d4b61; text-decoration: none">Functies</a>
+<a href="#" aria-current="page" style="color: #13243b; font-weight: 700; text-decoration: none; border-bottom: 2px solid {{accent}}; padding-bottom: 2px">Gaming</a>
+<a href="#" style="color: #3d4b61; text-decoration: none">Zakelijk</a>
+<a href="#" style="color: #3d4b61; text-decoration: none">Privacy</a>
+</nav>
+<a href="#" style="display: inline-flex; align-items: center; height: 42px; padding: 0 18px; border-radius: 10px; background: {{accent}}; color: #ffffff; font-size: 14.5px; font-weight: 700; text-decoration: none">Gratis downloaden</a>
+</div>
+</header>
+
+<section style="background: #eef4fb">
+<div style="max-width: 1120px; margin: 0 auto; padding: 56px 24px 48px; display: flex; flex-direction: column; gap: 18px">
+<h1 style="margin: 0; font-size: 48px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Werkt jouw game?</h1>
+<p style="margin: 0; max-width: 680px; font-size: 18px; line-height: 1.5; color: #3d4b61">Zoek je game of koppel je Steam-bibliotheek. Je ziet meteen wat werkt, vóórdat je overstapt.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px">
+<label style="flex: 1 1 360px; max-width: 560px; height: 52px; display: flex; align-items: center; gap: 10px; padding: 0 16px; border: 1px solid #c9d2de; border-radius: 12px; background: #ffffff; box-sizing: border-box; color: #4a5568">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Zoek een game</span>
+<input type="search" placeholder="Zoek een game, bijvoorbeeld Elden Ring" onInput="{{onSearch}}" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 16px; color: #13243b; width: 100%">
+</label>
+<button type="button" style="height: 52px; padding: 0 20px; border: 1px solid #13243b; border-radius: 12px; background: #ffffff; font: inherit; font-size: 15px; font-weight: 700; color: #13243b; cursor: pointer">Steam-bibliotheek koppelen</button>
+</div>
+<p style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: #3d4b61"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>We bewaren je bibliotheek niet en volgen je niet.</p>
+</div>
+</section>
+
+<section>
+<div style="max-width: 1120px; margin: 0 auto; padding: 36px 24px 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px">
+<h2 style="margin: 0; font-size: 22px; font-weight: 800">Jouw bibliotheek: {{total}} games</h2>
+<span style="font-size: 13.5px; color: #4a5568">Voorbeeld van een gekoppelde Steam-bibliotheek</span>
+</div>
+<div role="img" aria-label="{{barLabel}}" style="display: flex; gap: 2px; height: 14px; border-radius: 7px; overflow: hidden">
+<span style="width: {{wGood}}; background: #22a35a"></span>
+<span style="width: {{wPart}}; background: #d08a00"></span>
+<span style="width: {{wBad}}; background: #c53030"></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px">
+<span style="display: flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg><strong>{{nGood}}</strong> werken perfect</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a5a00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg><strong>{{nPart}}</strong> werken deels</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9b1c1c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6M15 9l-6 6"></path></svg><strong>{{nBad}}</strong> werken niet door anti-cheat</span>
+</div>
+</div>
+</section>
+
+<section>
+<div style="max-width: 1120px; margin: 0 auto; padding: 28px 24px 0; display: flex; flex-direction: column; gap: 14px">
+<div role="group" aria-label="Filter op status" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="4">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.selected}}" style="height: 38px; padding: 0 16px; border: 1px solid {{f.border}}; border-radius: 19px; background: {{f.bg}}; color: {{f.fg}}; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">{{f.label}}</button>
+</sc-for>
+</div>
+
+<div style="border: 1px solid #e1e6ee; border-radius: 14px; overflow: hidden">
+<sc-for list="{{games}}" as="g" hint-placeholder-count="8">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 16px 20px; border-bottom: 1px solid #eef1f5">
+<span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 10px; background: {{g.tile}}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800">{{g.letter}}</span>
+<span style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 16px; font-weight: 700">{{g.name}}</span>
+<span style="font-size: 13.5px; color: #4a5568">{{g.detail}}</span>
+</span>
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: 14px; background: {{g.cBg}}; color: {{g.cFg}}; font-size: 13px; font-weight: 700; white-space: nowrap"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{g.cDot}}"></span>{{g.compat}}</span>
+<span style="flex: 0 1 300px; font-size: 13.5px; color: #3d4b61">{{g.advice}}</span>
+</div>
+</sc-for>
+<sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 24px 20px; font-size: 15px; color: #3d4b61">Geen game gevonden. Staat jouw game er niet bij? Laat het ons weten via de stemlijst hieronder.</p>
+</sc-if>
+</div>
+<p style="margin: 0; font-size: 13px; color: #4a5568">“Werkt niet door anti-cheat” betekent: de maker van de game staat zijn anti-cheat alleen op Windows toe. Dat kan veranderen.</p>
+</div>
+</section>
+
+<section>
+<div style="max-width: 1120px; margin: 0 auto; padding: 40px 24px 56px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; padding: 32px; border-radius: 18px; background: #13243b; color: #ffffff">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-size: 26px; font-weight: 800">Gamer? Je verliest niets.</h2>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.5; color: #dbe4f0">De meeste games werken. Voor de rest houd je Windows ernaast en start je met één klik opnieuw, of je speelt via cloud gaming.</p>
+<a href="#" style="font-size: 14px; font-weight: 600; color: #ffffff">Mis je een game? Stem welke als eerste moet werken</a>
+</div>
+<a href="#" style="display: inline-flex; align-items: center; height: 50px; padding: 0 24px; border-radius: 12px; background: #ffffff; color: #13243b; font-size: 15.5px; font-weight: 800; text-decoration: none">Overstap-assistent downloaden</a>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"$preview":{"width":1440,"height":1480}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'alle', q: '' };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const C = {
+      goed: { label: 'Werkt perfect', bg: '#e8f5ee', fg: '#166534', dot: '#22a35a' },
+      deels: { label: 'Werkt deels', bg: '#fdf3e1', fg: '#8a5a00', dot: '#d08a00' },
+      niet: { label: 'Werkt niet: anti-cheat', bg: '#fdecec', fg: '#9b1c1c', dot: '#c53030' }
+    };
+    const all = [
+      { name: 'Elden Ring', tile: '#8a6d1f', c: 'goed', detail: 'Ook online', advice: 'Gewoon spelen via Steam.' },
+      { name: 'Cyberpunk 2077', tile: '#b4235a', c: 'goed', detail: 'Ook met raytracing op een geschikte videokaart', advice: 'Gewoon spelen via Steam.' },
+      { name: 'Baldur’s Gate 3', tile: '#6d45b8', c: 'goed', detail: 'Ook samen online spelen', advice: 'Gewoon spelen via Steam.' },
+      { name: 'Counter-Strike 2', tile: '#3d4b61', c: 'goed', detail: 'Eigen Linux-versie', advice: 'Gewoon spelen via Steam.' },
+      { name: 'Grand Theft Auto V', tile: '#0f766e', c: 'deels', detail: 'Verhaal werkt, GTA Online niet', advice: 'Online spelen: via Windows ernaast.' },
+      { name: 'Call of Duty: Warzone', tile: '#4b5a70', c: 'niet', detail: 'Ricochet-anti-cheat', advice: 'Via Windows ernaast of via cloud gaming.' },
+      { name: 'Battlefield 6', tile: '#b8501a', c: 'niet', detail: 'EA Javelin-anti-cheat', advice: 'Via Windows ernaast of via cloud gaming.' },
+      { name: 'Fortnite', tile: '#2563c9', c: 'niet', detail: 'Easy Anti-Cheat, door Epic niet aangezet voor Linux', advice: 'Via Windows ernaast of via cloud gaming.' }
+    ];
+    const lib = { goed: 41, deels: 4, niet: 3 };
+    const total = lib.goed + lib.deels + lib.niet;
+    const pct = (n) => ((n / total) * 100).toFixed(1) + '%';
+    const f = this.state.filter;
+    const q = this.state.q.trim().toLowerCase();
+    const games = all
+      .filter((g) => f === 'alle' || g.c === f)
+      .filter((g) => !q || g.name.toLowerCase().indexOf(q) !== -1)
+      .map((g) => {
+        const st = C[g.c];
+        return { name: g.name, letter: g.name.charAt(0), tile: g.tile, detail: g.detail, advice: g.advice, compat: st.label, cBg: st.bg, cFg: st.fg, cDot: st.dot };
+      });
+    const defs = [
+      { id: 'alle', label: 'Alle' },
+      { id: 'goed', label: 'Werkt perfect' },
+      { id: 'deels', label: 'Werkt deels' },
+      { id: 'niet', label: 'Werkt niet' }
+    ];
+    const filters = defs.map((d) => {
+      const sel = d.id === f;
+      return {
+        label: d.label, selected: sel,
+        bg: sel ? '#13243b' : '#ffffff', fg: sel ? '#ffffff' : '#13243b', border: sel ? '#13243b' : '#c9d2de',
+        pick: () => this.setState({ filter: d.id })
+      };
+    });
+    return {
+      accent: accent,
+      total: total,
+      nGood: lib.goed, nPart: lib.deels, nBad: lib.niet,
+      wGood: pct(lib.goed), wPart: pct(lib.deels), wBad: pct(lib.niet),
+      barLabel: lib.goed + ' van de ' + total + ' games werken perfect, ' + lib.deels + ' deels en ' + lib.niet + ' niet',
+      filters: filters,
+      games: games,
+      empty: games.length === 0,
+      onSearch: (e) => this.setState({ q: e && e.target ? e.target.value : '' })
+    };
+  }
+}
+</script>
+</body>
+</html>

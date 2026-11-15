@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Batterijoverzicht</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+.hov:hover{background:rgba(37,99,201,0.09) !important}
+.hovd:hover{background:rgba(255,255,255,0.14) !important}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #d9e7f2; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<svg aria-hidden="true" width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0">
+<circle cx="1130" cy="220" r="78" fill="#f4cf9c"></circle>
+<path d="M0 520 C 180 440, 360 470, 520 430 C 700 385, 860 450, 1040 410 C 1200 375, 1330 420, 1440 395 L1440 900 L0 900 Z" fill="#a9c6dd"></path>
+<path d="M0 610 C 200 540, 380 600, 600 560 C 820 520, 980 600, 1180 560 C 1300 535, 1380 560, 1440 550 L1440 900 L0 900 Z" fill="#7aa3c8"></path>
+<path d="M0 700 C 240 640, 460 710, 720 670 C 960 635, 1180 700, 1440 650 L1440 900 L0 900 Z" fill="#4d7aa6"></path>
+<path d="M0 790 C 300 750, 560 800, 860 770 C 1100 748, 1300 780, 1440 760 L1440 900 L0 900 Z" fill="#2f5682"></path>
+</svg>
+
+<div style="position: absolute; left: 140px; top: 22px; width: 1160px; height: 822px; background: #ffffff; border-radius: 10px; box-shadow: 0 18px 48px rgba(10,20,40,0.28); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; flex-shrink: 0; background: #eef2f7; display: flex; align-items: center; justify-content: space-between; padding-left: 14px; border-bottom: 1px solid #dde3ec">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>
+<span>Instellingen</span>
+</div>
+<div style="display: flex; height: 100%">
+<button class="hov" type="button" aria-label="Minimaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+<button class="hov" type="button" aria-label="Maximaliseren" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+<button class="hov" type="button" aria-label="Sluiten" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+</div>
+
+<div style="flex: 1; display: flex; min-height: 0">
+<div style="width: 250px; flex-shrink: 0; background: #f6f8fb; border-right: 1px solid #e6ebf2; padding: 16px 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 6px 8px 14px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: {{accent}}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">G</span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600">Gebruiker</span><span style="font-size: 12px; color: #4a5568">Lokaal account</span></span>
+</div>
+<label style="height: 36px; border: 1px solid #d5dce6; border-radius: 8px; background: #ffffff; display: flex; align-items: center; gap: 8px; padding: 0 10px; margin-bottom: 10px; color: #4a5568">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Zoeken in instellingen</span>
+<input type="search" placeholder="Instelling zoeken" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 13px; color: #13243b; width: 100%">
+</label>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>Systeem</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg>Netwerk en internet</button>
+<button type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: {{accentSoft}}; font: inherit; font-size: 13.5px; font-weight: 600; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2M6 10v4M9.5 10v4"></path></svg>Batterij en energie</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>Privacy</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg>Apps</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Accounts</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path></svg>Beveiliging</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"></path></svg>Herstel en versleuteling</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Over dit systeem</button>
+</div>
+
+<div style="flex: 1; min-width: 0; padding: 24px 36px; display: flex; flex-direction: column; gap: 16px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Batterij en energie</h1>
+
+<div style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 16px">
+<div style="display: flex; align-items: center; gap: 18px; padding: 18px 20px; border: 1px solid #e1e6ee; border-radius: 12px">
+<svg role="img" aria-label="Batterij 64 procent" width="64" height="34" viewBox="0 0 64 34"><rect x="1" y="1" width="56" height="32" rx="6" fill="none" stroke="#3d4b61" stroke-width="2"></rect><rect x="58" y="11" width="5" height="12" rx="2" fill="#3d4b61"></rect><rect x="5" y="5" width="31" height="24" rx="3" fill="{{accent}}"></rect></svg>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 34px; font-weight: 700; line-height: 1">64%</span>
+<span style="font-size: 13px; color: #3d4b61">Nog ongeveer {{remaining}}</span>
+<span style="align-self: flex-start; display: flex; align-items: center; gap: 5px; margin-top: 2px; font-size: 11.5px; font-weight: 600; color: #3d4b61; background: #eef2f7; border-radius: 10px; padding: 3px 9px">Op batterij sinds 08:00</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 16px 20px; border: 1px solid #e1e6ee; border-radius: 12px">
+<h2 style="margin: 0; font-size: 15px; font-weight: 700">Energiestand</h2>
+<div role="group" aria-label="Energiestand" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 10px; background: #eef2f7">
+<sc-for list="{{modes}}" as="m" hint-placeholder-count="4">
+<button type="button" onClick="{{m.pick}}" aria-pressed="{{m.selected}}" style="height: 36px; border: 0; border-radius: 8px; background: {{m.bg}}; box-shadow: {{m.shadow}}; font: inherit; font-size: 13px; font-weight: 600; color: {{m.fg}}; cursor: pointer">{{m.label}}</button>
+</sc-for>
+</div>
+<span style="font-size: 13px; color: #3d4b61">{{modeText}}</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 20px 10px; border: 1px solid #e1e6ee; border-radius: 12px">
+<div style="display: flex; align-items: baseline; justify-content: space-between">
+<h2 style="margin: 0; font-size: 15px; font-weight: 700">Batterijniveau, laatste 12 uur</h2>
+<span style="font-size: 12px; color: #4a5568">Grijs vlak: aan de lader</span>
+</div>
+<svg role="img" aria-label="Batterijniveau: 100 procent aan de lader tot 08:00, daarna geleidelijk gedaald naar 64 procent om 15:30" width="806" height="134" viewBox="0 0 806 134">
+<rect x="36" y="10" width="304" height="100" fill="#eef2f7"></rect>
+<line x1="36" y1="10" x2="796" y2="10" stroke="#e1e6ee" stroke-width="1"></line>
+<line x1="36" y1="60" x2="796" y2="60" stroke="#e1e6ee" stroke-width="1"></line>
+<line x1="36" y1="110" x2="796" y2="110" stroke="#c9d2de" stroke-width="1"></line>
+<text x="30" y="14" text-anchor="end" font-size="11" fill="#4a5568">100%</text>
+<text x="30" y="64" text-anchor="end" font-size="11" fill="#4a5568">50%</text>
+<text x="30" y="114" text-anchor="end" font-size="11" fill="#4a5568">0%</text>
+<path d="M36 10 L340 10 L400.8 14 L461.6 19 L522.4 23 L583.2 26 L644 30 L704.8 37 L765.6 44 L796 46 L796 110 L36 110 Z" fill="{{accentSoft}}"></path>
+<path d="M36 10 L340 10 L400.8 14 L461.6 19 L522.4 23 L583.2 26 L644 30 L704.8 37 L765.6 44 L796 46" fill="none" stroke="{{accent}}" stroke-width="2" stroke-linejoin="round"></path>
+<circle cx="796" cy="46" r="5" fill="{{accent}}" stroke="#ffffff" stroke-width="2"></circle>
+<text x="786" y="34" text-anchor="end" font-size="11.5" font-weight="700" fill="#13243b">Nu 64%</text>
+<text x="36" y="128" font-size="11" fill="#4a5568">03:00</text>
+<text x="218" y="128" text-anchor="middle" font-size="11" fill="#4a5568">06:00</text>
+<text x="401" y="128" text-anchor="middle" font-size="11" fill="#4a5568">09:00</text>
+<text x="583" y="128" text-anchor="middle" font-size="11" fill="#4a5568">12:00</text>
+<text x="766" y="128" text-anchor="middle" font-size="11" fill="#4a5568">15:00</text>
+</svg>
+</div>
+
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 20px; border: 1px solid #e1e6ee; border-radius: 12px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px">
+<h2 style="margin: 0; font-size: 15px; font-weight: 700">Verbruik per app</h2>
+<span style="font-size: 12px; color: #4a5568">Sinds loskoppelen om 08:00</span>
+</div>
+<sc-for list="{{apps}}" as="a" hint-placeholder-count="6">
+<div title="{{a.name}}: {{a.share}}% van het verbruik" style="display: flex; flex-direction: column; gap: 4px; padding: 4px 0">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="font-size: 13.5px; font-weight: 600">{{a.name}}</span>
+<span style="font-size: 12px; color: #4a5568">{{a.note}}</span>
+<span style="flex: 1"></span>
+<span style="font-size: 13px; font-weight: 600">{{a.share}}%</span>
+</div>
+<div style="height: 6px; border-radius: 3px; background: #eef2f7"><div style="width: {{a.width}}; height: 6px; border-radius: 3px; background: {{accent}}"></div></div>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; padding: 12px 16px; border: 1px solid #e1e6ee; border-radius: 12px">
+<h2 style="margin: 0 0 4px; font-size: 15px; font-weight: 700">Automatisch besparen</h2>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; height: 40px; border-bottom: 1px solid #f1f4f8">
+<span style="font-size: 13px">Extra zuinig onder 20%</span>
+<button type="button" role="switch" aria-checked="true" aria-label="Extra zuinig onder 20%" style="flex-shrink: 0; width: 40px; height: 22px; border-radius: 11px; border: 0; padding: 0; background: {{accent}}; position: relative; cursor: pointer"><span style="position: absolute; top: 3px; left: 21px; width: 16px; height: 16px; border-radius: 50%; background: #ffffff"></span></button>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; height: 40px; border-bottom: 1px solid #f1f4f8">
+<span style="font-size: 13px">Laden tot 80% (gezonde batterij)</span>
+<button type="button" role="switch" aria-checked="true" aria-label="Laden tot 80%" style="flex-shrink: 0; width: 40px; height: 22px; border-radius: 11px; border: 0; padding: 0; background: {{accent}}; position: relative; cursor: pointer"><span style="position: absolute; top: 3px; left: 21px; width: 16px; height: 16px; border-radius: 50%; background: #ffffff"></span></button>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; height: 40px; border-bottom: 1px solid #f1f4f8">
+<span style="font-size: 13px">Losse videokaart alleen voor games</span>
+<button type="button" role="switch" aria-checked="true" aria-label="Losse videokaart alleen voor games" style="flex-shrink: 0; width: 40px; height: 22px; border-radius: 11px; border: 0; padding: 0; background: {{accent}}; position: relative; cursor: pointer"><span style="position: absolute; top: 3px; left: 21px; width: 16px; height: 16px; border-radius: 50%; background: #ffffff"></span></button>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; height: 40px">
+<span style="font-size: 13px">Updates alleen aan de lader</span>
+<button type="button" role="switch" aria-checked="true" aria-label="Updates alleen aan de lader" style="flex-shrink: 0; width: 40px; height: 22px; border-radius: 11px; border: 0; padding: 0; background: {{accent}}; position: relative; cursor: pointer"><span style="position: absolute; top: 3px; left: 21px; width: 16px; height: 16px; border-radius: 50%; background: #ffffff"></span></button>
+</div>
+</div>
+<div style="display: flex; gap: 10px; padding: 12px 14px; border-radius: 12px; background: #fdf3e1; border: 1px solid #f3dcae">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a5a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg>
+<span style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 700; color: #5c3d00">Schermklik is bevroren</span>
+<span style="font-size: 12.5px; line-height: 1.4; color: #5c3d00">De app wilde op de achtergrond blijven draaien, maar heeft daar geen toestemming voor.</span>
+<a href="#" style="font-size: 12.5px; font-weight: 600; color: #5c3d00">Toestemming geven</a>
+</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 48px; background: #1a2232; display: flex; align-items: center; gap: 4px; padding: 0 6px; box-sizing: border-box; color: #ffffff">
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px 0 12px; border: 0; border-radius: 8px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"></circle></svg><span>Start</span></button>
+<span style="width: 1px; height: 24px; background: #3a4558; margin: 0 6px"></span>
+<button class="hovd" type="button" aria-label="Verkenner" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #f2c46d; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+<button class="hovd" type="button" aria-label="Internet" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #8fb8ff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></button>
+<button class="hovd" type="button" aria-label="E-mail" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #6fd6c9; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></button>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; margin-left: 6px; border: 0; border-bottom: 3px solid {{accent}}; border-radius: 8px 8px 4px 4px; background: rgba(255,255,255,0.08); color: #ffffff; font: inherit; font-size: 13px; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c5cfdd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>Instellingen — Batterij</button>
+<span style="flex: 1"></span>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 0; border-radius: 16px; background: rgba(255,255,255,0.1); color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3ddc84"></span>3 diensten actief</button>
+<button class="hovd" type="button" aria-label="Wifi: verbonden" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></button>
+<button class="hovd" type="button" aria-label="Volume" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button class="hovd" type="button" aria-label="Batterij: 64 procent" style="display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 8px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2"></path><rect x="5" y="10" width="7.5" height="4" rx="0.5" fill="currentColor" stroke="none"></rect></svg>64%</button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px 0 8px; line-height: 1.25">
+<span style="font-size: 13px; font-weight: 600">15:30</span>
+<span style="font-size: 11.5px; color: #c5cfdd">15-11-2026</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { mode: 'auto' };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const m = /^#?([0-9a-f]{6})$/i.exec(accent);
+    let soft = 'rgba(37,99,201,0.12)';
+    if (m) {
+      const n = parseInt(m[1], 16);
+      soft = 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',0.12)';
+    }
+    const defs = [
+      { id: 'auto', label: 'Automatisch', text: 'Zuinig op batterij, gebalanceerd aan de lader. Aanbevolen. Nu: zuinig.', time: '5 u 20 min' },
+      { id: 'zuinig', label: 'Zuinig', text: 'Langste batterijduur. Processor en scherm in spaarstand.', time: '5 u 20 min' },
+      { id: 'balans', label: 'Gebalanceerd', text: 'Goede balans tussen snelheid en batterijduur.', time: '4 u 30 min' },
+      { id: 'snel', label: 'Prestaties', text: 'Maximale snelheid. De batterij gaat sneller leeg.', time: '3 u 10 min' }
+    ];
+    const cur = defs.find((d) => d.id === this.state.mode) || defs[0];
+    const modes = defs.map((d) => {
+      const sel = d.id === this.state.mode;
+      return {
+        label: d.label, selected: sel,
+        bg: sel ? '#ffffff' : 'transparent', fg: sel ? '#13243b' : '#3d4b61',
+        shadow: sel ? '0 1px 3px rgba(19,36,59,0.18)' : 'none',
+        pick: () => this.setState({ mode: d.id })
+      };
+    });
+    const list = [
+      { name: 'Firefox', note: 'Op de voorgrond', share: 34 },
+      { name: 'Office', note: 'Windows-programma', share: 22 },
+      { name: 'Vergaderen', note: 'Videogesprek, camera aan', share: 18 },
+      { name: 'Systeem en bureaublad', note: 'Scherm, wifi, broker', share: 12 },
+      { name: 'Klankbord', note: 'Achtergrond, met toestemming', share: 8 },
+      { name: 'Overig', note: '4 apps', share: 6 }
+    ];
+    const max = 34;
+    const apps = list.map((a) => ({ name: a.name, note: a.note, share: a.share, width: Math.round((a.share / max) * 100) + '%' }));
+    return { accent: accent, accentSoft: soft, modes: modes, modeText: cur.text, remaining: cur.time, apps: apps };
+  }
+}
+</script>
+</body>
+</html>
