@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Webbescherming</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>{{t.docTitle}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+.hov:hover{background:rgba(37,99,201,0.09) !important}
+.hovd:hover{background:rgba(255,255,255,0.14) !important}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #d9e7f2; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<svg aria-hidden="true" width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0">
+<circle cx="1270" cy="200" r="70" fill="#f4cf9c"></circle>
+<path d="M0 520 C 180 440, 360 470, 520 430 C 700 385, 860 450, 1040 410 C 1200 375, 1330 420, 1440 395 L1440 900 L0 900 Z" fill="#a9c6dd"></path>
+<path d="M0 610 C 200 540, 380 600, 600 560 C 820 520, 980 600, 1180 560 C 1300 535, 1380 560, 1440 550 L1440 900 L0 900 Z" fill="#7aa3c8"></path>
+<path d="M0 700 C 240 640, 460 710, 720 670 C 960 635, 1180 700, 1440 650 L1440 900 L0 900 Z" fill="#4d7aa6"></path>
+<path d="M0 790 C 300 750, 560 800, 860 770 C 1100 748, 1300 780, 1440 760 L1440 900 L0 900 Z" fill="#2f5682"></path>
+</svg>
+
+<div role="application" aria-label="{{t.taskTitle}}" style="position: absolute; left: 24px; top: 20px; width: 1046px; height: 826px; background: #ffffff; border-radius: 10px; box-shadow: 0 18px 48px rgba(10,20,40,0.28); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 44px; flex-shrink: 0; background: #e6ecf3; display: flex; align-items: flex-end; justify-content: space-between; padding-left: 10px">
+<div style="display: flex; align-items: flex-end; gap: 6px; height: 100%">
+<div style="display: flex; align-items: center; gap: 8px; width: 290px; height: 36px; padding: 0 8px 0 12px; box-sizing: border-box; background: #ffffff; border-radius: 9px 9px 0 0; font-size: 13px; font-weight: 600">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b42318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M12 8v5M12 16h.01"></path></svg><span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{t.tab}}</span>
+<button class="hov" type="button" aria-label="{{t.closeTab}}" style="width: 22px; height: 22px; border: 0; border-radius: 6px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+<button class="hov" type="button" aria-label="{{t.newTab}}" style="width: 30px; height: 30px; margin-bottom: 3px; border: 0; border-radius: 8px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
+</div>
+<div style="display: flex; height: 100%; align-self: stretch">
+<button class="hov" type="button" aria-label="{{t.minimize}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path></svg></button>
+<button class="hov" type="button" aria-label="{{t.maximize}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+<button class="hov" type="button" aria-label="{{t.close}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+</div>
+<div style="height: 50px; flex-shrink: 0; display: flex; align-items: center; gap: 4px; padding: 0 10px; border-bottom: 1px solid #e3e8ef">
+<button class="hov" type="button" aria-label="{{t.back}}" style="width: 34px; height: 34px; border: 0; border-radius: 8px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button class="hov" type="button" aria-label="{{t.forward}}" style="width: 34px; height: 34px; border: 0; border-radius: 8px; background: transparent; color: #a0abba; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+<button class="hov" type="button" aria-label="{{t.reload}}" style="width: 34px; height: 34px; border: 0; border-radius: 8px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 4v7h-7"></path></svg></button>
+<div style="flex: 1; height: 36px; margin: 0 6px; display: flex; align-items: center; gap: 10px; padding: 0 6px; border-radius: 18px; background: #f1f4f8">
+<span style="display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 11px; border-radius: 13px; background: #fdecea; color: #b42318; font-size: 12.5px; font-weight: 700"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M12 8v5M12 16h.01"></path></svg>{{t.addrBlocked}}</span>
+<span style="font-size: 13.5px; color: #6b7686"><span style="color: #13243b">deals-shop.example</span>/offer</span>
+</div>
+<button class="hov" type="button" aria-label="{{t.avShort}}" style="width: 34px; height: 34px; border: 0; border-radius: 8px; background: transparent; color: #166534; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m8.8 12.2 2.3 2.3 4.3-4.6"></path></svg></button>
+<button class="hov" type="button" aria-label="{{t.menu}}" style="width: 34px; height: 34px; border: 0; border-radius: 8px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h.01M12 12h.01M12 18h.01"></path></svg></button>
+</div>
+
+<main style="flex: 1; min-height: 0; background: linear-gradient(180deg, #fdf3f1 0%, #fbf8f7 55%, #f7f9fb 100%); display: flex; justify-content: center">
+<div style="width: 760px; padding: 30px 0 0; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 18px">
+<span style="width: 72px; height: 72px; flex-shrink: 0; border-radius: 50%; background: #b42318; color: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 7px rgba(180,35,24,0.12)"><svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M12 8v5M12 16h.01"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 700; color: #b42318">{{t.label}}</span>
+<h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.01em">{{t.title}}</h1>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #2d3a4e"><strong>deals-shop.example</strong> {{t.lead}}</p>
+<div style="border: 1px solid #ecd3cf; border-radius: 12px; background: #ffffff; overflow: hidden">
+<div style="padding: 10px 18px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; color: #6b4a45; background: #fbf1ef">{{t.details}}</div>
+<div style="display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 11px 18px; border-top: 1px solid #f1e1de; font-size: 13.5px; line-height: 1.45"><span style="color: #6b4a45; font-weight: 600">{{t.dWebsite}}</span><span style="color: #13243b">deals-shop.example</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 11px 18px; border-top: 1px solid #f1e1de; font-size: 13.5px; line-height: 1.45"><span style="color: #6b4a45; font-weight: 600">{{t.dFound}}</span><span style="color: #13243b">{{t.dFoundV}}</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 11px 18px; border-top: 1px solid #f1e1de; font-size: 13.5px; line-height: 1.45"><span style="color: #6b4a45; font-weight: 600">{{t.dWhen}}</span><span style="color: #13243b">{{t.dWhenV}}</span></div>
+<div style="display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 11px 18px; border-top: 1px solid #f1e1de; font-size: 13.5px; line-height: 1.45"><span style="color: #6b4a45; font-weight: 600">{{t.dPc}}</span><span style="color: #13243b"><span style="display: inline-flex; align-items: center; gap: 6px; color: #166534; font-weight: 600"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>{{t.dPcV}}</span></span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 15.5px; font-weight: 700">{{t.stepsTitle}}</h2>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border: 1px solid #e1e6ee; border-radius: 12px; background: #ffffff"><span style="display: flex; align-items: center; gap: 9px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #b42318; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700">1</span><span style="font-size: 14.5px; font-weight: 700">{{t.s1T}}</span></span><span style="font-size: 13px; line-height: 1.45; color: #3d4b61">{{t.s1S}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border: 1px solid #e1e6ee; border-radius: 12px; background: #ffffff"><span style="display: flex; align-items: center; gap: 9px"><span style="width: 26px; height: 26px; border-radius: 50%; background: {{accent}}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700">2</span><span style="font-size: 14.5px; font-weight: 700">{{t.s2T}}</span></span><span style="font-size: 13px; line-height: 1.45; color: #3d4b61">{{t.s2S}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border: 1px solid #e1e6ee; border-radius: 12px; background: #ffffff"><span style="display: flex; align-items: center; gap: 9px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #166534; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700">3</span><span style="font-size: 14.5px; font-weight: 700">{{t.s3T}}</span></span><span style="font-size: 13px; line-height: 1.45; color: #3d4b61">{{t.s3S}}</span></div>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; margin-top: 2px">
+<button type="button" style="height: 42px; padding: 0 22px; border: 0; border-radius: 10px; background: {{accent}}; font: inherit; font-size: 14px; font-weight: 600; color: #ffffff; cursor: pointer">{{t.back}}</button>
+<button class="hov" type="button" style="height: 42px; padding: 0 16px; border: 1px solid #c9d2de; border-radius: 10px; background: #ffffff; font: inherit; font-size: 13.5px; font-weight: 600; color: #13243b; cursor: pointer">{{t.recheck}}</button>
+<span style="flex: 1"></span>
+<a href="#" style="font-size: 13px; font-weight: 600; color: {{accent}}; text-decoration: none">{{t.report}}</a>
+</div>
+<p style="margin: 6px 0 0; display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #4a5568"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m8.8 12.2 2.3 2.3 4.3-4.6"></path></svg>{{t.foot}}</p>
+</div>
+</main>
+</div>
+
+<!-- Notification: another site is clean again -->
+<div role="status" style="position: absolute; left: 1090px; bottom: 66px; width: 330px; background: #ffffff; border-radius: 12px; box-shadow: 0 14px 40px rgba(10,20,40,0.30); overflow: hidden">
+<div style="display: flex; align-items: center; gap: 8px; padding: 11px 12px 0 14px; font-size: 12px; color: #4a5568">
+<span style="color: #166534; display: flex"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m8.8 12.2 2.3 2.3 4.3-4.6"></path></svg></span><span style="font-weight: 600; color: #13243b">{{t.avShort}}</span><span>· 09:52</span><span style="flex: 1"></span>
+<button class="hov" type="button" aria-label="{{t.close}}" style="width: 24px; height: 24px; border: 0; border-radius: 6px; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+<div style="display: flex; gap: 12px; padding: 10px 16px 16px 14px">
+<span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; background: #e3f3e9; color: #166534; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 5px">
+<span style="font-size: 14.5px; font-weight: 700">{{t.tTitle}}</span>
+<span style="font-size: 13px; line-height: 1.45; color: #3d4b61"><strong style="color: #13243b">news-site.example</strong> {{t.tText}}</span>
+<span style="display: flex; gap: 8px; margin-top: 6px">
+<button type="button" style="height: 34px; padding: 0 14px; border: 0; border-radius: 8px; background: {{accent}}; font: inherit; font-size: 13px; font-weight: 600; color: #ffffff; cursor: pointer">{{t.tOpen}}</button>
+<button class="hov" type="button" style="height: 34px; padding: 0 12px; border: 1px solid #c9d2de; border-radius: 8px; background: #ffffff; font: inherit; font-size: 13px; font-weight: 600; color: #13243b; cursor: pointer">{{t.tLater}}</button>
+</span>
+</div>
+</div>
+</div>
+
+<div style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 48px; background: #1a2232; display: flex; align-items: center; gap: 4px; padding: 0 6px; box-sizing: border-box; color: #ffffff">
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px 0 12px; border: 0; border-radius: 8px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 64 64"><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-dasharray="99 33" transform="rotate(-30 32 32)"></circle><circle cx="37.4" cy="11.7" r="7" fill="#F5A524"></circle></svg><span>{{t.start}}</span></button>
+<span style="width: 1px; height: 24px; background: #3a4558; margin: 0 6px"></span>
+<button class="hovd" type="button" aria-label="{{t.explorer}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #f2c46d; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.internet}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #8fb8ff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.email}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #6fd6c9; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></button>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; margin-left: 6px; border: 0; border-bottom: 3px solid {{accent}}; border-radius: 8px 8px 4px 4px; background: rgba(255,255,255,0.08); color: #ffffff; font: inherit; font-size: 13px; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8fb8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg>{{t.taskTitle}}</button>
+<span style="flex: 1"></span>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 0; border-radius: 16px; background: rgba(255,255,255,0.1); color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3ddc84"></span>{{t.services}}</button>
+<button class="hovd" type="button" aria-label="{{t.wifi}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.volume}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.battery}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2"></path><rect x="5" y="10" width="9" height="4" rx="0.5" fill="currentColor" stroke="none"></rect></svg></button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px 0 8px; line-height: 1.25">
+<span style="font-size: 13px; font-weight: 600">09:52</span>
+<span style="font-size: 11.5px; color: #c5cfdd">{{t.date}}</span>
+</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"lang":{"editor":"select","default":"nl","options":["en","nl"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const lang = this.props.lang === 'nl' ? 'nl' : 'en';
+    const T = {
+      en: {
+        docTitle: 'Web protection', minimize: 'Minimize', maximize: 'Maximize', close: 'Close', closeTab: 'Close tab', newTab: 'New tab',
+        back: 'Back to safety', forward: 'Forward', reload: 'Reload', menu: 'Menu',
+        tab: 'Website blocked', addrBlocked: 'Blocked', avShort: 'IT DeXt Antivirus',
+        label: 'IT DeXt Antivirus', title: 'This website has been blocked',
+        lead: 'contains JavaScript that can harm your computer. IT DeXt Antivirus stopped it automatically, before it could run.',
+        details: 'DETAILS', dWebsite: 'Website', dFound: 'What was found', dFoundV: 'Harmful JavaScript that tries to install software without your permission',
+        dWhen: 'When', dWhenV: 'Today 09:41 · blocked automatically', dPc: 'Your computer', dPcV: 'Safe. Nothing was run.',
+        stepsTitle: 'What happens now?',
+        s1T: 'Blocked', s1S: 'The harmful script was stopped. Nothing ran on your computer.',
+        s2T: 'Checked again', s2S: 'IT DeXt checks the website again every hour.',
+        s3T: 'Open again', s3S: 'As soon as the website is clean, you can visit it again. You get a message.',
+        recheck: 'Check again now', foot: 'Web protection is part of IT DeXt Antivirus, built into LuxyOS and free. It works in every browser.', report: 'Is this a mistake? Report it',
+        tTitle: 'Website is safe again', tText: 'was blocked yesterday. The harmful script has been removed, so you can visit it again.',
+        tOpen: 'Open website', tLater: 'Later',
+        start: 'Start', explorer: 'Explorer', internet: 'Internet', email: 'Email', taskTitle: 'Internet — Blocked website',
+        services: '3 services running', wifi: 'Wi-Fi: connected', volume: 'Volume', battery: 'Battery', date: '16 Nov 2026'
+      },
+      nl: {
+        docTitle: 'Webbescherming', minimize: 'Minimaliseren', maximize: 'Maximaliseren', close: 'Sluiten', closeTab: 'Tabblad sluiten', newTab: 'Nieuw tabblad',
+        back: 'Terug naar veilig', forward: 'Vooruit', reload: 'Vernieuwen', menu: 'Menu',
+        tab: 'Website geblokkeerd', addrBlocked: 'Geblokkeerd', avShort: 'IT DeXt Antivirus',
+        label: 'IT DeXt Antivirus', title: 'Deze website is geblokkeerd',
+        lead: 'bevat JavaScript dat je computer kan beschadigen. IT DeXt Antivirus heeft het automatisch tegengehouden, voordat het kon starten.',
+        details: 'DETAILS', dWebsite: 'Website', dFound: 'Wat is gevonden', dFoundV: 'Schadelijk JavaScript dat zonder jouw toestemming software probeert te installeren',
+        dWhen: 'Wanneer', dWhenV: 'Vandaag 09:41 · automatisch geblokkeerd', dPc: 'Je computer', dPcV: 'Veilig. Er is niets uitgevoerd.',
+        stepsTitle: 'Wat gebeurt er nu?',
+        s1T: 'Geblokkeerd', s1S: 'Het schadelijke script is tegengehouden. Er is niets gestart op je computer.',
+        s2T: 'Opnieuw gecontroleerd', s2S: 'IT DeXt controleert de website elk uur opnieuw.',
+        s3T: 'Weer open', s3S: 'Zodra de website schoon is, kun je hem weer bezoeken. Je krijgt een melding.',
+        recheck: 'Nu opnieuw controleren', foot: 'Webbescherming hoort bij IT DeXt Antivirus, ingebouwd in LuxyOS en gratis. Het werkt in elke browser.', report: 'Is dit een vergissing? Meld het',
+        tTitle: 'Website is weer veilig', tText: 'was gisteren geblokkeerd. Het schadelijke script is verwijderd, dus je kunt de website weer bezoeken.',
+        tOpen: 'Website openen', tLater: 'Later',
+        start: 'Start', explorer: 'Verkenner', internet: 'Internet', email: 'E-mail', taskTitle: 'Internet — Geblokkeerde website',
+        services: '3 diensten actief', wifi: 'Wifi: verbonden', volume: 'Volume', battery: 'Batterij', date: '16 nov 2026'
+      }
+    };
+    return { accent: accent, t: T[lang] };
+  }
+}
+</script>
+</body>
+</html>

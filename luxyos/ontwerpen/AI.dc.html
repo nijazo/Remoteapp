@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>AI-instellingen</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>{{t.docTitle}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2563c9}a:hover{color:#1d4ea3}
+.hov:hover{background:rgba(37,99,201,0.09) !important}
+.hovd:hover{background:rgba(255,255,255,0.14) !important}
+.tile{display:flex;align-items:center;gap:14px;padding:20px 20px;border:1px solid #e1e6ee;border-radius:12px;background:#ffffff;font:inherit;color:#13243b;text-align:left;cursor:pointer;width:100%;box-sizing:border-box}
+.tile-ic{width:44px;height:44px;flex-shrink:0;border-radius:11px;display:flex;align-items:center;justify-content:center}
+.tile-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.tile-t{font-size:14.5px;font-weight:700;line-height:1.3}
+.opt{display:flex;flex-direction:column;gap:10px;padding:20px;border:1px solid #d5dce6;border-radius:14px;background:#ffffff;font:inherit;color:#13243b;text-align:left;cursor:pointer;box-sizing:border-box}
+.opt-t{font-size:16px;font-weight:700;line-height:1.3}
+.opt-s{font-size:13px;line-height:1.45;color:#3d4b61}
+.row{display:flex;align-items:center;gap:14px;padding:14px 20px;border-top:1px solid #e9edf3}
+.pill{flex-shrink:0;display:flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:14px;background:#13243b;color:#ffffff;font-size:12.5px;font-weight:600}
+.tile-s{display:flex;align-items:center;gap:6px;font-size:13px;line-height:1.35;color:#3d4b61}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #d9e7f2; font-family: Inter, system-ui, sans-serif; color: #13243b">
+
+<svg aria-hidden="true" width="1440" height="900" viewBox="0 0 1440 900" style="position: absolute; left: 0; top: 0">
+<circle cx="1130" cy="220" r="78" fill="#f4cf9c"></circle>
+<path d="M0 520 C 180 440, 360 470, 520 430 C 700 385, 860 450, 1040 410 C 1200 375, 1330 420, 1440 395 L1440 900 L0 900 Z" fill="#a9c6dd"></path>
+<path d="M0 610 C 200 540, 380 600, 600 560 C 820 520, 980 600, 1180 560 C 1300 535, 1380 560, 1440 550 L1440 900 L0 900 Z" fill="#7aa3c8"></path>
+<path d="M0 700 C 240 640, 460 710, 720 670 C 960 635, 1180 700, 1440 650 L1440 900 L0 900 Z" fill="#4d7aa6"></path>
+<path d="M0 790 C 300 750, 560 800, 860 770 C 1100 748, 1300 780, 1440 760 L1440 900 L0 900 Z" fill="#2f5682"></path>
+</svg>
+
+<div role="application" aria-label="{{t.taskTitle}}" style="position: absolute; left: 140px; top: 22px; width: 1160px; height: 822px; background: #ffffff; border-radius: 10px; box-shadow: 0 18px 48px rgba(10,20,40,0.28); overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 40px; flex-shrink: 0; background: #eef2f7; display: flex; align-items: center; justify-content: space-between; padding-left: 14px; border-bottom: 1px solid #dde3ec">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>
+<span>{{t.settings}}</span>
+</div>
+<div style="display: flex; height: 100%">
+<button class="hov" type="button" aria-label="{{t.minimize}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+<button class="hov" type="button" aria-label="{{t.maximize}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+<button class="hov" type="button" aria-label="{{t.close}}" style="width: 44px; height: 100%; border: 0; background: transparent; color: #3d4b61; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+</div>
+
+<div style="flex: 1; display: flex; min-height: 0">
+<div style="width: 250px; flex-shrink: 0; background: #f6f8fb; border-right: 1px solid #e6ebf2; padding: 16px 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 6px 8px 14px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: {{accent}}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">{{t.avatar}}</span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600">{{t.user}}</span><span style="font-size: 12px; color: #4a5568">{{t.account}}</span></span>
+</div>
+<label style="height: 36px; border: 1px solid #d5dce6; border-radius: 8px; background: #ffffff; display: flex; align-items: center; gap: 8px; padding: 0 10px; margin-bottom: 10px; color: #4a5568">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">{{t.searchLabel}}</span>
+<input type="search" placeholder="{{t.searchPh}}" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 13px; color: #13243b; width: 100%">
+</label>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>{{t.nSystem}}</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg>{{t.nNetwork}}</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>{{t.nPrivacy}}</button>
+<button type="button" aria-current="page" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: {{accentSoft}}; font: inherit; font-size: 13.5px; font-weight: 600; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9L12 16.5l-1.9-4.6L5.5 10l4.6-1.9z"></path><path d="M18.5 15.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg>{{t.nAi}}</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg>{{t.nApps}}</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>{{t.nAccounts}}</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path></svg>{{t.nSecurity}}</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"></path></svg>{{t.nRecovery}}</button>
+<button class="hov" type="button" style="display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 13.5px; color: #13243b; text-align: left; cursor: pointer"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3d4b61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>{{t.nAbout}}</button>
+</div>
+
+<div style="flex: 1; min-width: 0; padding: 26px 36px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em">{{t.heading}}</h1>
+<p style="margin: 0; max-width: 780px; font-size: 14.5px; line-height: 1.55; color: #3d4b61">{{t.intro}}</p>
+</div>
+
+<!-- Choice -->
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 id="ai-choice" style="margin: 0; font-size: 15px; font-weight: 700">{{t.choiceLabel}}</h2>
+<div role="radiogroup" aria-labelledby="ai-choice" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: stretch">
+<button class="opt" type="button" role="radio" aria-checked="true" style="border: 2px solid {{accent}}; background: #f3f7fd; box-shadow: 0 6px 18px rgba(37,99,201,0.12)"><span style="display: flex; align-items: center; justify-content: space-between"><span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; background: {{accent}}; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9L12 16.5l-1.9-4.6L5.5 10l4.6-1.9z"></path><path d="M18.5 15.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path><path d="M3 3l18 18"></path></svg></span><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 50%; border: 7px solid {{accent}}; box-sizing: border-box; background: #ffffff"></span></span><span class="opt-t">{{t.o1T}}</span><span class="opt-s">{{t.o1S}}</span><span style="align-self: flex-start; display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #ffffff; background: {{accent}}; border-radius: 10px; padding: 3px 10px"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>{{t.sel}}</span></button>
+<button class="opt" type="button" role="radio" aria-checked="false" style=""><span style="display: flex; align-items: center; justify-content: space-between"><span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; background: {{accentSoft}}; color: {{accent}}; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="10" rx="1.5"></rect><path d="M2 19h20"></path></svg></span><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 50%; border: 2px solid #aab5c4; box-sizing: border-box; background: #ffffff"></span></span><span class="opt-t">{{t.o2T}}</span><span class="opt-s">{{t.o2S}}</span></button>
+<button class="opt" type="button" role="radio" aria-checked="false" style=""><span style="display: flex; align-items: center; justify-content: space-between"><span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; background: {{accentSoft}}; color: {{accent}}; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9L12 16.5l-1.9-4.6L5.5 10l4.6-1.9z"></path><path d="M18.5 15.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 50%; border: 2px solid #aab5c4; box-sizing: border-box; background: #ffffff"></span></span><span class="opt-t">{{t.o3T}}</span><span class="opt-s">{{t.o3S}}</span></button>
+</div>
+</div>
+
+<!-- What off means -->
+<div style="border: 1px solid #e1e6ee; border-radius: 14px; overflow: hidden; background: #ffffff">
+<div style="display: flex; align-items: center; gap: 10px; padding: 15px 20px; background: #f6f8fb">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#13243b" stroke-width="2" stroke-linecap="round"><path d="M12 3v8"></path><path d="M6.3 6.8a8 8 0 1 0 11.4 0"></path></svg>
+<h2 style="margin: 0; font-size: 15.5px; font-weight: 700">{{t.offTitle}}</h2>
+</div>
+<div class="row"><span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; background: #eef1f5; color: #3d4b61; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9L12 16.5l-1.9-4.6L5.5 10l4.6-1.9z"></path><path d="M18.5 15.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14.5px; font-weight: 700">{{t.r1T}}</span><span style="font-size: 13px; line-height: 1.4; color: #3d4b61">{{t.r1S}}</span></span><span class="pill"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 6l12 12"></path></svg>{{t.stOff}}</span></div>
+<div class="row"><span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; background: #eef1f5; color: #3d4b61; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg></span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14.5px; font-weight: 700">{{t.r2T}}</span><span style="font-size: 13px; line-height: 1.4; color: #3d4b61">{{t.r2S}}</span></span><span class="pill"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 6l12 12"></path></svg>{{t.stBlocked}}</span></div>
+<div class="row"><span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; background: #eef1f5; color: #3d4b61; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10.5a4 4 0 0 0 .6-8 6 6 0 0 0-11.6 1.6A3.3 3.3 0 0 0 7 18z"></path><path d="M4 4l16 16"></path></svg></span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14.5px; font-weight: 700">{{t.r3T}}</span><span style="font-size: 13px; line-height: 1.4; color: #3d4b61">{{t.r3S}}</span></span><span class="pill"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 6l12 12"></path></svg>{{t.stBlocked}}</span></div>
+<div class="row"><span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; background: #eef1f5; color: #3d4b61; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9.5 9.5h5v5h-5zM9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"></path></svg></span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14.5px; font-weight: 700">{{t.r4T}}</span><span style="font-size: 13px; line-height: 1.4; color: #3d4b61">{{t.r4S}}</span></span><span class="pill"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 6l12 12"></path></svg>{{t.stOff}}</span></div>
+</div>
+
+<!-- Quiet line -->
+<div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #4a5568">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+<span>{{t.adminText}}</span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="position: absolute; left: 0; bottom: 0; width: 1440px; height: 48px; background: #1a2232; display: flex; align-items: center; gap: 4px; padding: 0 6px; box-sizing: border-box; color: #ffffff">
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px 0 12px; border: 0; border-radius: 8px; background: {{accent}}; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 64 64"><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-dasharray="99 33" transform="rotate(-30 32 32)"></circle><circle cx="37.4" cy="11.7" r="7" fill="#F5A524"></circle></svg><span>{{t.start}}</span></button>
+<span style="width: 1px; height: 24px; background: #3a4558; margin: 0 6px"></span>
+<button class="hovd" type="button" aria-label="{{t.explorer}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #f2c46d; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.internet}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #8fb8ff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.email}}" style="width: 40px; height: 40px; border: 0; border-radius: 8px; background: transparent; color: #6fd6c9; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></button>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; margin-left: 6px; border: 0; border-bottom: 3px solid {{accent}}; border-radius: 8px 8px 4px 4px; background: rgba(255,255,255,0.08); color: #ffffff; font: inherit; font-size: 13px; cursor: pointer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c5cfdd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>{{t.taskTitle}}</button>
+<span style="flex: 1"></span>
+<button class="hovd" type="button" style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 0; border-radius: 16px; background: rgba(255,255,255,0.1); color: #ffffff; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3ddc84"></span>{{t.services}}</button>
+<button class="hovd" type="button" aria-label="{{t.wifi}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.volume}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button class="hovd" type="button" aria-label="{{t.battery}}" style="width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"></rect><path d="M22 11v2"></path><rect x="5" y="10" width="9" height="4" rx="0.5" fill="currentColor" stroke="none"></rect></svg></button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; padding: 0 10px 0 8px; line-height: 1.25">
+<span style="font-size: 13px; font-weight: 600">09:40</span>
+<span style="font-size: 11.5px; color: #c5cfdd">{{t.date}}</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2563c9","options":["#2563c9","#b8501a","#137a6f","#6d45b8"]},"lang":{"editor":"select","default":"nl","options":["en","nl"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#2563c9';
+    const m = /^#?([0-9a-f]{6})$/i.exec(accent);
+    let soft = 'rgba(37,99,201,0.12)';
+    if (m) {
+      const n = parseInt(m[1], 16);
+      soft = 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',0.12)';
+    }
+    const lang = this.props.lang === 'nl' ? 'nl' : 'en';
+    const T = {
+      en: {
+        docTitle: 'AI settings', settings: 'Settings', minimize: 'Minimize', maximize: 'Maximize', close: 'Close',
+        avatar: 'U', user: 'User', account: 'Local account', searchLabel: 'Search settings', searchPh: 'Find a setting',
+        nSystem: 'System', nNetwork: 'Network & internet', nPrivacy: 'Privacy', nAi: 'AI', nApps: 'Apps', nAccounts: 'Accounts',
+        nSecurity: 'Security', nRecovery: 'Recovery & encryption', nAbout: 'About this system',
+        heading: 'AI',
+        intro: 'LuxyOS can use AI to help you, for example to search, write and find photos. You decide whether it may. Choose “AI off” and AI does not work anywhere on this computer.',
+        choiceLabel: 'How may LuxyOS use AI?', sel: 'Selected',
+        o1T: 'AI off', o1S: 'No AI at all. Not in the system, not in apps and not online.',
+        o2T: 'Only on this computer', o2S: 'AI runs on your own computer. Nothing is sent to the internet.',
+        o3T: 'AI on', o3S: 'AI on this computer and online AI services. Every AI feature is labelled.',
+        offTitle: 'AI is off. This is what that means:', stOff: 'Off', stBlocked: 'Blocked',
+        r1T: 'AI features in LuxyOS', r1S: 'Smart search, writing help, summaries and photo recognition are switched off.',
+        r2T: 'AI in apps', r2S: 'Apps cannot start AI features. The store shows which apps contain AI.',
+        r3T: 'Online AI services', r3S: 'Connections to AI services are blocked for the whole computer, also in browsers and Windows programs.',
+        r4T: 'AI chip (NPU)', r4S: 'Switched off. No app or program can use it.',
+        adminText: 'You can switch AI back on at any time. At work, your administrator can lock this setting for everyone.',
+        start: 'Start', explorer: 'Explorer', internet: 'Internet', email: 'Email', taskTitle: 'Settings — AI',
+        services: '3 services running', wifi: 'Wi-Fi: connected', volume: 'Volume', battery: 'Battery', date: '16 Nov 2026'
+      },
+      nl: {
+        docTitle: 'AI-instellingen', settings: 'Instellingen', minimize: 'Minimaliseren', maximize: 'Maximaliseren', close: 'Sluiten',
+        avatar: 'G', user: 'Gebruiker', account: 'Lokaal account', searchLabel: 'Zoeken in instellingen', searchPh: 'Instelling zoeken',
+        nSystem: 'Systeem', nNetwork: 'Netwerk en internet', nPrivacy: 'Privacy', nAi: 'AI', nApps: 'Apps', nAccounts: 'Accounts',
+        nSecurity: 'Beveiliging', nRecovery: 'Herstel en versleuteling', nAbout: 'Over dit systeem',
+        heading: 'AI',
+        intro: 'LuxyOS kan AI gebruiken om je te helpen, bijvoorbeeld bij zoeken, schrijven en foto’s vinden. Jij bepaalt of dat mag. Kies “AI uit” en AI werkt nergens op deze computer.',
+        choiceLabel: 'Hoe mag LuxyOS AI gebruiken?', sel: 'Gekozen',
+        o1T: 'AI uit', o1S: 'Helemaal geen AI. Niet in het systeem, niet in apps en niet online.',
+        o2T: 'Alleen op deze computer', o2S: 'AI draait op je eigen computer. Er gaat niets naar internet.',
+        o3T: 'AI aan', o3S: 'AI op deze computer en online AI-diensten. Elke AI-functie heeft een label.',
+        offTitle: 'AI staat uit. Dit betekent het:', stOff: 'Uit', stBlocked: 'Geblokkeerd',
+        r1T: 'AI-functies in LuxyOS', r1S: 'Slim zoeken, schrijfhulp, samenvattingen en fotoherkenning staan uit.',
+        r2T: 'AI in apps', r2S: 'Apps kunnen geen AI-functies starten. De winkel laat zien welke apps AI bevatten.',
+        r3T: 'Online AI-diensten', r3S: 'Verbindingen met AI-diensten zijn geblokkeerd voor de hele computer, ook in browsers en Windows-programma’s.',
+        r4T: 'AI-chip (NPU)', r4S: 'Uitgeschakeld. Geen app of programma kan hem gebruiken.',
+        adminText: 'Je kunt AI altijd weer aanzetten. Op het werk kan je beheerder deze instelling voor iedereen vastzetten.',
+        start: 'Start', explorer: 'Verkenner', internet: 'Internet', email: 'E-mail', taskTitle: 'Instellingen — AI',
+        services: '3 diensten actief', wifi: 'Wifi: verbonden', volume: 'Volume', battery: 'Batterij', date: '16 nov 2026'
+      }
+    };
+    return { accent: accent, accentSoft: soft, t: T[lang] };
+  }
+}
+</script>
+</body>
+</html>
