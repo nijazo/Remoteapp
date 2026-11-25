@@ -1,3 +1,5 @@
+> **Nieuwe versie:** deze overdracht staat nu in het LuxyOS-project: https://github.com/nijazo/luxyos/blob/main/docs/nl/overdracht.md. Zet Remoteapp niet op de pc; alleen het LuxyOS-project is nodig.
+
 # Overdracht: verder werken aan LuxyOS op de eigen pc
 
 Stand van 25 november 2026. Dit bestand vat samen wat er in de cloud-chat "LuxyOS" is gedaan, zodat een nieuwe chat op de pc (D:\LuxyOS) kan verdergaan.
