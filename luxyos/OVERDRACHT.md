@@ -67,15 +67,28 @@ Ook besproken: zonder Wine kan het alleen met een echte Windows op de achtergron
 
 ## Starten op de pc
 
-In PowerShell of de opdrachtprompt:
+Mappen op de pc:
+
+| Map | Wat |
+| --- | --- |
+| `D:\LuxyOS\git` | De twee projecten van GitHub |
+| `D:\LuxyOS\chat` | Werkmap voor de Claude-chat |
+
+In PowerShell:
 
 ```
-mkdir D:\LuxyOS
-cd /d D:\LuxyOS
+mkdir D:\LuxyOS\git, D:\LuxyOS\chat
+cd D:\LuxyOS\git
 git clone https://github.com/nijazo/luxyos.git
 git clone -b ccr-e51dc20e-zfaiie https://github.com/nijazo/Remoteapp.git
+Copy-Item D:\LuxyOS\git\Remoteapp\luxyos\chat-map\* D:\LuxyOS\chat\ -Recurse -Force
 ```
 
-Staan de mappen er al, haal dan alleen de nieuwste versie op: `git pull` in elke map.
+Staan de projecten er al, haal dan de nieuwste versie op met `git pull` in elke map, en voer alleen de laatste regel (`Copy-Item`) uit.
 
-Open daarna in de Claude-app een nieuwe Claude Code-chat met de map `D:\LuxyOS`, of typ `claude` in `D:\LuxyOS`. Begin met: "Lees Remoteapp\luxyos\OVERDRACHT.md en ga verder met LuxyOS."
+Daarmee staan in `D:\LuxyOS\chat`:
+
+- `CLAUDE.md`: vertelt de chat waar de projecten staan, de werkafspraken, en laadt deze overdracht automatisch;
+- `.claude\settings.json`: geeft de chat toegang tot `D:\LuxyOS\git`.
+
+Open daarna in de Claude-app een nieuwe Claude Code-chat met de map `D:\LuxyOS\chat`, of typ `claude` in PowerShell in die map. Begin met: "Ga verder met LuxyOS."
